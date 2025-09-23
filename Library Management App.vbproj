@@ -73,17 +73,37 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Database\DatabaseHandler.vb" />
+    <Compile Include="Forms\Admin\Admin_Main_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Forms\Admin\Admin_Main_Panel.Designer.vb">
+      <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\Recovery_Panel.Designer.vb">
+      <DependentUpon>Recovery_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\Recovery_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\SignUp_Panel.Designer.vb">
+      <DependentUpon>SignUp_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\SignUp_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\Login_Panel.Designer.vb">
+      <DependentUpon>Login_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\Login_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,8 +117,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\Admin_Main_Panel.resx">
+      <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\Recovery_Panel.resx">
+      <DependentUpon>Recovery_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\SignUp_Panel.resx">
+      <DependentUpon>SignUp_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\Login_Panel.resx">
+      <DependentUpon>Login_Panel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -118,6 +147,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
