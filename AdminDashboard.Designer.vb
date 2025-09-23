@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class AdminDashboard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -237,14 +237,14 @@ Partial Class Form1
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Admin Dashboard"
         '
-        'Form1
+        'AdminDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(992, 616)
         Me.Controls.Add(Me.panelMain)
         Me.Controls.Add(Me.panelSidebar)
-        Me.Name = "Form1"
+        Me.Name = "AdminDashboard"
         Me.Text = "Form1"
         Me.panelMain.ResumeLayout(False)
         Me.panelMain.PerformLayout()
