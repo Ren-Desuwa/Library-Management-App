@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class AdminDashboard
+Partial Class Admin_Main_Panel
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -222,7 +222,7 @@ Partial Class AdminDashboard
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(13, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(172, 32)
+        Me.Label1.Size = New System.Drawing.Size(165, 29)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "📚 LibraryMS"
         '
@@ -233,18 +233,18 @@ Partial Class AdminDashboard
         Me.Label2.ForeColor = System.Drawing.SystemColors.AppWorkspace
         Me.Label2.Location = New System.Drawing.Point(47, 57)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(120, 17)
+        Me.Label2.Size = New System.Drawing.Size(120, 16)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Admin Dashboard"
         '
-        'AdminDashboard
+        'Admin_Main_Panel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(992, 616)
         Me.Controls.Add(Me.panelMain)
         Me.Controls.Add(Me.panelSidebar)
-        Me.Name = "AdminDashboard"
+        Me.Name = "Admin_Main_Panel"
         Me.Text = "Form1"
         Me.panelMain.ResumeLayout(False)
         Me.panelMain.PerformLayout()
