@@ -22,112 +22,197 @@ Partial Class Login_Panel
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.lbl_cancel = New System.Windows.Forms.Button()
-        Me.btn_login = New System.Windows.Forms.Button()
-        Me.lbl_username = New System.Windows.Forms.Label()
-        Me.txt_username = New System.Windows.Forms.TextBox()
-        Me.lbl_login = New System.Windows.Forms.Label()
-        Me.txt_password = New System.Windows.Forms.TextBox()
-        Me.lbl_password = New System.Windows.Forms.Label()
-        Me.albl_link_to_signup = New System.Windows.Forms.LinkLabel()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.RoundedPanel1 = New Library_Management_App.RoundedPanel()
+        Me.RoundedPanel2 = New Library_Management_App.RoundedPanel()
+        Me.RoundedPanel3 = New Library_Management_App.RoundedPanel()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
-        'lbl_cancel
+        'TableLayoutPanel1
         '
-        Me.lbl_cancel.Location = New System.Drawing.Point(13, 390)
-        Me.lbl_cancel.Name = "lbl_cancel"
-        Me.lbl_cancel.Size = New System.Drawing.Size(128, 48)
-        Me.lbl_cancel.TabIndex = 0
-        Me.lbl_cancel.Text = "Cancel"
-        Me.lbl_cancel.UseVisualStyleBackColor = True
+        Me.TableLayoutPanel1.ColumnCount = 2
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.Padding = New System.Windows.Forms.Padding(20)
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1384, 801)
+        Me.TableLayoutPanel1.TabIndex = 0
         '
-        'btn_login
+        'Label1
         '
-        Me.btn_login.Location = New System.Drawing.Point(201, 390)
-        Me.btn_login.Name = "btn_login"
-        Me.btn_login.Size = New System.Drawing.Size(128, 48)
-        Me.btn_login.TabIndex = 1
-        Me.btn_login.Text = "Login"
-        Me.btn_login.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(47, 170)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(250, 47)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "📚 LibraryMS"
         '
-        'lbl_username
+        'Panel1
         '
-        Me.lbl_username.AutoSize = True
-        Me.lbl_username.Location = New System.Drawing.Point(11, 135)
-        Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(55, 13)
-        Me.lbl_username.TabIndex = 2
-        Me.lbl_username.Text = "Username"
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(23, 23)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(800, 755)
+        Me.Panel1.TabIndex = 1
         '
-        'txt_username
+        'Label2
         '
-        Me.txt_username.Location = New System.Drawing.Point(12, 151)
-        Me.txt_username.Name = "txt_username"
-        Me.txt_username.Size = New System.Drawing.Size(316, 20)
-        Me.txt_username.TabIndex = 3
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 45.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Location = New System.Drawing.Point(50, 252)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(517, 81)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Welcome to Your"
         '
-        'lbl_login
+        'Label3
         '
-        Me.lbl_login.AutoSize = True
-        Me.lbl_login.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_login.Location = New System.Drawing.Point(97, 35)
-        Me.lbl_login.Name = "lbl_login"
-        Me.lbl_login.Size = New System.Drawing.Size(110, 42)
-        Me.lbl_login.TabIndex = 4
-        Me.lbl_login.Text = "Login"
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 45.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label3.Location = New System.Drawing.Point(53, 317)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(452, 81)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Library System"
         '
-        'txt_password
+        'Label4
         '
-        Me.txt_password.Location = New System.Drawing.Point(11, 213)
-        Me.txt_password.Name = "txt_password"
-        Me.txt_password.Size = New System.Drawing.Size(316, 20)
-        Me.txt_password.TabIndex = 6
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label4.Location = New System.Drawing.Point(58, 462)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(401, 63)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Manage books, track members, and streamline your" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "library operations with our com" &
+    "prehensive management" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "system."
         '
-        'lbl_password
+        'Label5
         '
-        Me.lbl_password.AutoSize = True
-        Me.lbl_password.Location = New System.Drawing.Point(10, 197)
-        Me.lbl_password.Name = "lbl_password"
-        Me.lbl_password.Size = New System.Drawing.Size(53, 13)
-        Me.lbl_password.TabIndex = 5
-        Me.lbl_password.Text = "Password"
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label5.Location = New System.Drawing.Point(57, 540)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(401, 15)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "✔ Book Catalog Management     ✔ Member Tracking     ✔ Due Date Alerts"
         '
-        'albl_link_to_signup
+        'TableLayoutPanel2
         '
-        Me.albl_link_to_signup.AutoSize = True
-        Me.albl_link_to_signup.Location = New System.Drawing.Point(268, 245)
-        Me.albl_link_to_signup.Name = "albl_link_to_signup"
-        Me.albl_link_to_signup.Size = New System.Drawing.Size(45, 13)
-        Me.albl_link_to_signup.TabIndex = 7
-        Me.albl_link_to_signup.TabStop = True
-        Me.albl_link_to_signup.Text = "Sign Up"
+        Me.TableLayoutPanel2.ColumnCount = 3
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.87958!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.01864!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.10178!))
+        Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 1, 1)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(829, 23)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.87!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.13!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(532, 755)
+        Me.TableLayoutPanel2.TabIndex = 2
+        '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.ColumnCount = 3
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel3.Controls.Add(Me.RoundedPanel1, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.RoundedPanel2, 1, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.RoundedPanel3, 2, 0)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(61, 591)
+        Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.Padding = New System.Windows.Forms.Padding(5)
+        Me.TableLayoutPanel3.RowCount = 1
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(401, 160)
+        Me.TableLayoutPanel3.TabIndex = 0
+        '
+        'RoundedPanel1
+        '
+        Me.RoundedPanel1.BackColor = System.Drawing.Color.White
+        Me.RoundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RoundedPanel1.Location = New System.Drawing.Point(8, 8)
+        Me.RoundedPanel1.Name = "RoundedPanel1"
+        Me.RoundedPanel1.Size = New System.Drawing.Size(124, 144)
+        Me.RoundedPanel1.TabIndex = 0
+        '
+        'RoundedPanel2
+        '
+        Me.RoundedPanel2.BackColor = System.Drawing.Color.White
+        Me.RoundedPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RoundedPanel2.Location = New System.Drawing.Point(138, 8)
+        Me.RoundedPanel2.Name = "RoundedPanel2"
+        Me.RoundedPanel2.Size = New System.Drawing.Size(124, 144)
+        Me.RoundedPanel2.TabIndex = 1
+        '
+        'RoundedPanel3
+        '
+        Me.RoundedPanel3.BackColor = System.Drawing.Color.White
+        Me.RoundedPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RoundedPanel3.Location = New System.Drawing.Point(268, 8)
+        Me.RoundedPanel3.Name = "RoundedPanel3"
+        Me.RoundedPanel3.Size = New System.Drawing.Size(125, 144)
+        Me.RoundedPanel3.TabIndex = 2
         '
         'Login_Panel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(341, 450)
-        Me.Controls.Add(Me.albl_link_to_signup)
-        Me.Controls.Add(Me.txt_password)
-        Me.Controls.Add(Me.lbl_password)
-        Me.Controls.Add(Me.lbl_login)
-        Me.Controls.Add(Me.txt_username)
-        Me.Controls.Add(Me.lbl_username)
-        Me.Controls.Add(Me.btn_login)
-        Me.Controls.Add(Me.lbl_cancel)
+        Me.ClientSize = New System.Drawing.Size(1384, 801)
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "Login_Panel"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents lbl_cancel As Button
-    Friend WithEvents btn_login As Button
-    Friend WithEvents lbl_username As Label
-    Friend WithEvents txt_username As TextBox
-    Friend WithEvents lbl_login As Label
-    Friend WithEvents txt_password As TextBox
-    Friend WithEvents lbl_password As Label
-    Friend WithEvents albl_link_to_signup As LinkLabel
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents RoundedPanel1 As RoundedPanel
+    Friend WithEvents RoundedPanel2 As RoundedPanel
+    Friend WithEvents RoundedPanel3 As RoundedPanel
 End Class

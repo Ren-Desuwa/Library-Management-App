@@ -123,6 +123,9 @@
     <EmbeddedResource Include="Forms\Admin\Admin_Main_Panel.resx">
       <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\Login_Panel.resx">
+      <DependentUpon>Login_Panel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\SignUp_Panel.resx">
       <DependentUpon>SignUp_Panel.vb</DependentUpon>
     </EmbeddedResource>
