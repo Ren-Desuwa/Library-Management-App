@@ -30,7 +30,6 @@ Partial Class SignUp_Panel
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.RoundedPanel4 = New Library_Management_App.RoundedPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -58,6 +57,44 @@ Partial Class SignUp_Panel
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.RoundedPanel4 = New Library_Management_App.RoundedPanel()
+        Me.RoundedPanel5 = New Library_Management_App.RoundedPanel()
+        Me.TableLayoutPanel13 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel14 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel10 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel11 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -68,6 +105,18 @@ Partial Class SignUp_Panel
         Me.TableLayoutPanel5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
+        Me.TableLayoutPanel7.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.RoundedPanel5.SuspendLayout()
+        Me.TableLayoutPanel13.SuspendLayout()
+        Me.TableLayoutPanel14.SuspendLayout()
+        Me.TableLayoutPanel8.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
+        Me.TableLayoutPanel9.SuspendLayout()
+        Me.TableLayoutPanel10.SuspendLayout()
+        Me.TableLayoutPanel11.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -167,16 +216,6 @@ Partial Class SignUp_Panel
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.96027!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(532, 755)
         Me.TableLayoutPanel2.TabIndex = 2
-        '
-        'RoundedPanel4
-        '
-        Me.RoundedPanel4.BackColor = System.Drawing.Color.White
-        Me.RoundedPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RoundedPanel4.Location = New System.Drawing.Point(21, 3)
-        Me.RoundedPanel4.Name = "RoundedPanel4"
-        Me.RoundedPanel4.Padding = New System.Windows.Forms.Padding(1)
-        Me.RoundedPanel4.Size = New System.Drawing.Size(470, 749)
-        Me.RoundedPanel4.TabIndex = 1
         '
         'TableLayoutPanel4
         '
@@ -530,11 +569,513 @@ Partial Class SignUp_Panel
         Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Black
         '
+        'TableLayoutPanel7
+        '
+        Me.TableLayoutPanel7.ColumnCount = 2
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.0!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.0!))
+        Me.TableLayoutPanel7.Controls.Add(Me.Panel2, 0, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.TableLayoutPanel8, 1, 0)
+        Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
+        Me.TableLayoutPanel7.Padding = New System.Windows.Forms.Padding(20)
+        Me.TableLayoutPanel7.RowCount = 1
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(1384, 801)
+        Me.TableLayoutPanel7.TabIndex = 2
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Label13)
+        Me.Panel2.Controls.Add(Me.Label14)
+        Me.Panel2.Controls.Add(Me.Label16)
+        Me.Panel2.Controls.Add(Me.Label18)
+        Me.Panel2.Controls.Add(Me.Label19)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(23, 23)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(800, 755)
+        Me.Panel2.TabIndex = 1
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label13.Location = New System.Drawing.Point(57, 540)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(412, 15)
+        Me.Label13.TabIndex = 4
+        Me.Label13.Text = "✔ Borrow and Return Books     ✔ Student Tracking     ✔ Due Date Reminders"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label14.Location = New System.Drawing.Point(58, 462)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(430, 63)
+        Me.Label14.TabIndex = 3
+        Me.Label14.Text = "Create your student account to access the library system." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Borrow books, track yo" &
+    "ur borrowing history, and let us easily" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " manage student records."
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 45.0!, System.Drawing.FontStyle.Bold)
+        Me.Label16.Location = New System.Drawing.Point(50, 252)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(409, 81)
+        Me.Label16.TabIndex = 1
+        Me.Label16.Text = "Register Your"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(47, 170)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(250, 47)
+        Me.Label18.TabIndex = 0
+        Me.Label18.Text = "📚 LibraryMS"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI", 45.0!, System.Drawing.FontStyle.Bold)
+        Me.Label19.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label19.Location = New System.Drawing.Point(53, 317)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(504, 81)
+        Me.Label19.TabIndex = 2
+        Me.Label19.Text = "Student Account"
+        '
+        'RoundedPanel4
+        '
+        Me.RoundedPanel4.BackColor = System.Drawing.Color.White
+        Me.RoundedPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RoundedPanel4.Location = New System.Drawing.Point(21, 3)
+        Me.RoundedPanel4.Name = "RoundedPanel4"
+        Me.RoundedPanel4.Padding = New System.Windows.Forms.Padding(1)
+        Me.RoundedPanel4.Size = New System.Drawing.Size(470, 749)
+        Me.RoundedPanel4.TabIndex = 1
+        '
+        'RoundedPanel5
+        '
+        Me.RoundedPanel5.BackColor = System.Drawing.Color.White
+        Me.RoundedPanel5.Controls.Add(Me.TableLayoutPanel13)
+        Me.RoundedPanel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RoundedPanel5.Location = New System.Drawing.Point(12, 3)
+        Me.RoundedPanel5.Name = "RoundedPanel5"
+        Me.RoundedPanel5.Padding = New System.Windows.Forms.Padding(1)
+        Me.RoundedPanel5.Size = New System.Drawing.Size(506, 749)
+        Me.RoundedPanel5.TabIndex = 1
+        '
+        'TableLayoutPanel13
+        '
+        Me.TableLayoutPanel13.ColumnCount = 1
+        Me.TableLayoutPanel13.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel13.Controls.Add(Me.GroupBox6, 0, 4)
+        Me.TableLayoutPanel13.Controls.Add(Me.GroupBox5, 0, 3)
+        Me.TableLayoutPanel13.Controls.Add(Me.Label26, 0, 0)
+        Me.TableLayoutPanel13.Controls.Add(Me.Label27, 0, 1)
+        Me.TableLayoutPanel13.Controls.Add(Me.Button2, 0, 7)
+        Me.TableLayoutPanel13.Controls.Add(Me.TableLayoutPanel14, 0, 8)
+        Me.TableLayoutPanel13.Controls.Add(Me.GroupBox4, 0, 2)
+        Me.TableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel13.Location = New System.Drawing.Point(1, 1)
+        Me.TableLayoutPanel13.Name = "TableLayoutPanel13"
+        Me.TableLayoutPanel13.RowCount = 9
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.85542!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.14458!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 169.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 187.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 182.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel13.Size = New System.Drawing.Size(504, 747)
+        Me.TableLayoutPanel13.TabIndex = 0
+        '
+        'TableLayoutPanel14
+        '
+        Me.TableLayoutPanel14.ColumnCount = 2
+        Me.TableLayoutPanel14.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel14.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel14.Controls.Add(Me.LinkLabel2, 1, 0)
+        Me.TableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel14.Location = New System.Drawing.Point(3, 723)
+        Me.TableLayoutPanel14.Name = "TableLayoutPanel14"
+        Me.TableLayoutPanel14.RowCount = 1
+        Me.TableLayoutPanel14.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel14.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel14.Size = New System.Drawing.Size(498, 21)
+        Me.TableLayoutPanel14.TabIndex = 10
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button2.Location = New System.Drawing.Point(12, 668)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(12)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(480, 40)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Register"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label27.Location = New System.Drawing.Point(3, 47)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(498, 26)
+        Me.Label27.TabIndex = 1
+        Me.Label27.Text = "Create your Account"
+        Me.Label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label26.Location = New System.Drawing.Point(3, 0)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(498, 47)
+        Me.Label26.TabIndex = 0
+        Me.Label26.Text = "Student Account Registration"
+        Me.Label26.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'TableLayoutPanel8
+        '
+        Me.TableLayoutPanel8.ColumnCount = 3
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.691729!))
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 96.2406!))
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.067669!))
+        Me.TableLayoutPanel8.Controls.Add(Me.RoundedPanel5, 1, 0)
+        Me.TableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel8.Location = New System.Drawing.Point(829, 23)
+        Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
+        Me.TableLayoutPanel8.RowCount = 1
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.96027!))
+        Me.TableLayoutPanel8.Size = New System.Drawing.Size(532, 755)
+        Me.TableLayoutPanel8.TabIndex = 2
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.ActiveLinkColor = System.Drawing.Color.Gray
+        Me.LinkLabel2.AutoSize = True
+        Me.TableLayoutPanel14.SetColumnSpan(Me.LinkLabel2, 2)
+        Me.LinkLabel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LinkLabel2.LinkColor = System.Drawing.Color.Black
+        Me.LinkLabel2.Location = New System.Drawing.Point(3, 1)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(492, 20)
+        Me.LinkLabel2.TabIndex = 0
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "Cancel"
+        Me.LinkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.LinkLabel2.VisitedLinkColor = System.Drawing.Color.Black
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.TableLayoutPanel9)
+        Me.GroupBox4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox4.Location = New System.Drawing.Point(3, 76)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(498, 163)
+        Me.GroupBox4.TabIndex = 11
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Personal Information"
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.TableLayoutPanel10)
+        Me.GroupBox5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox5.Location = New System.Drawing.Point(3, 245)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(498, 181)
+        Me.GroupBox5.TabIndex = 12
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Contact Information"
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.TableLayoutPanel11)
+        Me.GroupBox6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox6.Location = New System.Drawing.Point(3, 432)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(498, 176)
+        Me.GroupBox6.TabIndex = 13
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Account Security"
+        '
+        'TableLayoutPanel9
+        '
+        Me.TableLayoutPanel9.ColumnCount = 2
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel9.Controls.Add(Me.TextBox11, 0, 3)
+        Me.TableLayoutPanel9.Controls.Add(Me.TextBox9, 1, 1)
+        Me.TableLayoutPanel9.Controls.Add(Me.Label24, 0, 2)
+        Me.TableLayoutPanel9.Controls.Add(Me.Label21, 1, 0)
+        Me.TableLayoutPanel9.Controls.Add(Me.Label20, 0, 0)
+        Me.TableLayoutPanel9.Controls.Add(Me.TextBox8, 0, 1)
+        Me.TableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel9.Location = New System.Drawing.Point(3, 16)
+        Me.TableLayoutPanel9.Name = "TableLayoutPanel9"
+        Me.TableLayoutPanel9.RowCount = 4
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel9.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel9.Size = New System.Drawing.Size(492, 144)
+        Me.TableLayoutPanel9.TabIndex = 0
+        '
+        'TableLayoutPanel10
+        '
+        Me.TableLayoutPanel10.ColumnCount = 2
+        Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel10.Controls.Add(Me.TextBox15, 0, 3)
+        Me.TableLayoutPanel10.Controls.Add(Me.TextBox12, 0, 1)
+        Me.TableLayoutPanel10.Controls.Add(Me.Label34, 0, 2)
+        Me.TableLayoutPanel10.Controls.Add(Me.Label30, 0, 0)
+        Me.TableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel10.Location = New System.Drawing.Point(3, 16)
+        Me.TableLayoutPanel10.Name = "TableLayoutPanel10"
+        Me.TableLayoutPanel10.RowCount = 4
+        Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel10.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel10.Size = New System.Drawing.Size(492, 162)
+        Me.TableLayoutPanel10.TabIndex = 1
+        '
+        'TableLayoutPanel11
+        '
+        Me.TableLayoutPanel11.ColumnCount = 2
+        Me.TableLayoutPanel11.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel11.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel11.Controls.Add(Me.CheckBox6, 1, 3)
+        Me.TableLayoutPanel11.Controls.Add(Me.CheckBox3, 1, 1)
+        Me.TableLayoutPanel11.Controls.Add(Me.TextBox17, 0, 3)
+        Me.TableLayoutPanel11.Controls.Add(Me.TextBox13, 0, 1)
+        Me.TableLayoutPanel11.Controls.Add(Me.Label29, 0, 2)
+        Me.TableLayoutPanel11.Controls.Add(Me.Label22, 0, 0)
+        Me.TableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel11.Location = New System.Drawing.Point(3, 16)
+        Me.TableLayoutPanel11.Name = "TableLayoutPanel11"
+        Me.TableLayoutPanel11.RowCount = 4
+        Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel11.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.TableLayoutPanel11.Size = New System.Drawing.Size(492, 157)
+        Me.TableLayoutPanel11.TabIndex = 1
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(3, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(240, 36)
+        Me.Label20.TabIndex = 0
+        Me.Label20.Text = "First Name"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(249, 0)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(240, 36)
+        Me.Label21.TabIndex = 1
+        Me.Label21.Text = "Last Name"
+        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(3, 72)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(240, 36)
+        Me.Label24.TabIndex = 4
+        Me.Label24.Text = "Student ID"
+        Me.Label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.Location = New System.Drawing.Point(3, 0)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(240, 40)
+        Me.Label30.TabIndex = 1
+        Me.Label30.Text = "Email"
+        Me.Label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(3, 80)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(240, 40)
+        Me.Label34.TabIndex = 5
+        Me.Label34.Text = "Contact Number"
+        Me.Label34.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TextBox8
+        '
+        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox8.Location = New System.Drawing.Point(3, 39)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(240, 26)
+        Me.TextBox8.TabIndex = 5
+        '
+        'TextBox9
+        '
+        Me.TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox9.Location = New System.Drawing.Point(249, 39)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(240, 26)
+        Me.TextBox9.TabIndex = 6
+        '
+        'TextBox11
+        '
+        Me.TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanel9.SetColumnSpan(Me.TextBox11, 2)
+        Me.TextBox11.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TextBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox11.Location = New System.Drawing.Point(3, 111)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(486, 26)
+        Me.TextBox11.TabIndex = 8
+        '
+        'TextBox12
+        '
+        Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanel10.SetColumnSpan(Me.TextBox12, 2)
+        Me.TextBox12.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox12.Location = New System.Drawing.Point(3, 43)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(486, 26)
+        Me.TextBox12.TabIndex = 7
+        '
+        'TextBox15
+        '
+        Me.TextBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TableLayoutPanel10.SetColumnSpan(Me.TextBox15, 2)
+        Me.TextBox15.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TextBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox15.Location = New System.Drawing.Point(3, 123)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(486, 26)
+        Me.TextBox15.TabIndex = 11
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(3, 0)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(240, 39)
+        Me.Label22.TabIndex = 2
+        Me.Label22.Text = "Password"
+        Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.Location = New System.Drawing.Point(3, 78)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(240, 39)
+        Me.Label29.TabIndex = 6
+        Me.Label29.Text = "Confirm Password"
+        Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TextBox13
+        '
+        Me.TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox13.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TextBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox13.Location = New System.Drawing.Point(3, 42)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Size = New System.Drawing.Size(240, 26)
+        Me.TextBox13.TabIndex = 8
+        Me.TextBox13.UseSystemPasswordChar = True
+        '
+        'TextBox17
+        '
+        Me.TextBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox17.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TextBox17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox17.Location = New System.Drawing.Point(3, 120)
+        Me.TextBox17.Name = "TextBox17"
+        Me.TextBox17.Size = New System.Drawing.Size(240, 26)
+        Me.TextBox17.TabIndex = 11
+        Me.TextBox17.UseSystemPasswordChar = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.CheckBox3.Location = New System.Drawing.Point(387, 42)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(102, 33)
+        Me.CheckBox3.TabIndex = 13
+        Me.CheckBox3.Text = "Show Password"
+        Me.CheckBox3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox6
+        '
+        Me.CheckBox6.AutoSize = True
+        Me.CheckBox6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.CheckBox6.Location = New System.Drawing.Point(387, 120)
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.Size = New System.Drawing.Size(102, 34)
+        Me.CheckBox6.TabIndex = 15
+        Me.CheckBox6.Text = "Show Password"
+        Me.CheckBox6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.CheckBox6.UseVisualStyleBackColor = True
+        '
         'SignUp_Panel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1384, 801)
+        Me.Controls.Add(Me.TableLayoutPanel7)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "SignUp_Panel"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -554,6 +1095,24 @@ Partial Class SignUp_Panel
         Me.GroupBox3.ResumeLayout(False)
         Me.TableLayoutPanel6.ResumeLayout(False)
         Me.TableLayoutPanel6.PerformLayout()
+        Me.TableLayoutPanel7.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.RoundedPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel13.ResumeLayout(False)
+        Me.TableLayoutPanel13.PerformLayout()
+        Me.TableLayoutPanel14.ResumeLayout(False)
+        Me.TableLayoutPanel14.PerformLayout()
+        Me.TableLayoutPanel8.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
+        Me.TableLayoutPanel9.ResumeLayout(False)
+        Me.TableLayoutPanel9.PerformLayout()
+        Me.TableLayoutPanel10.ResumeLayout(False)
+        Me.TableLayoutPanel10.PerformLayout()
+        Me.TableLayoutPanel11.ResumeLayout(False)
+        Me.TableLayoutPanel11.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -594,4 +1153,41 @@ Partial Class SignUp_Panel
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents Button1 As Button
     Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
+    Friend WithEvents RoundedPanel5 As RoundedPanel
+    Friend WithEvents TableLayoutPanel13 As TableLayoutPanel
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents TableLayoutPanel14 As TableLayoutPanel
+    Friend WithEvents LinkLabel2 As LinkLabel
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents TableLayoutPanel11 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel10 As TableLayoutPanel
+    Friend WithEvents Label34 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents TableLayoutPanel9 As TableLayoutPanel
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents TextBox15 As TextBox
+    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents TextBox17 As TextBox
+    Friend WithEvents TextBox13 As TextBox
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
 End Class
