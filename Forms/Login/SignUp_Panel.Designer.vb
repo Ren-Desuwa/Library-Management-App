@@ -694,9 +694,9 @@ Partial Class SignUp_Panel
         Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 187.0!))
         Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 182.0!))
         Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69.0!))
-        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
+        Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35.0!))
         Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel13.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
@@ -710,12 +710,12 @@ Partial Class SignUp_Panel
         Me.TableLayoutPanel14.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel14.Controls.Add(Me.LinkLabel2, 1, 0)
         Me.TableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel14.Location = New System.Drawing.Point(3, 723)
+        Me.TableLayoutPanel14.Location = New System.Drawing.Point(3, 714)
         Me.TableLayoutPanel14.Name = "TableLayoutPanel14"
         Me.TableLayoutPanel14.RowCount = 1
         Me.TableLayoutPanel14.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel14.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel14.Size = New System.Drawing.Size(498, 21)
+        Me.TableLayoutPanel14.Size = New System.Drawing.Size(498, 30)
         Me.TableLayoutPanel14.TabIndex = 10
         '
         'Button2
@@ -724,7 +724,7 @@ Partial Class SignUp_Panel
         Me.Button2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button2.Location = New System.Drawing.Point(12, 668)
+        Me.Button2.Location = New System.Drawing.Point(12, 659)
         Me.Button2.Margin = New System.Windows.Forms.Padding(12)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(480, 40)
@@ -780,7 +780,7 @@ Partial Class SignUp_Panel
         Me.TableLayoutPanel14.SetColumnSpan(Me.LinkLabel2, 2)
         Me.LinkLabel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LinkLabel2.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel2.Location = New System.Drawing.Point(3, 1)
+        Me.LinkLabel2.Location = New System.Drawing.Point(3, 10)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(492, 20)
         Me.LinkLabel2.TabIndex = 0
