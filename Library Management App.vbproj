@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -141,6 +142,36 @@
     <Compile Include="Forms\Login\SignUp_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\User\UC_search_books.Designer.vb">
+      <DependentUpon>UC_search_books.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UC_search_books.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_dashboard.Designer.vb">
+      <DependentUpon>UC_user_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_dashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_history.Designer.vb">
+      <DependentUpon>UC_user_history.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_history.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_settings.Designer.vb">
+      <DependentUpon>UC_user_settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_settings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\User_Main_Panel.Designer.vb">
+      <DependentUpon>User_Main_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\User_Main_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -192,6 +223,21 @@
     <EmbeddedResource Include="Forms\Login\SignUp_Panel.resx">
       <DependentUpon>SignUp_Panel.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\UC_search_books.resx">
+      <DependentUpon>UC_search_books.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\UC_user_dashboard.resx">
+      <DependentUpon>UC_user_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\UC_user_history.resx">
+      <DependentUpon>UC_user_history.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\UC_user_settings.resx">
+      <DependentUpon>UC_user_settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\User_Main_Panel.resx">
+      <DependentUpon>User_Main_Panel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -211,8 +257,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\User\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

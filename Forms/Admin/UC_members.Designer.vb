@@ -44,6 +44,7 @@ Partial Class UC_members
         '
         Me.Button1.BackColor = System.Drawing.Color.Black
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Button1.Location = New System.Drawing.Point(890, 18)
         Me.Button1.Name = "Button1"

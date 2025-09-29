@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class UC_books
+Partial Class UC_user_history
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -25,7 +25,6 @@ Partial Class UC_books
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.RoundedPanel1 = New Library_Management_App.RoundedPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.RoundedPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -35,46 +34,32 @@ Partial Class UC_books
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(29, 50)
+        Me.Label2.Location = New System.Drawing.Point(29, 53)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(253, 18)
-        Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Manage your library's book collection"
+        Me.Label2.Size = New System.Drawing.Size(315, 18)
+        Me.Label2.TabIndex = 20
+        Me.Label2.Text = "Track all your past transactions with the library."
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(26, 26)
+        Me.Label3.Location = New System.Drawing.Point(26, 29)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(194, 24)
-        Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Books Management"
+        Me.Label3.Size = New System.Drawing.Size(189, 24)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "Transaction History"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'RoundedPanel1
         '
         Me.RoundedPanel1.BackColor = System.Drawing.Color.White
-        Me.RoundedPanel1.Controls.Add(Me.Button1)
         Me.RoundedPanel1.Controls.Add(Me.Label4)
-        Me.RoundedPanel1.Location = New System.Drawing.Point(32, 81)
+        Me.RoundedPanel1.Location = New System.Drawing.Point(32, 84)
         Me.RoundedPanel1.Name = "RoundedPanel1"
         Me.RoundedPanel1.Size = New System.Drawing.Size(1073, 600)
-        Me.RoundedPanel1.TabIndex = 12
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Black
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(890, 18)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(170, 52)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Add New Book"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.RoundedPanel1.TabIndex = 21
         '
         'Label4
         '
@@ -83,19 +68,19 @@ Partial Class UC_books
         Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(27, 18)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(189, 31)
+        Me.Label4.Size = New System.Drawing.Size(284, 31)
         Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Book Catalog"
+        Me.Label4.Text = "Recent Transactions"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
-        'UC_books
+        'UC_user_history
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.RoundedPanel1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
-        Me.Name = "UC_books"
+        Me.Name = "UC_user_history"
         Me.Size = New System.Drawing.Size(1130, 713)
         Me.RoundedPanel1.ResumeLayout(False)
         Me.RoundedPanel1.PerformLayout()
@@ -103,9 +88,9 @@ Partial Class UC_books
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents Label4 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

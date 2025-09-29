@@ -48,13 +48,13 @@ Partial Class Login_Panel
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cmbRole = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnLogin = New System.Windows.Forms.Button()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
@@ -358,13 +358,13 @@ Partial Class Login_Panel
         Me.TableLayoutPanel4.Controls.Add(Me.Label6, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.Label7, 0, 1)
         Me.TableLayoutPanel4.Controls.Add(Me.Label8, 0, 3)
-        Me.TableLayoutPanel4.Controls.Add(Me.ComboBox1, 0, 4)
+        Me.TableLayoutPanel4.Controls.Add(Me.cmbRole, 0, 4)
         Me.TableLayoutPanel4.Controls.Add(Me.Label9, 0, 5)
-        Me.TableLayoutPanel4.Controls.Add(Me.TextBox1, 0, 6)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtUsername, 0, 6)
         Me.TableLayoutPanel4.Controls.Add(Me.Label10, 0, 7)
-        Me.TableLayoutPanel4.Controls.Add(Me.TextBox2, 0, 8)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtPassword, 0, 8)
         Me.TableLayoutPanel4.Controls.Add(Me.CheckBox1, 0, 9)
-        Me.TableLayoutPanel4.Controls.Add(Me.Button1, 0, 10)
+        Me.TableLayoutPanel4.Controls.Add(Me.btnLogin, 0, 10)
         Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel5, 0, 11)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(1, 1)
@@ -423,18 +423,18 @@ Partial Class Login_Panel
         Me.Label8.TabIndex = 2
         Me.Label8.Text = "Login As"
         '
-        'ComboBox1
+        'cmbRole
         '
-        Me.ComboBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Librarian", "Student"})
-        Me.ComboBox1.Location = New System.Drawing.Point(12, 212)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(12)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(377, 32)
-        Me.ComboBox1.TabIndex = 3
+        Me.cmbRole.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbRole.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbRole.FormattingEnabled = True
+        Me.cmbRole.Items.AddRange(New Object() {"Librarian", "Student"})
+        Me.cmbRole.Location = New System.Drawing.Point(12, 212)
+        Me.cmbRole.Margin = New System.Windows.Forms.Padding(12)
+        Me.cmbRole.Name = "cmbRole"
+        Me.cmbRole.Size = New System.Drawing.Size(377, 32)
+        Me.cmbRole.TabIndex = 3
         '
         'Label9
         '
@@ -448,16 +448,16 @@ Partial Class Login_Panel
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "User ID"
         '
-        'TextBox1
+        'txtUsername
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(12, 281)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(12)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(377, 29)
-        Me.TextBox1.TabIndex = 5
+        Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUsername.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Location = New System.Drawing.Point(12, 281)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(12)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(377, 29)
+        Me.txtUsername.TabIndex = 5
         '
         'Label10
         '
@@ -471,16 +471,17 @@ Partial Class Login_Panel
         Me.Label10.TabIndex = 6
         Me.Label10.Text = "Password"
         '
-        'TextBox2
+        'txtPassword
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(12, 342)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(12)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(377, 29)
-        Me.TextBox2.TabIndex = 7
+        Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Location = New System.Drawing.Point(12, 342)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(12)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(377, 29)
+        Me.txtPassword.TabIndex = 7
+        Me.txtPassword.UseSystemPasswordChar = True
         '
         'CheckBox1
         '
@@ -494,19 +495,19 @@ Partial Class Login_Panel
         Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnLogin
         '
-        Me.Button1.BackColor = System.Drawing.Color.DarkRed
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(12, 562)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(377, 40)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Sign In"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnLogin.BackColor = System.Drawing.Color.DarkRed
+        Me.btnLogin.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnLogin.Location = New System.Drawing.Point(12, 562)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(12)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(377, 40)
+        Me.btnLogin.TabIndex = 9
+        Me.btnLogin.Text = "Sign In"
+        Me.btnLogin.UseVisualStyleBackColor = False
         '
         'TableLayoutPanel5
         '
@@ -602,13 +603,13 @@ Partial Class Login_Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cmbRole As ComboBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtUsername As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtPassword As TextBox
     Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLogin As Button
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents LinkLabel2 As LinkLabel
