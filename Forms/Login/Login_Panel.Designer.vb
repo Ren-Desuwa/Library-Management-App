@@ -56,8 +56,9 @@ Partial Class Login_Panel
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.lblForgotPassword = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.lblError = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -366,13 +367,14 @@ Partial Class Login_Panel
         Me.TableLayoutPanel4.Controls.Add(Me.CheckBox1, 0, 9)
         Me.TableLayoutPanel4.Controls.Add(Me.btnLogin, 0, 10)
         Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel5, 0, 11)
+        Me.TableLayoutPanel4.Controls.Add(Me.lblError, 0, 2)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(1, 1)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 12
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.85542!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.14458!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16.0!))
@@ -393,7 +395,7 @@ Partial Class Login_Panel
         Me.Label6.ForeColor = System.Drawing.Color.DarkRed
         Me.Label6.Location = New System.Drawing.Point(3, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(395, 85)
+        Me.Label6.Size = New System.Drawing.Size(395, 74)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Sign In"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -404,9 +406,9 @@ Partial Class Login_Panel
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(3, 85)
+        Me.Label7.Location = New System.Drawing.Point(3, 74)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(395, 48)
+        Me.Label7.Size = New System.Drawing.Size(395, 41)
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "Access your Library Dashboard"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -514,7 +516,7 @@ Partial Class Login_Panel
         Me.TableLayoutPanel5.ColumnCount = 2
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.LinkLabel1, 1, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.lblForgotPassword, 1, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.LinkLabel2, 0, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel5.Location = New System.Drawing.Point(3, 617)
@@ -524,20 +526,20 @@ Partial Class Login_Panel
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(395, 21)
         Me.TableLayoutPanel5.TabIndex = 10
         '
-        'LinkLabel1
+        'lblForgotPassword
         '
-        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.Gray
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel1.Location = New System.Drawing.Point(200, 0)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(192, 21)
-        Me.LinkLabel1.TabIndex = 0
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Forgot Password?"
-        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Black
+        Me.lblForgotPassword.ActiveLinkColor = System.Drawing.Color.Gray
+        Me.lblForgotPassword.AutoSize = True
+        Me.lblForgotPassword.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblForgotPassword.LinkColor = System.Drawing.Color.Black
+        Me.lblForgotPassword.Location = New System.Drawing.Point(200, 0)
+        Me.lblForgotPassword.Name = "lblForgotPassword"
+        Me.lblForgotPassword.Size = New System.Drawing.Size(192, 21)
+        Me.lblForgotPassword.TabIndex = 0
+        Me.lblForgotPassword.TabStop = True
+        Me.lblForgotPassword.Text = "Forgot Password?"
+        Me.lblForgotPassword.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lblForgotPassword.VisitedLinkColor = System.Drawing.Color.Black
         '
         'LinkLabel2
         '
@@ -553,6 +555,17 @@ Partial Class Login_Panel
         Me.LinkLabel2.Text = "Register"
         Me.LinkLabel2.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.LinkLabel2.VisitedLinkColor = System.Drawing.Color.Black
+        '
+        'lblError
+        '
+        Me.lblError.AutoSize = True
+        Me.lblError.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblError.ForeColor = System.Drawing.Color.Red
+        Me.lblError.Location = New System.Drawing.Point(3, 115)
+        Me.lblError.Name = "lblError"
+        Me.lblError.Size = New System.Drawing.Size(395, 26)
+        Me.lblError.TabIndex = 11
+        Me.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Login_Panel
         '
@@ -611,7 +624,7 @@ Partial Class Login_Panel
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents lblForgotPassword As LinkLabel
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents Label12 As Label
@@ -622,4 +635,5 @@ Partial Class Login_Panel
     Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
     Friend WithEvents Label16 As Label
     Friend WithEvents Label14 As Label
+    Friend WithEvents lblError As Label
 End Class
