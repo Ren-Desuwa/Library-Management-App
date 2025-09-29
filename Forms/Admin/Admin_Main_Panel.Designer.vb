@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Admin_Main_Panel
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,259 +20,540 @@ Partial Class Admin_Main_Panel
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.panelMain = New System.Windows.Forms.Panel()
-        Me.pnlDashboard = New System.Windows.Forms.Panel()
-        Me.lblOverview = New System.Windows.Forms.Label()
-        Me.pnlSettings = New System.Windows.Forms.Panel()
-        Me.pnlReports = New System.Windows.Forms.Panel()
-        Me.pnlTransactions = New System.Windows.Forms.Panel()
-        Me.pnlMembers = New System.Windows.Forms.Panel()
-        Me.pnlBooks = New System.Windows.Forms.Panel()
-        Me.pnlContent = New System.Windows.Forms.Panel()
-        Me.lblPageTitle = New System.Windows.Forms.Label()
-        Me.panelSidebar = New System.Windows.Forms.Panel()
-        Me.btnSettings = New System.Windows.Forms.Button()
-        Me.btnReports = New System.Windows.Forms.Button()
-        Me.btnTransactions = New System.Windows.Forms.Button()
-        Me.btnMembers = New System.Windows.Forms.Button()
-        Me.btnBooks = New System.Windows.Forms.Button()
-        Me.btnDashboards = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Admin_Main_Panel))
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
+        Me.lnkSettings = New System.Windows.Forms.LinkLabel()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.lnkReports = New System.Windows.Forms.LinkLabel()
+        Me.lnkOverdue = New System.Windows.Forms.LinkLabel()
+        Me.lnkTransactions = New System.Windows.Forms.LinkLabel()
+        Me.lnkMember = New System.Windows.Forms.LinkLabel()
+        Me.lnkBooks = New System.Windows.Forms.LinkLabel()
+        Me.lnkDashboard = New System.Windows.Forms.LinkLabel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.PanelContent = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.panelMain.SuspendLayout()
-        Me.pnlDashboard.SuspendLayout()
-        Me.panelSidebar.SuspendLayout()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.TableLayoutPanel1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
+        Me.TableLayoutPanel3.SuspendLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        Me.TableLayoutPanel4.SuspendLayout()
+        Me.TableLayoutPanel5.SuspendLayout()
+        Me.TableLayoutPanel6.SuspendLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'panelMain
+        'TableLayoutPanel1
         '
-        Me.panelMain.Controls.Add(Me.pnlDashboard)
-        Me.panelMain.Controls.Add(Me.pnlSettings)
-        Me.panelMain.Controls.Add(Me.pnlReports)
-        Me.panelMain.Controls.Add(Me.pnlTransactions)
-        Me.panelMain.Controls.Add(Me.pnlMembers)
-        Me.panelMain.Controls.Add(Me.pnlBooks)
-        Me.panelMain.Controls.Add(Me.pnlContent)
-        Me.panelMain.Controls.Add(Me.lblPageTitle)
-        Me.panelMain.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelMain.Location = New System.Drawing.Point(200, 0)
-        Me.panelMain.Name = "panelMain"
-        Me.panelMain.Size = New System.Drawing.Size(792, 616)
-        Me.panelMain.TabIndex = 6
+        Me.TableLayoutPanel1.ColumnCount = 2
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.5578!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.4422!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel5, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel6, 1, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.48814!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.51186!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1384, 801)
+        Me.TableLayoutPanel1.TabIndex = 0
         '
-        'pnlDashboard
+        'Panel1
         '
-        Me.pnlDashboard.Controls.Add(Me.lblOverview)
-        Me.pnlDashboard.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlDashboard.Location = New System.Drawing.Point(0, 31)
-        Me.pnlDashboard.Name = "pnlDashboard"
-        Me.pnlDashboard.Size = New System.Drawing.Size(792, 585)
-        Me.pnlDashboard.TabIndex = 7
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(3, 79)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(236, 719)
+        Me.Panel1.TabIndex = 1
         '
-        'lblOverview
+        'TableLayoutPanel2
         '
-        Me.lblOverview.AutoSize = True
-        Me.lblOverview.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOverview.Location = New System.Drawing.Point(6, 4)
-        Me.lblOverview.Name = "lblOverview"
-        Me.lblOverview.Size = New System.Drawing.Size(57, 18)
-        Me.lblOverview.TabIndex = 0
-        Me.lblOverview.Text = "Label3"
+        Me.TableLayoutPanel2.ColumnCount = 1
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 0, 0)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 1
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.69958!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(234, 717)
+        Me.TableLayoutPanel2.TabIndex = 0
         '
-        'pnlSettings
+        'TableLayoutPanel3
         '
-        Me.pnlSettings.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlSettings.Location = New System.Drawing.Point(0, 31)
-        Me.pnlSettings.Name = "pnlSettings"
-        Me.pnlSettings.Size = New System.Drawing.Size(792, 585)
-        Me.pnlSettings.TabIndex = 6
+        Me.TableLayoutPanel3.ColumnCount = 2
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.LinkLabel3, 1, 7)
+        Me.TableLayoutPanel3.Controls.Add(Me.lnkSettings, 1, 6)
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox9, 0, 7)
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox7, 0, 6)
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox6, 0, 5)
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox5, 0, 4)
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox4, 0, 3)
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox3, 0, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox2, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.lnkReports, 1, 5)
+        Me.TableLayoutPanel3.Controls.Add(Me.lnkOverdue, 1, 4)
+        Me.TableLayoutPanel3.Controls.Add(Me.lnkTransactions, 1, 3)
+        Me.TableLayoutPanel3.Controls.Add(Me.lnkMember, 1, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.lnkBooks, 1, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.lnkDashboard, 1, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox1, 0, 0)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 3)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 8
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(228, 711)
+        Me.TableLayoutPanel3.TabIndex = 0
         '
-        'pnlReports
+        'LinkLabel3
         '
-        Me.pnlReports.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlReports.Location = New System.Drawing.Point(0, 31)
-        Me.pnlReports.Name = "pnlReports"
-        Me.pnlReports.Size = New System.Drawing.Size(792, 585)
-        Me.pnlReports.TabIndex = 5
+        Me.LinkLabel3.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LinkLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.LinkLabel3.LinkColor = System.Drawing.Color.Black
+        Me.LinkLabel3.Location = New System.Drawing.Point(84, 616)
+        Me.LinkLabel3.Margin = New System.Windows.Forms.Padding(10, 0, 3, 0)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(141, 95)
+        Me.LinkLabel3.TabIndex = 24
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "Logout"
+        Me.LinkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LinkLabel3.VisitedLinkColor = System.Drawing.Color.Black
         '
-        'pnlTransactions
+        'lnkSettings
         '
-        Me.pnlTransactions.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlTransactions.Location = New System.Drawing.Point(0, 31)
-        Me.pnlTransactions.Name = "pnlTransactions"
-        Me.pnlTransactions.Size = New System.Drawing.Size(792, 585)
-        Me.pnlTransactions.TabIndex = 4
+        Me.lnkSettings.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lnkSettings.AutoSize = True
+        Me.lnkSettings.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lnkSettings.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnkSettings.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.lnkSettings.LinkColor = System.Drawing.Color.Black
+        Me.lnkSettings.Location = New System.Drawing.Point(84, 528)
+        Me.lnkSettings.Margin = New System.Windows.Forms.Padding(10, 0, 3, 0)
+        Me.lnkSettings.Name = "lnkSettings"
+        Me.lnkSettings.Size = New System.Drawing.Size(141, 88)
+        Me.lnkSettings.TabIndex = 23
+        Me.lnkSettings.TabStop = True
+        Me.lnkSettings.Text = "Settings"
+        Me.lnkSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lnkSettings.VisitedLinkColor = System.Drawing.Color.Black
         '
-        'pnlMembers
+        'PictureBox9
         '
-        Me.pnlMembers.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlMembers.Location = New System.Drawing.Point(0, 31)
-        Me.pnlMembers.Name = "pnlMembers"
-        Me.pnlMembers.Size = New System.Drawing.Size(792, 585)
-        Me.pnlMembers.TabIndex = 3
+        Me.PictureBox9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
+        Me.PictureBox9.Location = New System.Drawing.Point(3, 619)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(68, 89)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox9.TabIndex = 22
+        Me.PictureBox9.TabStop = False
         '
-        'pnlBooks
+        'PictureBox7
         '
-        Me.pnlBooks.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlBooks.Location = New System.Drawing.Point(0, 31)
-        Me.pnlBooks.Name = "pnlBooks"
-        Me.pnlBooks.Size = New System.Drawing.Size(792, 585)
-        Me.pnlBooks.TabIndex = 2
+        Me.PictureBox7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
+        Me.PictureBox7.Location = New System.Drawing.Point(3, 531)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(68, 82)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox7.TabIndex = 20
+        Me.PictureBox7.TabStop = False
         '
-        'pnlContent
+        'PictureBox6
         '
-        Me.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnlContent.Location = New System.Drawing.Point(0, 31)
-        Me.pnlContent.Name = "pnlContent"
-        Me.pnlContent.Size = New System.Drawing.Size(792, 585)
-        Me.pnlContent.TabIndex = 1
+        Me.PictureBox6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
+        Me.PictureBox6.Location = New System.Drawing.Point(3, 443)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(68, 82)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox6.TabIndex = 19
+        Me.PictureBox6.TabStop = False
         '
-        'lblPageTitle
+        'PictureBox5
         '
-        Me.lblPageTitle.AutoSize = True
-        Me.lblPageTitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.lblPageTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPageTitle.Location = New System.Drawing.Point(0, 0)
-        Me.lblPageTitle.Name = "lblPageTitle"
-        Me.lblPageTitle.Size = New System.Drawing.Size(156, 31)
-        Me.lblPageTitle.TabIndex = 0
-        Me.lblPageTitle.Text = "Dashboard"
+        Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(3, 355)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(68, 82)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox5.TabIndex = 18
+        Me.PictureBox5.TabStop = False
         '
-        'panelSidebar
+        'PictureBox4
         '
-        Me.panelSidebar.Controls.Add(Me.btnSettings)
-        Me.panelSidebar.Controls.Add(Me.btnReports)
-        Me.panelSidebar.Controls.Add(Me.btnTransactions)
-        Me.panelSidebar.Controls.Add(Me.btnMembers)
-        Me.panelSidebar.Controls.Add(Me.btnBooks)
-        Me.panelSidebar.Controls.Add(Me.btnDashboards)
-        Me.panelSidebar.Controls.Add(Me.Label1)
-        Me.panelSidebar.Controls.Add(Me.Label2)
-        Me.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left
-        Me.panelSidebar.Location = New System.Drawing.Point(0, 0)
-        Me.panelSidebar.Name = "panelSidebar"
-        Me.panelSidebar.Size = New System.Drawing.Size(200, 616)
-        Me.panelSidebar.TabIndex = 5
+        Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(3, 267)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(68, 82)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 17
+        Me.PictureBox4.TabStop = False
         '
-        'btnSettings
+        'PictureBox3
         '
-        Me.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSettings.Location = New System.Drawing.Point(19, 416)
-        Me.btnSettings.Name = "btnSettings"
-        Me.btnSettings.Size = New System.Drawing.Size(166, 57)
-        Me.btnSettings.TabIndex = 8
-        Me.btnSettings.Text = "Settings"
-        Me.btnSettings.UseVisualStyleBackColor = False
+        Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(3, 179)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(68, 82)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 16
+        Me.PictureBox3.TabStop = False
         '
-        'btnReports
+        'PictureBox2
         '
-        Me.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReports.Location = New System.Drawing.Point(19, 353)
-        Me.btnReports.Name = "btnReports"
-        Me.btnReports.Size = New System.Drawing.Size(166, 57)
-        Me.btnReports.TabIndex = 7
-        Me.btnReports.Text = "Reports"
-        Me.btnReports.UseVisualStyleBackColor = False
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 91)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(68, 82)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 15
+        Me.PictureBox2.TabStop = False
         '
-        'btnTransactions
+        'lnkReports
         '
-        Me.btnTransactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTransactions.Location = New System.Drawing.Point(19, 290)
-        Me.btnTransactions.Name = "btnTransactions"
-        Me.btnTransactions.Size = New System.Drawing.Size(166, 57)
-        Me.btnTransactions.TabIndex = 6
-        Me.btnTransactions.Text = "Transaction"
-        Me.btnTransactions.UseVisualStyleBackColor = False
+        Me.lnkReports.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lnkReports.AutoSize = True
+        Me.lnkReports.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lnkReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnkReports.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.lnkReports.LinkColor = System.Drawing.Color.Black
+        Me.lnkReports.Location = New System.Drawing.Point(84, 440)
+        Me.lnkReports.Margin = New System.Windows.Forms.Padding(10, 0, 3, 0)
+        Me.lnkReports.Name = "lnkReports"
+        Me.lnkReports.Size = New System.Drawing.Size(141, 88)
+        Me.lnkReports.TabIndex = 13
+        Me.lnkReports.TabStop = True
+        Me.lnkReports.Text = "Reports"
+        Me.lnkReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lnkReports.VisitedLinkColor = System.Drawing.Color.Black
         '
-        'btnMembers
+        'lnkOverdue
         '
-        Me.btnMembers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMembers.Location = New System.Drawing.Point(19, 227)
-        Me.btnMembers.Name = "btnMembers"
-        Me.btnMembers.Size = New System.Drawing.Size(166, 57)
-        Me.btnMembers.TabIndex = 5
-        Me.btnMembers.Text = "Members"
-        Me.btnMembers.UseVisualStyleBackColor = False
+        Me.lnkOverdue.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lnkOverdue.AutoSize = True
+        Me.lnkOverdue.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lnkOverdue.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnkOverdue.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.lnkOverdue.LinkColor = System.Drawing.Color.Black
+        Me.lnkOverdue.Location = New System.Drawing.Point(84, 352)
+        Me.lnkOverdue.Margin = New System.Windows.Forms.Padding(10, 0, 3, 0)
+        Me.lnkOverdue.Name = "lnkOverdue"
+        Me.lnkOverdue.Size = New System.Drawing.Size(141, 88)
+        Me.lnkOverdue.TabIndex = 11
+        Me.lnkOverdue.TabStop = True
+        Me.lnkOverdue.Text = "Overdue"
+        Me.lnkOverdue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lnkOverdue.VisitedLinkColor = System.Drawing.Color.Black
         '
-        'btnBooks
+        'lnkTransactions
         '
-        Me.btnBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBooks.Location = New System.Drawing.Point(19, 164)
-        Me.btnBooks.Name = "btnBooks"
-        Me.btnBooks.Size = New System.Drawing.Size(166, 57)
-        Me.btnBooks.TabIndex = 4
-        Me.btnBooks.Text = "Books Management"
-        Me.btnBooks.UseVisualStyleBackColor = False
+        Me.lnkTransactions.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lnkTransactions.AutoSize = True
+        Me.lnkTransactions.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lnkTransactions.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnkTransactions.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.lnkTransactions.LinkColor = System.Drawing.Color.Black
+        Me.lnkTransactions.Location = New System.Drawing.Point(84, 264)
+        Me.lnkTransactions.Margin = New System.Windows.Forms.Padding(10, 0, 3, 0)
+        Me.lnkTransactions.Name = "lnkTransactions"
+        Me.lnkTransactions.Size = New System.Drawing.Size(141, 88)
+        Me.lnkTransactions.TabIndex = 9
+        Me.lnkTransactions.TabStop = True
+        Me.lnkTransactions.Text = "Transactions"
+        Me.lnkTransactions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lnkTransactions.VisitedLinkColor = System.Drawing.Color.Black
         '
-        'btnDashboards
+        'lnkMember
         '
-        Me.btnDashboards.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDashboards.Location = New System.Drawing.Point(19, 101)
-        Me.btnDashboards.Name = "btnDashboards"
-        Me.btnDashboards.Size = New System.Drawing.Size(166, 57)
-        Me.btnDashboards.TabIndex = 3
-        Me.btnDashboards.Text = "Dashboard"
-        Me.btnDashboards.UseVisualStyleBackColor = False
+        Me.lnkMember.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lnkMember.AutoSize = True
+        Me.lnkMember.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lnkMember.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnkMember.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.lnkMember.LinkColor = System.Drawing.Color.Black
+        Me.lnkMember.Location = New System.Drawing.Point(84, 176)
+        Me.lnkMember.Margin = New System.Windows.Forms.Padding(10, 0, 3, 0)
+        Me.lnkMember.Name = "lnkMember"
+        Me.lnkMember.Size = New System.Drawing.Size(141, 88)
+        Me.lnkMember.TabIndex = 7
+        Me.lnkMember.TabStop = True
+        Me.lnkMember.Text = "Members"
+        Me.lnkMember.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lnkMember.VisitedLinkColor = System.Drawing.Color.Black
+        '
+        'lnkBooks
+        '
+        Me.lnkBooks.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lnkBooks.AutoSize = True
+        Me.lnkBooks.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lnkBooks.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnkBooks.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.lnkBooks.LinkColor = System.Drawing.Color.Black
+        Me.lnkBooks.Location = New System.Drawing.Point(84, 88)
+        Me.lnkBooks.Margin = New System.Windows.Forms.Padding(10, 0, 3, 0)
+        Me.lnkBooks.Name = "lnkBooks"
+        Me.lnkBooks.Size = New System.Drawing.Size(141, 88)
+        Me.lnkBooks.TabIndex = 3
+        Me.lnkBooks.TabStop = True
+        Me.lnkBooks.Text = "Books"
+        Me.lnkBooks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lnkBooks.VisitedLinkColor = System.Drawing.Color.Black
+        '
+        'lnkDashboard
+        '
+        Me.lnkDashboard.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lnkDashboard.AutoSize = True
+        Me.lnkDashboard.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lnkDashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnkDashboard.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.lnkDashboard.LinkColor = System.Drawing.Color.Black
+        Me.lnkDashboard.Location = New System.Drawing.Point(84, 0)
+        Me.lnkDashboard.Margin = New System.Windows.Forms.Padding(10, 0, 3, 0)
+        Me.lnkDashboard.Name = "lnkDashboard"
+        Me.lnkDashboard.Size = New System.Drawing.Size(141, 88)
+        Me.lnkDashboard.TabIndex = 0
+        Me.lnkDashboard.TabStop = True
+        Me.lnkDashboard.Text = "Dashboard"
+        Me.lnkDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lnkDashboard.VisitedLinkColor = System.Drawing.Color.Black
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(68, 82)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 14
+        Me.PictureBox1.TabStop = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.TableLayoutPanel4)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(3, 3)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(236, 70)
+        Me.Panel2.TabIndex = 3
+        '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 1
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel4.Controls.Add(Me.Label1, 0, 0)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 1
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(234, 68)
+        Me.TableLayoutPanel4.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(13, 21)
+        Me.Label1.Location = New System.Drawing.Point(3, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(172, 32)
-        Me.Label1.TabIndex = 1
+        Me.Label1.Size = New System.Drawing.Size(228, 68)
+        Me.Label1.TabIndex = 2
         Me.Label1.Text = "📚 LibraryMS"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TableLayoutPanel5
+        '
+        Me.TableLayoutPanel5.ColumnCount = 1
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel5.Controls.Add(Me.PanelContent, 0, 0)
+        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(245, 79)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        Me.TableLayoutPanel5.RowCount = 1
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(1136, 719)
+        Me.TableLayoutPanel5.TabIndex = 4
+        '
+        'PanelContent
+        '
+        Me.PanelContent.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelContent.Location = New System.Drawing.Point(3, 3)
+        Me.PanelContent.Name = "PanelContent"
+        Me.PanelContent.Size = New System.Drawing.Size(1130, 713)
+        Me.PanelContent.TabIndex = 0
+        '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 2
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71.0!))
+        Me.TableLayoutPanel6.Controls.Add(Me.Label3, 0, 1)
+        Me.TableLayoutPanel6.Controls.Add(Me.Label2, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.PictureBox8, 1, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(245, 3)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 2
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(1136, 70)
+        Me.TableLayoutPanel6.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label2.Location = New System.Drawing.Point(47, 57)
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(120, 17)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Admin Dashboard"
+        Me.Label2.Size = New System.Drawing.Size(1059, 35)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Account Name"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(3, 35)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(3, 0, 8, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(1054, 35)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Librarian"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
+        Me.PictureBox8.Location = New System.Drawing.Point(1068, 3)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.TableLayoutPanel6.SetRowSpan(Me.PictureBox8, 2)
+        Me.PictureBox8.Size = New System.Drawing.Size(65, 64)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox8.TabIndex = 2
+        Me.PictureBox8.TabStop = False
         '
         'Admin_Main_Panel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(992, 616)
-        Me.Controls.Add(Me.panelMain)
-        Me.Controls.Add(Me.panelSidebar)
+        Me.ClientSize = New System.Drawing.Size(1384, 801)
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "Admin_Main_Panel"
-        Me.Text = "Form1"
-        Me.panelMain.ResumeLayout(False)
-        Me.panelMain.PerformLayout()
-        Me.pnlDashboard.ResumeLayout(False)
-        Me.pnlDashboard.PerformLayout()
-        Me.panelSidebar.ResumeLayout(False)
-        Me.panelSidebar.PerformLayout()
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Admin Dashboard"
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.TableLayoutPanel3.PerformLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.TableLayoutPanel4.PerformLayout()
+        Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel6.PerformLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents panelMain As Panel
-    Friend WithEvents pnlDashboard As Panel
-    Friend WithEvents lblOverview As Label
-    Friend WithEvents pnlSettings As Panel
-    Friend WithEvents pnlReports As Panel
-    Friend WithEvents pnlTransactions As Panel
-    Friend WithEvents pnlMembers As Panel
-    Friend WithEvents pnlBooks As Panel
-    Friend WithEvents pnlContent As Panel
-    Friend WithEvents lblPageTitle As Label
-    Friend WithEvents panelSidebar As Panel
-    Friend WithEvents btnSettings As Button
-    Friend WithEvents btnReports As Button
-    Friend WithEvents btnTransactions As Button
-    Friend WithEvents btnMembers As Button
-    Friend WithEvents btnBooks As Button
-    Friend WithEvents btnDashboards As Button
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
+    Friend WithEvents lnkReports As LinkLabel
+    Friend WithEvents lnkOverdue As LinkLabel
+    Friend WithEvents lnkTransactions As LinkLabel
+    Friend WithEvents lnkMember As LinkLabel
+    Friend WithEvents lnkBooks As LinkLabel
+    Friend WithEvents lnkDashboard As LinkLabel
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents lnkSettings As LinkLabel
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
+    Friend WithEvents PanelContent As Panel
+    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox8 As PictureBox
 End Class

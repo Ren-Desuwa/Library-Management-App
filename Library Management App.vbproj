@@ -81,6 +81,48 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Database\DatabaseHandler.vb" />
+    <Compile Include="Forms\Admin\UC_books.Designer.vb">
+      <DependentUpon>UC_books.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_books.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_dashboard.Designer.vb">
+      <DependentUpon>UC_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_dashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_members.Designer.vb">
+      <DependentUpon>UC_members.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_members.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_overdue.Designer.vb">
+      <DependentUpon>UC_overdue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_overdue.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_reports.Designer.vb">
+      <DependentUpon>UC_reports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_reports.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_settings.Designer.vb">
+      <DependentUpon>UC_settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_settings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_transactions.Designer.vb">
+      <DependentUpon>UC_transactions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_transactions.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Login\Login_Panel.Designer.vb">
       <DependentUpon>Login_Panel.vb</DependentUpon>
     </Compile>
@@ -122,6 +164,27 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\Admin\Admin_Main_Panel.resx">
       <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_books.resx">
+      <DependentUpon>UC_books.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_dashboard.resx">
+      <DependentUpon>UC_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_members.resx">
+      <DependentUpon>UC_members.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_overdue.resx">
+      <DependentUpon>UC_overdue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_reports.resx">
+      <DependentUpon>UC_reports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_settings.resx">
+      <DependentUpon>UC_settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_transactions.resx">
+      <DependentUpon>UC_transactions.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Login_Panel.resx">
       <DependentUpon>Login_Panel.vb</DependentUpon>

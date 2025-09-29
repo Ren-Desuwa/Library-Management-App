@@ -109,7 +109,7 @@ Partial Class Login_Panel
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label5.Location = New System.Drawing.Point(57, 540)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(308, 15)
+        Me.Label5.Size = New System.Drawing.Size(401, 15)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "✔ Book Catalog Management     ✔ Member Tracking     ✔ Due Date Alerts"
         '

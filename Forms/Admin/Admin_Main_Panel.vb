@@ -1,71 +1,42 @@
 ﻿Public Class Admin_Main_Panel
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Show dashboard when app starts
-        ShowSection("Dashboard")
+    ' Reusable method to load any UserControl into PanelMain
+    Private Sub LoadControl(ctrl As UserControl)
+        PanelContent.Controls.Clear()
+        ctrl.Dock = DockStyle.Fill
+        PanelContent.Controls.Add(ctrl)
     End Sub
 
-    Private Sub ShowSection(section As String)
-        ' Hide all panels first
-        pnlBooks.Visible = False
-        pnlMembers.Visible = False
-        pnlTransactions.Visible = False
-        pnlReports.Visible = False
-        pnlSettings.Visible = False
-
-        ' Show the right one + update title + overview text
-        Select Case section
-            Case "Dashboard"
-                pnlDashboard.Visible = True
-                lblPageTitle.Text = "Dashboard"
-                lblOverview.Text = "Dashboard Overview" & vbCrLf &
-                                   "Welcome to the Library Management System Admin Dashboard."
-            Case "Books"
-                pnlBooks.Visible = True
-                lblPageTitle.Text = "Books Management"
-                lblOverview.Text = "Here you can manage the library's book records."
-            Case "Members"
-                pnlMembers.Visible = True
-                lblPageTitle.Text = "Members"
-                lblOverview.Text = "Here you can manage registered library members."
-            Case "Transactions"
-                pnlTransactions.Visible = True
-                lblPageTitle.Text = "Transactions"
-                lblOverview.Text = "Here you can track book borrowing and returning."
-            Case "Reports"
-                pnlReports.Visible = True
-                lblPageTitle.Text = "Reports"
-                lblOverview.Text = "Here you can view reports like overdue books or popular titles."
-            Case "Settings"
-                pnlSettings.Visible = True
-                lblPageTitle.Text = "Settings"
-                lblOverview.Text = "Here you can configure system settings."
-        End Select
+    ' When you click the Dashboard link
+    Private Sub lnkDashboard_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkDashboard.LinkClicked
+        LoadControl(New UC_dashboard())
     End Sub
 
-    ' ========== SIDEBAR BUTTONS ==========
-    Private Sub btnDashboards_Click(sender As Object, e As EventArgs) Handles btnDashboards.Click
-        ShowSection("Dashboard")
+    Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkBooks.LinkClicked
+        LoadControl(New UC_books())
     End Sub
 
-    Private Sub btnBooks_Click(sender As Object, e As EventArgs) Handles btnBooks.Click
-        ShowSection("Books")
+    Private Sub lnkMember_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkMember.LinkClicked
+        LoadControl(New UC_members())
     End Sub
 
-    Private Sub btnMembers_Click(sender As Object, e As EventArgs) Handles btnMembers.Click
-        ShowSection("Members")
+    Private Sub lnkTransactions_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkTransactions.LinkClicked
+        LoadControl(New UC_transactions())
     End Sub
 
-    Private Sub btnTransactions_Click(sender As Object, e As EventArgs) Handles btnTransactions.Click
-        ShowSection("Transactions")
+    Private Sub lnkOverdue_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkOverdue.LinkClicked
+        LoadControl(New UC_overdue())
     End Sub
 
-    Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
-        ShowSection("Reports")
+    Private Sub lnkReports_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkReports.LinkClicked
+        LoadControl(New UC_reports())
     End Sub
 
-    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
-        ShowSection("Settings")
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        Close()
     End Sub
 
+    Private Sub lnkSettings_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkSettings.LinkClicked
+        LoadControl(New UC_settings())
+    End Sub
 End Class
