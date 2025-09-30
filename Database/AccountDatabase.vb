@@ -120,10 +120,9 @@ Public Class AccountDatabase
     ' Authenticate
     Public Function Authenticate(username As String, password As String) As Account
         Try
-            ' Get account and verify password in single connection session
             Dim query = "SELECT * FROM Accounts WHERE Username = ?"
-
             _dbConnection.OpenConnection()
+
             Try
                 Dim account As Account = Nothing
 
@@ -137,28 +136,22 @@ Public Class AccountDatabase
                     End Using
                 End Using
 
-
-                ' Verify password after closing reader
+                ' Verify password
                 If account IsNot Nothing AndAlso account.VerifyPassword(password) Then
-                    ' Update last login in same connection
-                    MessageBox.Show("Login successful!")
+                    ' Update last login
                     Dim updateQuery As String = "UPDATE Accounts SET LastLoginDate = ? WHERE AccountID = ?"
                     Using updateCmd As New OleDbCommand(updateQuery, _dbConnection.Connection)
-                        ' Explicitly use OleDbType.Date
-                        updateCmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now   ' Current date/time
+                        updateCmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now
                         updateCmd.Parameters.Add("?", OleDbType.Integer).Value = account.AccountID
-
                         updateCmd.ExecuteNonQuery()
                     End Using
-                    MessageBox.Show("Login successful!1")
+
                     account.RecordLogin()
-                    MessageBox.Show("Login successful!2")
-                    Return account
+                    Return account   ' ✅ return the valid account
                 End If
-                MessageBox.Show("Login successful!3")
-                Return Nothing
+
+                Return Nothing  ' ✅ if invalid password or no user
             Finally
-                MessageBox.Show("Login successful!4")
                 _dbConnection.CloseConnection()
             End Try
         Catch ex As Exception

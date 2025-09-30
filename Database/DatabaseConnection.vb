@@ -33,10 +33,10 @@ Public Class DatabaseConnection
         Try
             _connection.Open()
             Using cmd As New OleDbCommand("", _connection)
-                For Each kvp In newPasswords
+                For Each kvp As KeyValuePair(Of String, String) In newPasswords
                     Dim username As String = kvp.Key
                     Dim password As String = kvp.Value
-                    Dim hash As String = Account.HashPassword(password) ' Use your existing function
+                    Dim hash As String = Account.HashPassword(password)
 
                     cmd.CommandText = "UPDATE Accounts SET PasswordHash = ? WHERE Username = ?"
                     cmd.Parameters.Clear()
@@ -45,6 +45,7 @@ Public Class DatabaseConnection
 
                     cmd.ExecuteNonQuery()
                 Next
+
             End Using
             MessageBox.Show("Passwords updated successfully!")
         Catch ex As Exception
