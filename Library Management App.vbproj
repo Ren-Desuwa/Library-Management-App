@@ -77,7 +77,9 @@
     <Compile Include="Classes\Account.vb" />
     <Compile Include="Classes\Book.vb" />
     <Compile Include="Classes\Books.vb" />
+    <Compile Include="Database\AccountDatabase.vb" />
     <Compile Include="Database\BookDatabase.vb" />
+    <Compile Include="Database\LibraryDatabase.vb" />
     <Compile Include="Forms\Admin\Admin_Main_Panel.vb">
       <SubType>Form</SubType>
     </Compile>

@@ -24,9 +24,9 @@ Namespace My
 
 #Region "My.Settings Auto-Save Functionality"
 #If _MyType = "WindowsForms" Then
-        Private Shared addedHandler As Boolean
+        Private Shared added As Boolean
 
-        Private Shared addedHandlerLockObject As New Object
+        Private Shared addedLockObject As New Object
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
         Private Shared Sub AutoSaveSettings(ByVal sender As Global.System.Object, ByVal e As Global.System.EventArgs)
@@ -41,11 +41,11 @@ Namespace My
             Get
 
 #If _MyType = "WindowsForms" Then
-                   If Not addedHandler Then
-                        SyncLock addedHandlerLockObject
-                            If Not addedHandler Then
-                                AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
-                                addedHandler = True
+                   If Not added Then
+                        SyncLock addedLockObject
+                            If Not added Then
+                                Add My.Application.Shutdown, AddressOf AutoSaveSettings
+                                added = True
                             End If
                         End SyncLock
                     End If

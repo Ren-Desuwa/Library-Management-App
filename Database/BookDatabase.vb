@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 
-Public Class BookDatabaseHandler
+Public Class BookDatabase
     Private ReadOnly _dbConnection As DatabaseConnection
 
     Public Sub New(dbConnection As DatabaseConnection)
