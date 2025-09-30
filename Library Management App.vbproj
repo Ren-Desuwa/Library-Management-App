@@ -73,6 +73,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Account.vb" />
+    <Compile Include="Classes\Book.vb" />
+    <Compile Include="Classes\Books.vb" />
+    <Compile Include="Database\BookDatabase.vb" />
     <Compile Include="Forms\Admin\Admin_Main_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
