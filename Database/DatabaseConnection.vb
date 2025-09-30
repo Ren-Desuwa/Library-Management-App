@@ -5,7 +5,7 @@ Public Class DatabaseConnection
     Private Shared _instance As DatabaseConnection
     Private Shared ReadOnly _lock As New Object()
     Private ReadOnly _dbPath As String =
-        Path.Combine(Application.StartupPath, "Library.accdb")
+        Path.Combine(Application.StartupPath, "..\..\..\Database\Library.accdb")
 
     Private ReadOnly _connectionString As String =
         $"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={Path.Combine(Application.StartupPath, "Library.accdb")};"

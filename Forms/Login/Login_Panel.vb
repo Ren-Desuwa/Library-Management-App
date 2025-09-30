@@ -214,12 +214,14 @@ Public Class Login_Panel
     End Sub
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+
         Try
             ' TODO: Uncomment when SignUp_Panel is implemented
-            ' Dim signupForm As New SignUp_Panel()
-            ' signupForm.StartPosition = FormStartPosition.CenterScreen
-            ' signupForm.Show()
-            ' Me.Hide()
+            Dim signupForm As New Register_Panel()
+            signupForm.StartPosition = FormStartPosition.CenterScreen
+            signupForm.Show()
+            Me.Hide()
+            ' Open the Sign Up panel
 
             ' Temporary placeholder
             Dim result = MessageBox.Show("Registration feature coming soon." & vbCrLf & vbCrLf &
