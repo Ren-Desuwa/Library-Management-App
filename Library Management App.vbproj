@@ -142,10 +142,10 @@
     <Compile Include="Forms\Login\Recovery_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Login\SignUp_Panel.Designer.vb">
-      <DependentUpon>SignUp_Panel.vb</DependentUpon>
+    <Compile Include="Forms\Login\Register_Panel.Designer.vb">
+      <DependentUpon>Register_Panel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login\SignUp_Panel.vb">
+    <Compile Include="Forms\Login\Register_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\User\UC_search_books.Designer.vb">
@@ -226,8 +226,8 @@
     <EmbeddedResource Include="Forms\Login\Login_Panel.resx">
       <DependentUpon>Login_Panel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login\SignUp_Panel.resx">
-      <DependentUpon>SignUp_Panel.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Login\Register_Panel.resx">
+      <DependentUpon>Register_Panel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\UC_search_books.resx">
       <DependentUpon>UC_search_books.vb</DependentUpon>
