@@ -51,6 +51,7 @@
     ' Initialize database (create tables if needed)
     Public Sub InitializeDatabase()
         Try
+
             If Not _dbConnection.DatabaseExists() Then
                 Throw New Exception("Database file not found at: " & _dbConnection.DatabasePath)
             End If

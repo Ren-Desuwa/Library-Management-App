@@ -16,7 +16,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -45,7 +45,7 @@
     <OptionStrict>Off</OptionStrict>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionInfer>On</OptionInfer>
+    <OptionInfer>Off</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -146,6 +146,12 @@
       <DependentUpon>SignUp_Panel.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login\SignUp_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\main\main.Designer.vb">
+      <DependentUpon>main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\main\main.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\User\UC_search_books.Designer.vb">

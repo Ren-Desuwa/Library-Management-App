@@ -4,17 +4,15 @@ Imports System.IO
 Public Class DatabaseConnection
     Private Shared _instance As DatabaseConnection
     Private Shared ReadOnly _lock As New Object()
+    Private ReadOnly _dbPath As String =
+        Path.Combine(Application.StartupPath, "Library.accdb")
 
-    Private ReadOnly _dbPath As String
-    Private ReadOnly _connectionString As String
-    Private _connection As OleDbConnection
+    Private ReadOnly _connectionString As String =
+        $"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={Path.Combine(Application.StartupPath, "Library.accdb")};"
 
-    ' Private constructor for singleton
-    Private Sub New()
-        _dbPath = Path.Combine(Application.StartupPath, "..\..\..\Database\Library.accdb")
-        _connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={_dbPath};Persist Security Info=False;"
-        _connection = New OleDbConnection(_connectionString)
-    End Sub
+    Private ReadOnly _connection As New OleDbConnection(
+        $"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={Path.Combine(Application.StartupPath, "Library.accdb")};"
+    )
 
     ' Singleton instance
     Public Shared ReadOnly Property Instance As DatabaseConnection
@@ -55,9 +53,11 @@ Public Class DatabaseConnection
     Public Sub OpenConnection()
         Try
             If _connection.State = ConnectionState.Closed Then
+
                 _connection.Open()
             End If
         Catch ex As Exception
+            MessageBox.Show(ex.ToString())
             Throw New Exception($"Failed to open database connection: {ex.Message}", ex)
         End Try
     End Sub
@@ -77,7 +77,9 @@ Public Class DatabaseConnection
     ' Test connection
     Public Function TestConnection() As Boolean
         Try
+
             OpenConnection()
+
             CloseConnection()
             Return True
         Catch ex As Exception
