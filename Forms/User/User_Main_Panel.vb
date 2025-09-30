@@ -1,37 +1,9 @@
-﻿Public Class Admin_Main_Panel
-
-    ' Reusable method to load any UserControl into PanelMain
+﻿Public Class User_Main_Panel
     Private Sub LoadControl(ctrl As UserControl)
         PanelContent.Controls.Clear()
         ctrl.Dock = DockStyle.Fill
         PanelContent.Controls.Add(ctrl)
     End Sub
-
-    ' When you click the Dashboard link
-    Private Sub lnkDashboard_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkDashboard.LinkClicked
-        LoadControl(New UC_dashboard())
-    End Sub
-
-    Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkBooks.LinkClicked
-        LoadControl(New UC_books())
-    End Sub
-
-    Private Sub lnkMember_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkMember.LinkClicked
-        LoadControl(New UC_members())
-    End Sub
-
-    Private Sub lnkTransactions_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkTransactions.LinkClicked
-        LoadControl(New UC_transactions())
-    End Sub
-
-    Private Sub lnkOverdue_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkOverdue.LinkClicked
-        LoadControl(New UC_overdue())
-    End Sub
-
-    Private Sub lnkReports_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkReports.LinkClicked
-        LoadControl(New UC_reports())
-    End Sub
-
     Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
         If MessageBox.Show("Are you sure you want to log out?", "Confirm Logout",
                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -55,7 +27,19 @@
         End If
     End Sub
 
+    Private Sub lnkDashboard_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkDashboard.LinkClicked
+        LoadControl(New UC_user_dashboard())
+    End Sub
+
+    Private Sub lnkBooks_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkBooks.LinkClicked
+        LoadControl(New UC_search_books())
+    End Sub
+
+    Private Sub lnkTransactions_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkTransactions.LinkClicked
+        LoadControl(New UC_user_history())
+    End Sub
+
     Private Sub lnkSettings_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkSettings.LinkClicked
-        LoadControl(New UC_settings())
+        LoadControl(New UC_user_settings())
     End Sub
 End Class

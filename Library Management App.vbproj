@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -85,6 +86,48 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Database\DatabaseHandler.vb" />
+    <Compile Include="Forms\Admin\UC_books.Designer.vb">
+      <DependentUpon>UC_books.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_books.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_dashboard.Designer.vb">
+      <DependentUpon>UC_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_dashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_members.Designer.vb">
+      <DependentUpon>UC_members.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_members.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_overdue.Designer.vb">
+      <DependentUpon>UC_overdue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_overdue.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_reports.Designer.vb">
+      <DependentUpon>UC_reports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_reports.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_settings.Designer.vb">
+      <DependentUpon>UC_settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_settings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_transactions.Designer.vb">
+      <DependentUpon>UC_transactions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\UC_transactions.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\Login\Login_Panel.Designer.vb">
       <DependentUpon>Login_Panel.vb</DependentUpon>
     </Compile>
@@ -101,6 +144,36 @@
       <DependentUpon>SignUp_Panel.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login\SignUp_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UC_search_books.Designer.vb">
+      <DependentUpon>UC_search_books.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UC_search_books.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_dashboard.Designer.vb">
+      <DependentUpon>UC_user_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_dashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_history.Designer.vb">
+      <DependentUpon>UC_user_history.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_history.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_settings.Designer.vb">
+      <DependentUpon>UC_user_settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UC_user_settings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\User_Main_Panel.Designer.vb">
+      <DependentUpon>User_Main_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\User_Main_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -127,11 +200,47 @@
     <EmbeddedResource Include="Forms\Admin\Admin_Main_Panel.resx">
       <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_books.resx">
+      <DependentUpon>UC_books.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_dashboard.resx">
+      <DependentUpon>UC_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_members.resx">
+      <DependentUpon>UC_members.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_overdue.resx">
+      <DependentUpon>UC_overdue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_reports.resx">
+      <DependentUpon>UC_reports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_settings.resx">
+      <DependentUpon>UC_settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\UC_transactions.resx">
+      <DependentUpon>UC_transactions.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Login_Panel.resx">
       <DependentUpon>Login_Panel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\SignUp_Panel.resx">
       <DependentUpon>SignUp_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\UC_search_books.resx">
+      <DependentUpon>UC_search_books.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\UC_user_dashboard.resx">
+      <DependentUpon>UC_user_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\UC_user_history.resx">
+      <DependentUpon>UC_user_history.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\UC_user_settings.resx">
+      <DependentUpon>UC_user_settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\User_Main_Panel.resx">
+      <DependentUpon>User_Main_Panel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -152,8 +261,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\User\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
