@@ -1,4 +1,38 @@
 ﻿Public Class Login_Panel
+
+    Private Sub Login_Panel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            ' Get the singleton instance
+            Dim library = LibraryDatabase.Instance
+
+            ' Initialize database (creates tables if needed)
+
+            library.InitializeDatabase()
+
+            ' Test connection
+            If library.TestConnection() Then
+                MessageBox.Show("Database connected successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Failed to connect to database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show($"Error initializing system: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        '' Center the form on the screen
+        'Me.StartPosition = FormStartPosition.CenterScreen
+        '' Populate role combo box
+        'cmbRole.Items.Clear()
+        'cmbRole.Items.Add("Librarian")
+        'cmbRole.Items.Add("User")
+        'cmbRole.SelectedIndex = -1 ' No selection by default
+        '' Hide error label initially
+        'lblError.Text = ""
+        'lblError.Visible = False
+        '' Set password textbox to mask characters
+        'txtPassword.UseSystemPasswordChar = True
+    End Sub
+
     Private Sub TableLayoutPanel2_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel2.Paint
 
     End Sub

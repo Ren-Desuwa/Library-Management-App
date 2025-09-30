@@ -148,12 +148,6 @@
     <Compile Include="Forms\Login\SignUp_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\main\main.Designer.vb">
-      <DependentUpon>main.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\main\main.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\User\UC_search_books.Designer.vb">
       <DependentUpon>UC_search_books.vb</DependentUpon>
     </Compile>

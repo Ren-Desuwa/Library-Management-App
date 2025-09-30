@@ -2,31 +2,9 @@
 
     Private Sub Admin_Main_Panel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Load the dashboard by default
-        InitializeSystem()
         LoadControl(New UC_dashboard())
     End Sub
-    Public Shared Sub InitializeSystem()
 
-        Try
-            ' Get the singleton instance
-            Dim library = LibraryDatabase.Instance
-
-            ' Initialize database (creates tables if needed)
-
-            library.InitializeDatabase()
-
-            ' Test connection
-            If library.TestConnection() Then
-                MessageBox.Show("Database connected successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Else
-                MessageBox.Show("Failed to connect to database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-
-        Catch ex As Exception
-            MessageBox.Show($"Error initializing system: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
-    End Sub
 
     ' Reusable method to load any UserControl into PanelMain
     Private Sub LoadControl(ctrl As UserControl)
