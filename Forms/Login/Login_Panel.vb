@@ -113,7 +113,7 @@
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         ' Open the Sign Up panel
-        Dim signupForm As New SignUp_Panel()
+        Dim signupForm As New Register_Panel()
         signupForm.StartPosition = FormStartPosition.CenterScreen
         signupForm.Show()
 
