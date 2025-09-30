@@ -52,14 +52,14 @@ Public Class Login_Panel
         lblError.Text = ""
         lblError.Visible = False
 
-        ' Validate all inputs
+        ' Validate inputs
         If cmbRole.SelectedItem Is Nothing Then
             ShowError("Please select a role.")
             Return
         End If
 
         If String.IsNullOrWhiteSpace(txtUsername.Text) Then
-            ShowError("Please enter your username.")
+            ShowError("Please enter your User ID.")
             txtUsername.Focus()
             Return
         End If
@@ -74,47 +74,75 @@ Public Class Login_Panel
         Dim selectedRole As String = cmbRole.SelectedItem.ToString()
         Dim isLibrarianLogin As Boolean = (selectedRole = "Librarian")
 
-        ' Disable login button to prevent double-clicks
+        ' Disable button to prevent double-click
         btnLogin.Enabled = False
         btnLogin.Text = "Signing in..."
 
         Try
-            ' Authenticate using database
-            Dim username = txtUsername.Text.Trim()
-            Dim password = txtPassword.Text
-            Dim library = LibraryDatabase.Instance
-            Dim account = library.Accounts.Authenticate(username, password)
+            Using con As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xx\Source\Repos\Library-Management-App\Database\Library.accdb;Persist Security Info=False;")
+                con.Open()
 
-            If account IsNot Nothing Then
-                ' Verify role matches account type
-                If (isLibrarianLogin AndAlso account.IsAdmin) Then
-                    ' Librarian login successful
-                    CurrentUser = account
-                    OpenAdminDashboard()
+                Dim cmd As OleDbCommand
+                Dim reader As OleDbDataReader
 
-                ElseIf (Not isLibrarianLogin AndAlso Not account.IsAdmin) Then
-                    ' Student login successful
-                    CurrentUser = account
-                    OpenStudentDashboard()
+                If isLibrarianLogin Then
+                    ' Librarian/Admin login
+                    cmd = New OleDbCommand("SELECT * FROM Accounts WHERE Username=@Username", con)
+                    cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim())
+
+                    reader = cmd.ExecuteReader()
+                    If reader.Read() Then
+                        Dim storedHash As String = reader("PasswordHash").ToString()
+
+                        If Account.HashPassword(txtPassword.Text) = storedHash Then
+                            ' Build Account object
+                            Dim acc As New Account()
+                            acc.AccountID = Convert.ToInt32(reader("AccountID"))
+                            acc.Username = reader("Username").ToString()
+                            acc.PasswordHash = storedHash
+                            acc.Email = reader("Email").ToString()
+                            acc.IsAdmin = True
+                            acc.RecordLogin()
+
+                            CurrentUser = acc
+                            OpenAdminDashboard()
+                        Else
+                            ShowError("Invalid password.")
+                        End If
+                    Else
+                        ShowError("Username not found.")
+                    End If
+                    reader.Close()
 
                 Else
-                    ' Role mismatch
-                    If isLibrarianLogin Then
-                        ShowError("This account is not registered as a Librarian.")
+                    ' Student login (plain text password for now)
+                    cmd = New OleDbCommand("SELECT * FROM Students WHERE StudentID=@StudentID AND [Password]=@Password", con)
+                    cmd.Parameters.AddWithValue("@StudentID", txtUsername.Text.Trim())
+                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text)
+
+                    reader = cmd.ExecuteReader()
+                    If reader.Read() Then
+                        ' Create a simple lightweight object for CurrentUser
+                        Dim studentAccount As New Account()
+                        studentAccount.AccountID = Convert.ToInt32(reader("ID"))
+                        studentAccount.Username = reader("StudentID").ToString()
+                        studentAccount.Email = reader("Email").ToString()
+                        studentAccount.IsAdmin = False
+                        studentAccount.RecordLogin()
+
+                        CurrentUser = studentAccount
+                        OpenStudentDashboard()
                     Else
-                        ShowError("This account is not registered as a Student.")
+                        ShowError("Invalid student ID or password.")
                     End If
+                    reader.Close()
                 End If
-            Else
-                ' Authentication failed
-                ShowError("Invalid username or password.")
-            End If
+            End Using
 
         Catch ex As Exception
             ShowError($"Login error: {ex.Message}")
 
         Finally
-            ' Re-enable login button
             btnLogin.Enabled = True
             btnLogin.Text = "Sign In"
         End Try
@@ -147,22 +175,15 @@ Public Class Login_Panel
 
     Private Sub OpenStudentDashboard()
         Try
-            ' TODO: Create and uncomment Student_Main_Panel
-            ' Dim dashboard As New Student_Main_Panel()
-            ' dashboard.StartPosition = FormStartPosition.CenterScreen
-            ' dashboard.Show()
-            ' Me.Hide()
+            ' Open the User_Main_Panel form
+            Dim dashboard As New User_Main_Panel()
+            dashboard.StartPosition = FormStartPosition.CenterScreen
+            dashboard.Show()
 
-            ' Temporary placeholder
-            MessageBox.Show($"Welcome, {CurrentUser.Username}!" & vbCrLf &
-                          "Student dashboard will open here." & vbCrLf & vbCrLf &
-                          "Role: Student" & vbCrLf &
-                          $"Last Login: {CurrentUser.LastLoginDate}",
-                          "Login Successful",
-                          MessageBoxButtons.OK,
-                          MessageBoxIcon.Information)
+            ' Hide the login panel
+            Me.Hide()
 
-            ' For now, just clear the form
+            ' Optionally clear login form for next use
             ClearLoginForm()
 
         Catch ex As Exception
@@ -218,36 +239,11 @@ Public Class Login_Panel
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
 
         Try
-            ' TODO: Uncomment when SignUp_Panel is implemented
             Dim signupForm As New Register_Panel()
             signupForm.StartPosition = FormStartPosition.CenterScreen
             signupForm.Show()
             Me.Hide()
             ' Open the Sign Up panel
-
-            ' Temporary placeholder
-            Dim result = MessageBox.Show("Registration feature coming soon." & vbCrLf & vbCrLf &
-                          "This will allow new students to create accounts." & vbCrLf &
-                          "Librarian accounts must be created by administrators." & vbCrLf & vbCrLf &
-                          "Would you like to see the registration form template?",
-                          "Registration",
-                          MessageBoxButtons.YesNo,
-                          MessageBoxIcon.Information)
-
-            If result = DialogResult.Yes Then
-                ' Show what fields would be needed
-                MessageBox.Show("Registration Form Fields:" & vbCrLf & vbCrLf &
-                              "- Username (unique)" & vbCrLf &
-                              "- Email Address" & vbCrLf &
-                              "- Password" & vbCrLf &
-                              "- Confirm Password" & vbCrLf &
-                              "- Full Name" & vbCrLf &
-                              "- Student ID (for students)" & vbCrLf &
-                              "- Terms & Conditions acceptance",
-                              "Registration Fields",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Information)
-            End If
 
         Catch ex As Exception
             ShowError($"Error opening registration: {ex.Message}")

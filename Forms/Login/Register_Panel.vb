@@ -1,4 +1,7 @@
-﻿Public Class Register_Panel
+﻿Imports System.Data.OleDb
+
+Public Class Register_Panel
+    Private con As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xx\Source\Repos\Library-Management-App\Database\Library.accdb;Persist Security Info=False;")
     Private Sub lblForgotPassword_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lblForgotPassword.LinkClicked
         ' Open Login Panel
         Dim login As New Login_Panel()
@@ -69,35 +72,30 @@
     End Sub
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        ' Clear previous error
-        lblError.Text = ""
+        Try
+            con.Open()
+            Dim cmd As New OleDbCommand("INSERT INTO Students (StudentID, FirstName, LastName, Email, ContactNumber, [Password]) 
+                                 VALUES (@StudentID, @FirstName, @LastName, @Email, @ContactNumber, @Password)", con)
 
-        ' Check all required fields
-        If String.IsNullOrWhiteSpace(txtFirstName.Text) OrElse
-       String.IsNullOrWhiteSpace(txtLastName.Text) OrElse
-       String.IsNullOrWhiteSpace(txtStudentID.Text) OrElse txtStudentID.Text = "e.g., 20240001-N" OrElse
-       String.IsNullOrWhiteSpace(txtEmail.Text) OrElse
-       String.IsNullOrWhiteSpace(txtContactNumber.Text) OrElse txtContactNumber.Text = "+639" OrElse
-       String.IsNullOrWhiteSpace(txtPassword.Text) OrElse
-       String.IsNullOrWhiteSpace(txtConfirmPassword.Text) Then
+            cmd.Parameters.AddWithValue("@StudentID", txtStudentID.Text)
+            cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text)
+            cmd.Parameters.AddWithValue("@LastName", txtLastName.Text)
+            cmd.Parameters.AddWithValue("@Email", txtEmail.Text)
+            cmd.Parameters.AddWithValue("@ContactNumber", txtContactNumber.Text)
+            cmd.Parameters.AddWithValue("@Password", txtPassword.Text)
 
-            lblError.Text = "Please fill in all fields."
-            Exit Sub
-        End If
+            cmd.ExecuteNonQuery()
+            MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-        ' Check password match
-        If txtPassword.Text <> txtConfirmPassword.Text Then
-            lblError.Text = "Passwords do not match."
-            Exit Sub
-        End If
+            ' After successful register → Go back to login
+            Me.Visible = False
+            Login_Panel.Visible = True
 
-        ' If everything is valid
-        lblError.Text = ""
-        MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-        ' TODO: Insert registration logic here (e.g., save to database)
-        Me.Visible = False
-        Login_Panel.Visible = True
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            con.Close()
+        End Try
     End Sub
 
     Private Sub txtFirstName_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtFirstName.KeyPress
