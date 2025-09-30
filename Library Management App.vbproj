@@ -85,7 +85,7 @@
       <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Database\DatabaseHandler.vb" />
+    <Compile Include="Database\DatabaseConnection.vb" />
     <Compile Include="Forms\Admin\UC_books.Designer.vb">
       <DependentUpon>UC_books.vb</DependentUpon>
     </Compile>

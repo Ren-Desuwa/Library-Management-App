@@ -1,62 +1,146 @@
-﻿Public Class Account
-    Private _AccountID As Integer
-    Private _Username As String
-    Private _Password As String
-    Private _Email As String
-    Private _IsAdmin As Boolean
-    Private _BorrowedBooks As List(Of Books)
+﻿
+Imports System.Text.RegularExpressions
+Imports System.Security.Cryptography
+Imports System.Text
+
+' ==================== ACCOUNT CLASS ====================
+
+Public Class Account
+    Private _accountID As Integer
+    Private _username As String
+    Private _passwordHash As String
+    Private _email As String
+    Private _isAdmin As Boolean
+    Private _createdDate As Date
+    Private _lastLoginDate As Date?
 
     Public Property AccountID As Integer
         Get
-            Return _AccountID
+            Return _accountID
         End Get
-        Set(value As Integer)
-            _AccountID = value
+        Friend Set(value As Integer)
+            _accountID = value
         End Set
     End Property
+
     Public Property Username As String
         Get
-            Return _Username
+            Return _username
         End Get
         Set(value As String)
-            _Username = value
+            If String.IsNullOrWhiteSpace(value) Then
+                Throw New ArgumentException("Username cannot be empty")
+            End If
+            If value.Length < 3 Then
+                Throw New ArgumentException("Username must be at least 3 characters")
+            End If
+            _username = value.Trim()
         End Set
     End Property
-    Public Property Password As String
+
+    Public Property PasswordHash As String
         Get
-            Return _Password
+            Return _passwordHash
         End Get
-        Set(value As String)
-            _Password = value
+        Friend Set(value As String)
+            _passwordHash = value
         End Set
     End Property
+
     Public Property Email As String
         Get
-            Return _Email
+            Return _email
         End Get
         Set(value As String)
-            _Email = value
+            If Not IsValidEmail(value) Then
+                Throw New ArgumentException("Invalid email format")
+            End If
+            _email = value.Trim().ToLower()
         End Set
     End Property
+
     Public Property IsAdmin As Boolean
         Get
-            Return _IsAdmin
+            Return _isAdmin
         End Get
-        Set(value As Boolean)
-            _IsAdmin = value
-        End Set
-    End Property
-    Public Property BorrowedBooks As List(Of Books)
-        Get
-            Return _BorrowedBooks
-        End Get
-        Set(value As List(Of Books))
-            _BorrowedBooks = value
+        Friend Set(value As Boolean)
+            _isAdmin = value
         End Set
     End Property
 
+    Public Property CreatedDate As Date
+        Get
+            Return _createdDate
+        End Get
+        Friend Set(value As Date)
+            _createdDate = value
+        End Set
+    End Property
+
+    Public Property LastLoginDate As Date?
+        Get
+            Return _lastLoginDate
+        End Get
+        Friend Set(value As Date?)
+            _lastLoginDate = value
+        End Set
+    End Property
+
+    Public ReadOnly Property AccountType As String
+        Get
+            Return If(_isAdmin, "Admin", "User")
+        End Get
+    End Property
+
+    ' Parameterless constructor for database loading
     Public Sub New()
-        _BorrowedBooks = New List(Of Books)()
     End Sub
 
+    ' Constructor for creating new accounts
+    Public Sub New(username As String, password As String, email As String, isAdmin As Boolean)
+        Me.Username = username
+        Me.Email = email
+        Me.IsAdmin = isAdmin
+        SetPassword(password)
+        _createdDate = Date.Now
+    End Sub
+
+    Public Sub SetPassword(password As String)
+        If String.IsNullOrWhiteSpace(password) Then
+            Throw New ArgumentException("Password cannot be empty")
+        End If
+        If password.Length < 6 Then
+            Throw New ArgumentException("Password must be at least 6 characters")
+        End If
+        _passwordHash = HashPassword(password)
+    End Sub
+
+    Public Function VerifyPassword(password As String) As Boolean
+        Return _passwordHash = HashPassword(password)
+    End Function
+
+    Public Sub RecordLogin()
+        _lastLoginDate = Date.Now
+    End Sub
+
+    Public Shared Function HashPassword(password As String) As String
+        Using sha256 As SHA256 = SHA256.Create()
+            Dim bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password))
+            Return Convert.ToBase64String(bytes)
+        End Using
+    End Function
+
+    Private Shared Function IsValidEmail(email As String) As Boolean
+        If String.IsNullOrWhiteSpace(email) Then Return False
+        Try
+            Dim regex As New Regex("^[^@\s]+@[^@\s]+\.[^@\s]+$")
+            Return regex.IsMatch(email)
+        Catch
+            Return False
+        End Try
+    End Function
+
+    Public Overrides Function ToString() As String
+        Return $"{Username} ({AccountType}) - ID: {AccountID}"
+    End Function
 End Class
