@@ -80,8 +80,10 @@ Public Class Login_Panel
 
         Try
             ' Authenticate using database
+            Dim username = txtUsername.Text.Trim()
+            Dim password = txtPassword.Text
             Dim library = LibraryDatabase.Instance
-            Dim account = library.Accounts.Authenticate(txtUsername.Text.Trim(), txtPassword.Text)
+            Dim account = library.Accounts.Authenticate(username, password)
 
             If account IsNot Nothing Then
                 ' Verify role matches account type

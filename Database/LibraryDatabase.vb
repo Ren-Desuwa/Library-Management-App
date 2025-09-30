@@ -28,6 +28,7 @@
     End Property
 
     ' Access to book operations
+
     Public ReadOnly Property Books As BookDatabase
         Get
             Return _bookHandler

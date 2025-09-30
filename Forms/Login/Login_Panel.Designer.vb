@@ -82,30 +82,26 @@ Partial Class Login_Panel
         Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.Padding = New System.Windows.Forms.Padding(27, 25, 27, 25)
+        Me.TableLayoutPanel1.Padding = New System.Windows.Forms.Padding(30, 31, 30, 31)
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1845, 986)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(2076, 1232)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'Panel1
         '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(34, 36)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(31, 29)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1066, 928)
+        Me.Panel1.Size = New System.Drawing.Size(1201, 1160)
         Me.Panel1.TabIndex = 1
         '
         'Label5
@@ -113,10 +109,10 @@ Partial Class Login_Panel
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label5.Location = New System.Drawing.Point(76, 665)
+        Me.Label5.Location = New System.Drawing.Point(86, 831)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(526, 20)
+        Me.Label5.Size = New System.Drawing.Size(619, 21)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "✔ Book Catalog Management     ✔ Member Tracking     ✔ Due Date Alerts"
         '
@@ -125,10 +121,10 @@ Partial Class Login_Panel
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label4.Location = New System.Drawing.Point(77, 569)
+        Me.Label4.Location = New System.Drawing.Point(87, 711)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(501, 84)
+        Me.Label4.Size = New System.Drawing.Size(606, 81)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Manage books, track members, and streamline your" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "library operations with our com" &
     "prehensive management" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "system."
@@ -137,10 +133,10 @@ Partial Class Login_Panel
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 45.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(67, 310)
+        Me.Label2.Location = New System.Drawing.Point(75, 388)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(646, 100)
+        Me.Label2.Size = New System.Drawing.Size(767, 103)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Welcome to Your"
         '
@@ -148,10 +144,10 @@ Partial Class Login_Panel
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(63, 209)
+        Me.Label1.Location = New System.Drawing.Point(71, 261)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(314, 60)
+        Me.Label1.Size = New System.Drawing.Size(365, 62)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "📚 LibraryMS"
         '
@@ -160,10 +156,10 @@ Partial Class Login_Panel
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 45.0!, System.Drawing.FontStyle.Bold)
         Me.Label3.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label3.Location = New System.Drawing.Point(71, 390)
+        Me.Label3.Location = New System.Drawing.Point(80, 488)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(564, 100)
+        Me.Label3.Size = New System.Drawing.Size(688, 103)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Library System"
         '
@@ -176,13 +172,13 @@ Partial Class Login_Panel
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 1, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.RoundedPanel4, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(1105, 29)
-        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(1243, 36)
+        Me.TableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.96027!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.03973!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(709, 928)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(799, 1160)
         Me.TableLayoutPanel2.TabIndex = 2
         '
         'TableLayoutPanel3
@@ -195,12 +191,12 @@ Partial Class Login_Panel
         Me.TableLayoutPanel3.Controls.Add(Me.RoundedPanel2, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.RoundedPanel3, 2, 0)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(81, 801)
-        Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(90, 1002)
+        Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(538, 123)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(607, 153)
         Me.TableLayoutPanel3.TabIndex = 0
         '
         'RoundedPanel1
@@ -208,10 +204,10 @@ Partial Class Login_Panel
         Me.RoundedPanel1.BackColor = System.Drawing.Color.White
         Me.RoundedPanel1.Controls.Add(Me.TableLayoutPanel6)
         Me.RoundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RoundedPanel1.Location = New System.Drawing.Point(4, 4)
-        Me.RoundedPanel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.RoundedPanel1.Location = New System.Drawing.Point(4, 5)
+        Me.RoundedPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RoundedPanel1.Name = "RoundedPanel1"
-        Me.RoundedPanel1.Size = New System.Drawing.Size(171, 115)
+        Me.RoundedPanel1.Size = New System.Drawing.Size(194, 143)
         Me.RoundedPanel1.TabIndex = 0
         '
         'TableLayoutPanel6
@@ -222,12 +218,12 @@ Partial Class Login_Panel
         Me.TableLayoutPanel6.Controls.Add(Me.Label11, 0, 1)
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(4)
+        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 2
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(171, 115)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(194, 143)
         Me.TableLayoutPanel6.TabIndex = 0
         '
         'Label12
@@ -239,7 +235,7 @@ Partial Class Login_Panel
         Me.Label12.Location = New System.Drawing.Point(4, 0)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(163, 57)
+        Me.Label12.Size = New System.Drawing.Size(186, 71)
         Me.Label12.TabIndex = 1
         Me.Label12.Text = "1,482"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -249,10 +245,10 @@ Partial Class Login_Panel
         Me.Label11.AutoSize = True
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label11.ForeColor = System.Drawing.Color.Gray
-        Me.Label11.Location = New System.Drawing.Point(4, 57)
+        Me.Label11.Location = New System.Drawing.Point(4, 71)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(163, 58)
+        Me.Label11.Size = New System.Drawing.Size(186, 72)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Total Books"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -262,10 +258,10 @@ Partial Class Login_Panel
         Me.RoundedPanel2.BackColor = System.Drawing.Color.White
         Me.RoundedPanel2.Controls.Add(Me.TableLayoutPanel7)
         Me.RoundedPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RoundedPanel2.Location = New System.Drawing.Point(183, 4)
-        Me.RoundedPanel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.RoundedPanel2.Location = New System.Drawing.Point(206, 5)
+        Me.RoundedPanel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RoundedPanel2.Name = "RoundedPanel2"
-        Me.RoundedPanel2.Size = New System.Drawing.Size(171, 115)
+        Me.RoundedPanel2.Size = New System.Drawing.Size(194, 143)
         Me.RoundedPanel2.TabIndex = 1
         '
         'TableLayoutPanel7
@@ -276,12 +272,12 @@ Partial Class Login_Panel
         Me.TableLayoutPanel7.Controls.Add(Me.Label13, 0, 1)
         Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(4)
+        Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
         Me.TableLayoutPanel7.RowCount = 2
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(171, 115)
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(194, 143)
         Me.TableLayoutPanel7.TabIndex = 1
         '
         'Label15
@@ -293,7 +289,7 @@ Partial Class Login_Panel
         Me.Label15.Location = New System.Drawing.Point(4, 0)
         Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(163, 57)
+        Me.Label15.Size = New System.Drawing.Size(186, 71)
         Me.Label15.TabIndex = 3
         Me.Label15.Text = "59"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -303,10 +299,10 @@ Partial Class Login_Panel
         Me.Label13.AutoSize = True
         Me.Label13.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label13.ForeColor = System.Drawing.Color.Gray
-        Me.Label13.Location = New System.Drawing.Point(4, 57)
+        Me.Label13.Location = New System.Drawing.Point(4, 71)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(163, 58)
+        Me.Label13.Size = New System.Drawing.Size(186, 72)
         Me.Label13.TabIndex = 2
         Me.Label13.Text = "Members"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -316,10 +312,10 @@ Partial Class Login_Panel
         Me.RoundedPanel3.BackColor = System.Drawing.Color.White
         Me.RoundedPanel3.Controls.Add(Me.TableLayoutPanel8)
         Me.RoundedPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RoundedPanel3.Location = New System.Drawing.Point(362, 4)
-        Me.RoundedPanel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.RoundedPanel3.Location = New System.Drawing.Point(408, 5)
+        Me.RoundedPanel3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RoundedPanel3.Name = "RoundedPanel3"
-        Me.RoundedPanel3.Size = New System.Drawing.Size(172, 115)
+        Me.RoundedPanel3.Size = New System.Drawing.Size(195, 143)
         Me.RoundedPanel3.TabIndex = 2
         '
         'TableLayoutPanel8
@@ -330,12 +326,12 @@ Partial Class Login_Panel
         Me.TableLayoutPanel8.Controls.Add(Me.Label14, 0, 1)
         Me.TableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel8.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel8.Margin = New System.Windows.Forms.Padding(4)
+        Me.TableLayoutPanel8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
         Me.TableLayoutPanel8.RowCount = 2
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel8.Size = New System.Drawing.Size(172, 115)
+        Me.TableLayoutPanel8.Size = New System.Drawing.Size(195, 143)
         Me.TableLayoutPanel8.TabIndex = 1
         '
         'Label16
@@ -347,7 +343,7 @@ Partial Class Login_Panel
         Me.Label16.Location = New System.Drawing.Point(4, 0)
         Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(164, 57)
+        Me.Label16.Size = New System.Drawing.Size(187, 71)
         Me.Label16.TabIndex = 3
         Me.Label16.Text = "16"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -357,10 +353,10 @@ Partial Class Login_Panel
         Me.Label14.AutoSize = True
         Me.Label14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label14.ForeColor = System.Drawing.Color.Gray
-        Me.Label14.Location = New System.Drawing.Point(4, 57)
+        Me.Label14.Location = New System.Drawing.Point(4, 71)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(164, 58)
+        Me.Label14.Size = New System.Drawing.Size(187, 72)
         Me.Label14.TabIndex = 2
         Me.Label14.Text = "Due Today"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -370,11 +366,11 @@ Partial Class Login_Panel
         Me.RoundedPanel4.BackColor = System.Drawing.Color.White
         Me.RoundedPanel4.Controls.Add(Me.TableLayoutPanel4)
         Me.RoundedPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RoundedPanel4.Location = New System.Drawing.Point(81, 4)
-        Me.RoundedPanel4.Margin = New System.Windows.Forms.Padding(4)
+        Me.RoundedPanel4.Location = New System.Drawing.Point(90, 5)
+        Me.RoundedPanel4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.RoundedPanel4.Name = "RoundedPanel4"
         Me.RoundedPanel4.Padding = New System.Windows.Forms.Padding(1)
-        Me.RoundedPanel4.Size = New System.Drawing.Size(538, 789)
+        Me.RoundedPanel4.Size = New System.Drawing.Size(607, 987)
         Me.RoundedPanel4.TabIndex = 1
         '
         'TableLayoutPanel4
@@ -395,22 +391,22 @@ Partial Class Login_Panel
         Me.TableLayoutPanel4.Controls.Add(Me.lblError, 0, 2)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(1, 1)
-        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(4)
+        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 12
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.85542!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.14458!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 252.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(536, 787)
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 315.0!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(605, 985)
         Me.TableLayoutPanel4.TabIndex = 0
         '
         'Label6
@@ -422,7 +418,7 @@ Partial Class Login_Panel
         Me.Label6.Location = New System.Drawing.Point(4, 0)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(528, 118)
+        Me.Label6.Size = New System.Drawing.Size(597, 148)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Sign In"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -433,10 +429,10 @@ Partial Class Login_Panel
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label7.Location = New System.Drawing.Point(4, 118)
+        Me.Label7.Location = New System.Drawing.Point(4, 148)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(528, 66)
+        Me.Label7.Size = New System.Drawing.Size(597, 83)
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "Access your Library Dashboard"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -446,10 +442,10 @@ Partial Class Login_Panel
         Me.Label8.AutoSize = True
         Me.Label8.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(16, 227)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(16, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(18, 287)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(18, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(516, 17)
+        Me.Label8.Size = New System.Drawing.Size(583, 20)
         Me.Label8.TabIndex = 2
         Me.Label8.Text = "Login As"
         '
@@ -460,10 +456,10 @@ Partial Class Login_Panel
         Me.cmbRole.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbRole.FormattingEnabled = True
         Me.cmbRole.Items.AddRange(New Object() {"Librarian", "Student"})
-        Me.cmbRole.Location = New System.Drawing.Point(16, 259)
-        Me.cmbRole.Margin = New System.Windows.Forms.Padding(16, 15, 16, 15)
+        Me.cmbRole.Location = New System.Drawing.Point(18, 326)
+        Me.cmbRole.Margin = New System.Windows.Forms.Padding(18, 19, 18, 19)
         Me.cmbRole.Name = "cmbRole"
-        Me.cmbRole.Size = New System.Drawing.Size(504, 37)
+        Me.cmbRole.Size = New System.Drawing.Size(569, 41)
         Me.cmbRole.TabIndex = 3
         '
         'Label9
@@ -471,10 +467,10 @@ Partial Class Login_Panel
         Me.Label9.AutoSize = True
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(16, 312)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(16, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(18, 393)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(18, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(516, 17)
+        Me.Label9.Size = New System.Drawing.Size(583, 20)
         Me.Label9.TabIndex = 4
         Me.Label9.Text = "User ID"
         '
@@ -483,10 +479,10 @@ Partial Class Login_Panel
         Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsername.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(16, 344)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(16, 15, 16, 15)
+        Me.txtUsername.Location = New System.Drawing.Point(18, 432)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(18, 19, 18, 19)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(504, 34)
+        Me.txtUsername.Size = New System.Drawing.Size(569, 40)
         Me.txtUsername.TabIndex = 5
         '
         'Label10
@@ -494,10 +490,10 @@ Partial Class Login_Panel
         Me.Label10.AutoSize = True
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(16, 387)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(16, 0, 4, 0)
+        Me.Label10.Location = New System.Drawing.Point(18, 486)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(18, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(516, 17)
+        Me.Label10.Size = New System.Drawing.Size(583, 20)
         Me.Label10.TabIndex = 6
         Me.Label10.Text = "Password"
         '
@@ -506,10 +502,10 @@ Partial Class Login_Panel
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(16, 419)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(16, 15, 16, 15)
+        Me.txtPassword.Location = New System.Drawing.Point(18, 525)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(18, 19, 18, 19)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(504, 34)
+        Me.txtPassword.Size = New System.Drawing.Size(569, 40)
         Me.txtPassword.TabIndex = 7
         Me.txtPassword.UseSystemPasswordChar = True
         '
@@ -517,10 +513,10 @@ Partial Class Login_Panel
         '
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.CheckBox1.Location = New System.Drawing.Point(407, 470)
-        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.CheckBox1.Location = New System.Drawing.Point(453, 589)
+        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(125, 28)
+        Me.CheckBox1.Size = New System.Drawing.Size(148, 35)
         Me.CheckBox1.TabIndex = 8
         Me.CheckBox1.Text = "Show Password"
         Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -532,10 +528,10 @@ Partial Class Login_Panel
         Me.btnLogin.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnLogin.Location = New System.Drawing.Point(16, 690)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(16, 15, 16, 15)
+        Me.btnLogin.Location = New System.Drawing.Point(18, 864)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(18, 19, 18, 19)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(504, 49)
+        Me.btnLogin.Size = New System.Drawing.Size(569, 61)
         Me.btnLogin.TabIndex = 9
         Me.btnLogin.Text = "Sign In"
         Me.btnLogin.UseVisualStyleBackColor = False
@@ -548,12 +544,12 @@ Partial Class Login_Panel
         Me.TableLayoutPanel5.Controls.Add(Me.lblForgotPassword, 1, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.LinkLabel2, 0, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(4, 758)
-        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(4)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(4, 949)
+        Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(528, 25)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(597, 31)
         Me.TableLayoutPanel5.TabIndex = 10
         '
         'lblForgotPassword
@@ -562,10 +558,10 @@ Partial Class Login_Panel
         Me.lblForgotPassword.AutoSize = True
         Me.lblForgotPassword.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblForgotPassword.LinkColor = System.Drawing.Color.Black
-        Me.lblForgotPassword.Location = New System.Drawing.Point(268, 0)
+        Me.lblForgotPassword.Location = New System.Drawing.Point(302, 0)
         Me.lblForgotPassword.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblForgotPassword.Name = "lblForgotPassword"
-        Me.lblForgotPassword.Size = New System.Drawing.Size(256, 25)
+        Me.lblForgotPassword.Size = New System.Drawing.Size(291, 31)
         Me.lblForgotPassword.TabIndex = 0
         Me.lblForgotPassword.TabStop = True
         Me.lblForgotPassword.Text = "Forgot Password?"
@@ -581,7 +577,7 @@ Partial Class Login_Panel
         Me.LinkLabel2.Location = New System.Drawing.Point(4, 0)
         Me.LinkLabel2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(256, 25)
+        Me.LinkLabel2.Size = New System.Drawing.Size(290, 31)
         Me.LinkLabel2.TabIndex = 1
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "Register"
@@ -593,20 +589,20 @@ Partial Class Login_Panel
         Me.lblError.AutoSize = True
         Me.lblError.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblError.ForeColor = System.Drawing.Color.Red
-        Me.lblError.Location = New System.Drawing.Point(4, 184)
+        Me.lblError.Location = New System.Drawing.Point(4, 231)
         Me.lblError.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(528, 38)
+        Me.lblError.Size = New System.Drawing.Size(597, 48)
         Me.lblError.TabIndex = 11
         Me.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Login_Panel
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1845, 986)
+        Me.ClientSize = New System.Drawing.Size(1924, 1170)
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Login_Panel"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"

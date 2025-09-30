@@ -1,5 +1,4 @@
-﻿
-Imports System.Text.RegularExpressions
+﻿Imports System.Text.RegularExpressions
 Imports System.Security.Cryptography
 Imports System.Text
 
@@ -116,7 +115,19 @@ Public Class Account
     End Sub
 
     Public Function VerifyPassword(password As String) As Boolean
-        Return _passwordHash = HashPassword(password)
+        If String.IsNullOrWhiteSpace(password) OrElse String.IsNullOrWhiteSpace(_passwordHash) Then
+            Return False
+        End If
+
+        Try
+            Dim inputHash = HashPassword(password)
+            ' Use case-insensitive comparison for hash strings
+            Return String.Equals(_passwordHash, inputHash, StringComparison.OrdinalIgnoreCase)
+        Catch ex As Exception
+            ' Log error but don't expose it to caller
+            Console.WriteLine($"Password verification error: {ex.Message}")
+            Return False
+        End Try
     End Function
 
     Public Sub RecordLogin()
@@ -124,17 +135,28 @@ Public Class Account
     End Sub
 
     Public Shared Function HashPassword(password As String) As String
-        Using sha256 As SHA256 = SHA256.Create()
-            Dim bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password))
-            Return Convert.ToBase64String(bytes)
-        End Using
+        If String.IsNullOrWhiteSpace(password) Then
+            Throw New ArgumentException("Password cannot be empty")
+        End If
+
+        Try
+            Using sha256 As SHA256 = SHA256.Create()
+                ' Ensure consistent encoding
+                Dim bytes = Encoding.UTF8.GetBytes(password)
+                Dim hashBytes = sha256.ComputeHash(bytes)
+                ' Convert to Base64 string
+                Return Convert.ToBase64String(hashBytes)
+            End Using
+        Catch ex As Exception
+            Throw New Exception($"Error hashing password: {ex.Message}", ex)
+        End Try
     End Function
 
     Private Shared Function IsValidEmail(email As String) As Boolean
         If String.IsNullOrWhiteSpace(email) Then Return False
         Try
             Dim regex As New Regex("^[^@\s]+@[^@\s]+\.[^@\s]+$")
-            Return regex.IsMatch(email)
+            Return regex.IsMatch(email.Trim())
         Catch
             Return False
         End Try

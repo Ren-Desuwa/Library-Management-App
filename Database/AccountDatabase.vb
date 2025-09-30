@@ -39,53 +39,54 @@ Public Class AccountDatabase
     Public Function CreateAccount(username As String, password As String, email As String, isAdmin As Boolean) As Integer
         Try
             Dim passwordHash = Account.HashPassword(password)
-
             Dim query = "INSERT INTO Accounts (Username, PasswordHash, Email, IsAdmin, CreatedDate) VALUES (?, ?, ?, ?, ?)"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@Username", username)
-                cmd.Parameters.AddWithValue("@PasswordHash", passwordHash)
-                cmd.Parameters.AddWithValue("@Email", email)
-                cmd.Parameters.AddWithValue("@IsAdmin", isAdmin)
-                cmd.Parameters.AddWithValue("@CreatedDate", Date.Now)
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@Username", username)
+                    cmd.Parameters.AddWithValue("@PasswordHash", passwordHash)
+                    cmd.Parameters.AddWithValue("@Email", email)
+                    cmd.Parameters.AddWithValue("@IsAdmin", isAdmin)
+                    cmd.Parameters.AddWithValue("@CreatedDate", Date.Now)
 
-                _dbConnection.OpenConnection()
-                cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery()
 
-                cmd.CommandText = "SELECT @@IDENTITY"
-                Dim accountID = Convert.ToInt32(cmd.ExecuteScalar())
+                    cmd.CommandText = "SELECT @@IDENTITY"
+                    Dim accountID = Convert.ToInt32(cmd.ExecuteScalar())
+
+                    Return accountID
+                End Using
+            Finally
                 _dbConnection.CloseConnection()
-
-                Return accountID
-            End Using
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error creating account: {ex.Message}", ex)
         End Try
     End Function
 
     ' Get Account by ID
     Public Function GetAccountByID(accountID As Integer) As Account
+        Dim query As String = "SELECT * FROM Accounts WHERE AccountID = ?"
+
         Try
-            Dim query = "SELECT * FROM Accounts WHERE AccountID = ?"
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@AccountID", accountID)
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@AccountID", accountID)
-
-                _dbConnection.OpenConnection()
-                Using reader = cmd.ExecuteReader()
-                    If reader.Read() Then
-                        Dim account = MapReaderToAccount(reader)
-                        _dbConnection.CloseConnection()
-                        Return account
-                    End If
+                    Using reader As OleDbDataReader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            Return MapReaderToAccount(reader)
+                        End If
+                    End Using
                 End Using
-                _dbConnection.CloseConnection()
-            End Using
 
-            Return Nothing
+                Return Nothing
+            Finally
+                _dbConnection.CloseConnection()
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error getting account by ID: {ex.Message}", ex)
         End Try
     End Function
@@ -95,23 +96,23 @@ Public Class AccountDatabase
         Try
             Dim query = "SELECT * FROM Accounts WHERE Username = ?"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@Username", username)
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@Username", username)
 
-                _dbConnection.OpenConnection()
-                Using reader = cmd.ExecuteReader()
-                    If reader.Read() Then
-                        Dim account = MapReaderToAccount(reader)
-                        _dbConnection.CloseConnection()
-                        Return account
-                    End If
+                    Using reader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            Return MapReaderToAccount(reader)
+                        End If
+                    End Using
                 End Using
-                _dbConnection.CloseConnection()
-            End Using
 
-            Return Nothing
+                Return Nothing
+            Finally
+                _dbConnection.CloseConnection()
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error getting account by username: {ex.Message}", ex)
         End Try
     End Function
@@ -119,54 +120,70 @@ Public Class AccountDatabase
     ' Authenticate
     Public Function Authenticate(username As String, password As String) As Account
         Try
-            Dim account = GetAccountByUsername(username)
-            If account IsNot Nothing AndAlso account.VerifyPassword(password) Then
-                UpdateLastLogin(account.AccountID)
-                account.RecordLogin()
-                Return account
-            End If
-            Return Nothing
+            ' Get account and verify password in single connection session
+            Dim query = "SELECT * FROM Accounts WHERE Username = ?"
+
+            _dbConnection.OpenConnection()
+            Try
+                Dim account As Account = Nothing
+
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("?", username)
+
+                    Using reader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            account = MapReaderToAccount(reader)
+                        End If
+                    End Using
+                End Using
+
+
+                ' Verify password after closing reader
+                If account IsNot Nothing AndAlso account.VerifyPassword(password) Then
+                    ' Update last login in same connection
+                    MessageBox.Show("Login successful!")
+                    Dim updateQuery As String = "UPDATE Accounts SET LastLoginDate = ? WHERE AccountID = ?"
+                    Using updateCmd As New OleDbCommand(updateQuery, _dbConnection.Connection)
+                        ' Explicitly use OleDbType.Date
+                        updateCmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now   ' Current date/time
+                        updateCmd.Parameters.Add("?", OleDbType.Integer).Value = account.AccountID
+
+                        updateCmd.ExecuteNonQuery()
+                    End Using
+                    MessageBox.Show("Login successful!1")
+                    account.RecordLogin()
+                    MessageBox.Show("Login successful!2")
+                    Return account
+                End If
+                MessageBox.Show("Login successful!3")
+                Return Nothing
+            Finally
+                MessageBox.Show("Login successful!4")
+                _dbConnection.CloseConnection()
+            End Try
         Catch ex As Exception
             Throw New Exception($"Error authenticating user: {ex.Message}", ex)
         End Try
     End Function
-
-    ' Update Last Login
-    Private Sub UpdateLastLogin(accountID As Integer)
-        Try
-            Dim query = "UPDATE Accounts SET LastLoginDate = ? WHERE AccountID = ?"
-
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@LastLoginDate", Date.Now)
-                cmd.Parameters.AddWithValue("@AccountID", accountID)
-
-                _dbConnection.OpenConnection()
-                cmd.ExecuteNonQuery()
-                _dbConnection.CloseConnection()
-            End Using
-        Catch ex As Exception
-            _dbConnection.CloseConnection()
-            ' Don't throw - just log
-            Console.WriteLine($"Warning: Failed to update last login: {ex.Message}")
-        End Try
-    End Sub
 
     ' Update Account
     Public Sub UpdateAccount(accountID As Integer, username As String, email As String)
         Try
             Dim query = "UPDATE Accounts SET Username = ?, Email = ? WHERE AccountID = ?"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@Username", username)
-                cmd.Parameters.AddWithValue("@Email", email)
-                cmd.Parameters.AddWithValue("@AccountID", accountID)
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@Username", username)
+                    cmd.Parameters.AddWithValue("@Email", email)
+                    cmd.Parameters.AddWithValue("@AccountID", accountID)
 
-                _dbConnection.OpenConnection()
-                cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery()
+                End Using
+            Finally
                 _dbConnection.CloseConnection()
-            End Using
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error updating account: {ex.Message}", ex)
         End Try
     End Sub
@@ -177,16 +194,18 @@ Public Class AccountDatabase
             Dim passwordHash = Account.HashPassword(newPassword)
             Dim query = "UPDATE Accounts SET PasswordHash = ? WHERE AccountID = ?"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@PasswordHash", passwordHash)
-                cmd.Parameters.AddWithValue("@AccountID", accountID)
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@PasswordHash", passwordHash)
+                    cmd.Parameters.AddWithValue("@AccountID", accountID)
 
-                _dbConnection.OpenConnection()
-                cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery()
+                End Using
+            Finally
                 _dbConnection.CloseConnection()
-            End Using
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error changing password: {ex.Message}", ex)
         End Try
     End Sub
@@ -194,32 +213,38 @@ Public Class AccountDatabase
     ' Delete Account
     Public Function DeleteAccount(accountID As Integer) As Boolean
         Try
-            ' Check if user has borrowed books
-            If GetUserBorrowedBookCount(accountID) > 0 Then
-                Return False
-            End If
+            _dbConnection.OpenConnection()
+            Try
+                ' Check if user has borrowed books
+                Dim checkQuery = "SELECT COUNT(*) FROM BorrowedBooks WHERE UserID = ? AND ReturnDate IS NULL"
+                Using checkCmd As New OleDbCommand(checkQuery, _dbConnection.Connection)
+                    checkCmd.Parameters.AddWithValue("@UserID", accountID)
+                    Dim borrowedCount = Convert.ToInt32(checkCmd.ExecuteScalar())
 
-            ' Delete borrow history
-            Dim deleteHistory = "DELETE FROM BorrowedBooks WHERE UserID = ?"
-            Using cmd As New OleDbCommand(deleteHistory, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@UserID", accountID)
-                _dbConnection.OpenConnection()
-                cmd.ExecuteNonQuery()
+                    If borrowedCount > 0 Then
+                        Return False
+                    End If
+                End Using
+
+                ' Delete borrow history
+                Dim deleteHistory = "DELETE FROM BorrowedBooks WHERE UserID = ?"
+                Using cmd As New OleDbCommand(deleteHistory, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@UserID", accountID)
+                    cmd.ExecuteNonQuery()
+                End Using
+
+                ' Delete account
+                Dim deleteAnAccount = "DELETE FROM Accounts WHERE AccountID = ?"
+                Using cmd As New OleDbCommand(deleteAnAccount, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@AccountID", accountID)
+                    cmd.ExecuteNonQuery()
+                End Using
+
+                Return True
+            Finally
                 _dbConnection.CloseConnection()
-            End Using
-
-            ' Delete account
-            Dim deleteAnAccount = "DELETE FROM Accounts WHERE AccountID = ?"
-            Using cmd As New OleDbCommand(deleteAnAccount, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@AccountID", accountID)
-                _dbConnection.OpenConnection()
-                cmd.ExecuteNonQuery()
-                _dbConnection.CloseConnection()
-            End Using
-
-            Return True
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error deleting account: {ex.Message}", ex)
         End Try
     End Function
@@ -231,17 +256,19 @@ Public Class AccountDatabase
         Try
             Dim query = "SELECT * FROM Accounts ORDER BY Username"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                _dbConnection.OpenConnection()
-                Using reader = cmd.ExecuteReader()
-                    While reader.Read()
-                        accounts.Add(MapReaderToAccount(reader))
-                    End While
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    Using reader = cmd.ExecuteReader()
+                        While reader.Read()
+                            accounts.Add(MapReaderToAccount(reader))
+                        End While
+                    End Using
                 End Using
+            Finally
                 _dbConnection.CloseConnection()
-            End Using
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error getting all accounts: {ex.Message}", ex)
         End Try
 
@@ -255,17 +282,19 @@ Public Class AccountDatabase
         Try
             Dim query = "SELECT * FROM Accounts WHERE IsAdmin = False ORDER BY Username"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                _dbConnection.OpenConnection()
-                Using reader = cmd.ExecuteReader()
-                    While reader.Read()
-                        users.Add(MapReaderToAccount(reader))
-                    End While
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    Using reader = cmd.ExecuteReader()
+                        While reader.Read()
+                            users.Add(MapReaderToAccount(reader))
+                        End While
+                    End Using
                 End Using
+            Finally
                 _dbConnection.CloseConnection()
-            End Using
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error getting all users: {ex.Message}", ex)
         End Try
 
@@ -279,17 +308,19 @@ Public Class AccountDatabase
         Try
             Dim query = "SELECT * FROM Accounts WHERE IsAdmin = True ORDER BY Username"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                _dbConnection.OpenConnection()
-                Using reader = cmd.ExecuteReader()
-                    While reader.Read()
-                        admins.Add(MapReaderToAccount(reader))
-                    End While
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    Using reader = cmd.ExecuteReader()
+                        While reader.Read()
+                            admins.Add(MapReaderToAccount(reader))
+                        End While
+                    End Using
                 End Using
+            Finally
                 _dbConnection.CloseConnection()
-            End Using
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error getting all admins: {ex.Message}", ex)
         End Try
 
@@ -301,17 +332,19 @@ Public Class AccountDatabase
         Try
             Dim query = "INSERT INTO BorrowedBooks (UserID, BookID, BorrowDate) VALUES (?, ?, ?)"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@UserID", userID)
-                cmd.Parameters.AddWithValue("@BookID", bookID)
-                cmd.Parameters.AddWithValue("@BorrowDate", Date.Now)
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@UserID", userID)
+                    cmd.Parameters.AddWithValue("@BookID", bookID)
+                    cmd.Parameters.AddWithValue("@BorrowDate", Date.Now)
 
-                _dbConnection.OpenConnection()
-                cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery()
+                End Using
+            Finally
                 _dbConnection.CloseConnection()
-            End Using
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error recording borrow: {ex.Message}", ex)
         End Try
     End Sub
@@ -321,17 +354,19 @@ Public Class AccountDatabase
         Try
             Dim query = "UPDATE BorrowedBooks SET ReturnDate = ? WHERE UserID = ? AND BookID = ? AND ReturnDate IS NULL"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@ReturnDate", Date.Now)
-                cmd.Parameters.AddWithValue("@UserID", userID)
-                cmd.Parameters.AddWithValue("@BookID", bookID)
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@ReturnDate", Date.Now)
+                    cmd.Parameters.AddWithValue("@UserID", userID)
+                    cmd.Parameters.AddWithValue("@BookID", bookID)
 
-                _dbConnection.OpenConnection()
-                cmd.ExecuteNonQuery()
+                    cmd.ExecuteNonQuery()
+                End Using
+            Finally
                 _dbConnection.CloseConnection()
-            End Using
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Throw New Exception($"Error recording return: {ex.Message}", ex)
         End Try
     End Sub
@@ -341,17 +376,16 @@ Public Class AccountDatabase
         Try
             Dim query = "SELECT COUNT(*) FROM BorrowedBooks WHERE UserID = ? AND ReturnDate IS NULL"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@UserID", userID)
-
-                _dbConnection.OpenConnection()
-                Dim count = Convert.ToInt32(cmd.ExecuteScalar())
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@UserID", userID)
+                    Return Convert.ToInt32(cmd.ExecuteScalar())
+                End Using
+            Finally
                 _dbConnection.CloseConnection()
-
-                Return count
-            End Using
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             Return 0
         End Try
     End Function
@@ -363,23 +397,25 @@ Public Class AccountDatabase
         Try
             Dim query = "SELECT BookID, BorrowDate, ReturnDate FROM BorrowedBooks WHERE UserID = ? ORDER BY BorrowDate DESC"
 
-            Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                cmd.Parameters.AddWithValue("@UserID", userID)
+            _dbConnection.OpenConnection()
+            Try
+                Using cmd As New OleDbCommand(query, _dbConnection.Connection)
+                    cmd.Parameters.AddWithValue("@UserID", userID)
 
-                _dbConnection.OpenConnection()
-                Using reader = cmd.ExecuteReader()
-                    While reader.Read()
-                        Dim record As New Dictionary(Of String, Object)
-                        record("BookID") = reader("BookID")
-                        record("BorrowDate") = reader("BorrowDate")
-                        record("ReturnDate") = If(IsDBNull(reader("ReturnDate")), Nothing, reader("ReturnDate"))
-                        history.Add(record)
-                    End While
+                    Using reader = cmd.ExecuteReader()
+                        While reader.Read()
+                            Dim record As New Dictionary(Of String, Object)
+                            record("BookID") = reader("BookID")
+                            record("BorrowDate") = reader("BorrowDate")
+                            record("ReturnDate") = If(IsDBNull(reader("ReturnDate")), Nothing, reader("ReturnDate"))
+                            history.Add(record)
+                        End While
+                    End Using
                 End Using
+            Finally
                 _dbConnection.CloseConnection()
-            End Using
+            End Try
         Catch ex As Exception
-            _dbConnection.CloseConnection()
             ' Return empty list on error
         End Try
 
