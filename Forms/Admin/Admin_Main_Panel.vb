@@ -30,7 +30,7 @@
         LoadControl(New UC_transactions())
     End Sub
 
-    Private Sub lnkOverdue_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkOverdue.LinkClicked
+    Private Sub lnkOverdue_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         LoadControl(New UC_overdue())
     End Sub
 

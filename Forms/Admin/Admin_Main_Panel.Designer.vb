@@ -32,12 +32,10 @@ Partial Class Admin_Main_Panel
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lnkReports = New System.Windows.Forms.LinkLabel()
-        Me.lnkOverdue = New System.Windows.Forms.LinkLabel()
         Me.lnkTransactions = New System.Windows.Forms.LinkLabel()
         Me.lnkMember = New System.Windows.Forms.LinkLabel()
         Me.lnkBooks = New System.Windows.Forms.LinkLabel()
@@ -49,8 +47,8 @@ Partial Class Admin_Main_Panel
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.PanelContent = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -59,7 +57,6 @@ Partial Class Admin_Main_Panel
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,12 +119,10 @@ Partial Class Admin_Main_Panel
         Me.TableLayoutPanel3.Controls.Add(Me.PictureBox9, 0, 7)
         Me.TableLayoutPanel3.Controls.Add(Me.PictureBox7, 0, 6)
         Me.TableLayoutPanel3.Controls.Add(Me.PictureBox6, 0, 5)
-        Me.TableLayoutPanel3.Controls.Add(Me.PictureBox5, 0, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.PictureBox4, 0, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.PictureBox3, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.PictureBox2, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.lnkReports, 1, 5)
-        Me.TableLayoutPanel3.Controls.Add(Me.lnkOverdue, 1, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.lnkTransactions, 1, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.lnkMember, 1, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.lnkBooks, 1, 1)
@@ -218,17 +213,6 @@ Partial Class Admin_Main_Panel
         Me.PictureBox6.TabIndex = 19
         Me.PictureBox6.TabStop = False
         '
-        'PictureBox5
-        '
-        Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(3, 355)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(68, 82)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox5.TabIndex = 18
-        Me.PictureBox5.TabStop = False
-        '
         'PictureBox4
         '
         Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Fill
@@ -279,24 +263,6 @@ Partial Class Admin_Main_Panel
         Me.lnkReports.Text = "Reports"
         Me.lnkReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lnkReports.VisitedLinkColor = System.Drawing.Color.Black
-        '
-        'lnkOverdue
-        '
-        Me.lnkOverdue.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lnkOverdue.AutoSize = True
-        Me.lnkOverdue.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lnkOverdue.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lnkOverdue.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.lnkOverdue.LinkColor = System.Drawing.Color.Black
-        Me.lnkOverdue.Location = New System.Drawing.Point(84, 352)
-        Me.lnkOverdue.Margin = New System.Windows.Forms.Padding(10, 0, 3, 0)
-        Me.lnkOverdue.Name = "lnkOverdue"
-        Me.lnkOverdue.Size = New System.Drawing.Size(141, 88)
-        Me.lnkOverdue.TabIndex = 11
-        Me.lnkOverdue.TabStop = True
-        Me.lnkOverdue.Text = "Overdue"
-        Me.lnkOverdue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.lnkOverdue.VisitedLinkColor = System.Drawing.Color.Black
         '
         'lnkTransactions
         '
@@ -456,18 +422,6 @@ Partial Class Admin_Main_Panel
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(1136, 70)
         Me.TableLayoutPanel6.TabIndex = 5
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(3, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1059, 35)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Account Name"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -481,6 +435,18 @@ Partial Class Admin_Main_Panel
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Librarian"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(1059, 35)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Welcome!"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomRight
         '
         'PictureBox8
         '
@@ -511,7 +477,6 @@ Partial Class Admin_Main_Panel
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -531,13 +496,11 @@ Partial Class Admin_Main_Panel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents lnkReports As LinkLabel
-    Friend WithEvents lnkOverdue As LinkLabel
     Friend WithEvents lnkTransactions As LinkLabel
     Friend WithEvents lnkMember As LinkLabel
     Friend WithEvents lnkBooks As LinkLabel
     Friend WithEvents lnkDashboard As LinkLabel
     Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox

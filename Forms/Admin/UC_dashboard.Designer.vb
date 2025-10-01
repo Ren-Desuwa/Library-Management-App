@@ -22,13 +22,14 @@ Partial Class UC_dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.RoundedPanel5 = New Library_Management_App.RoundedPanel()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.RoundedPanel4 = New Library_Management_App.RoundedPanel()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblAttention = New System.Windows.Forms.Label()
+        Me.lblOverdue = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.RoundedPanel3 = New Library_Management_App.RoundedPanel()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -43,6 +44,7 @@ Partial Class UC_dashboard
         Me.lblUpdateTotalBooks = New System.Windows.Forms.Label()
         Me.lblTotalBooks = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.RoundedPanel5.SuspendLayout()
         Me.RoundedPanel4.SuspendLayout()
         Me.RoundedPanel3.SuspendLayout()
@@ -89,46 +91,46 @@ Partial Class UC_dashboard
         Me.Label15.ForeColor = System.Drawing.Color.Black
         Me.Label15.Location = New System.Drawing.Point(19, 20)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(211, 31)
+        Me.Label15.Size = New System.Drawing.Size(301, 31)
         Me.Label15.TabIndex = 10
-        Me.Label15.Text = "Recent Activity"
+        Me.Label15.Text = "Make Announcements"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'RoundedPanel4
         '
         Me.RoundedPanel4.BackColor = System.Drawing.Color.White
-        Me.RoundedPanel4.Controls.Add(Me.Label14)
-        Me.RoundedPanel4.Controls.Add(Me.Label12)
+        Me.RoundedPanel4.Controls.Add(Me.lblAttention)
+        Me.RoundedPanel4.Controls.Add(Me.lblOverdue)
         Me.RoundedPanel4.Controls.Add(Me.Label13)
         Me.RoundedPanel4.Location = New System.Drawing.Point(825, 119)
         Me.RoundedPanel4.Name = "RoundedPanel4"
         Me.RoundedPanel4.Size = New System.Drawing.Size(232, 143)
         Me.RoundedPanel4.TabIndex = 8
         '
-        'Label14
+        'lblAttention
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.White
-        Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(29, 100)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(98, 14)
-        Me.Label14.TabIndex = 15
-        Me.Label14.Text = "Needs Attention"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lblAttention.AutoSize = True
+        Me.lblAttention.BackColor = System.Drawing.Color.White
+        Me.lblAttention.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAttention.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblAttention.Location = New System.Drawing.Point(29, 100)
+        Me.lblAttention.Name = "lblAttention"
+        Me.lblAttention.Size = New System.Drawing.Size(98, 14)
+        Me.lblAttention.TabIndex = 15
+        Me.lblAttention.Text = "Needs Attention"
+        Me.lblAttention.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
-        'Label12
+        'lblOverdue
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(26, 53)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(30, 31)
-        Me.Label12.TabIndex = 14
-        Me.Label12.Text = "2"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lblOverdue.AutoSize = True
+        Me.lblOverdue.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOverdue.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblOverdue.Location = New System.Drawing.Point(26, 53)
+        Me.lblOverdue.Name = "lblOverdue"
+        Me.lblOverdue.Size = New System.Drawing.Size(30, 31)
+        Me.lblOverdue.TabIndex = 14
+        Me.lblOverdue.Text = "2"
+        Me.lblOverdue.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Label13
         '
@@ -294,6 +296,11 @@ Partial Class UC_dashboard
         Me.Label1.Text = "Total Books"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
         'UC_dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -335,13 +342,14 @@ Partial Class UC_dashboard
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents lblUpdateTotalBooks As Label
-    Friend WithEvents Label12 As Label
+    Friend WithEvents lblOverdue As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents lblBooksIssued As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label14 As Label
+    Friend WithEvents lblAttention As Label
     Friend WithEvents RoundedPanel5 As RoundedPanel
     Friend WithEvents Label15 As Label
     Friend WithEvents lblTotalStudents As Label
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class

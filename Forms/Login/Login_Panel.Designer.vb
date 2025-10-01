@@ -33,15 +33,15 @@ Partial Class Login_Panel
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.RoundedPanel1 = New Library_Management_App.RoundedPanel()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblTotalNumberofBooks = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.RoundedPanel2 = New Library_Management_App.RoundedPanel()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lblTotalNumberofMembers = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.RoundedPanel3 = New Library_Management_App.RoundedPanel()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.lblTotalNumberofDueToday = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.RoundedPanel4 = New Library_Management_App.RoundedPanel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
@@ -83,7 +83,7 @@ Partial Class Login_Panel
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.Padding = New System.Windows.Forms.Padding(20, 20, 20, 20)
+        Me.TableLayoutPanel1.Padding = New System.Windows.Forms.Padding(20)
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1384, 801)
@@ -109,7 +109,7 @@ Partial Class Login_Panel
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label5.Location = New System.Drawing.Point(57, 540)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(401, 15)
+        Me.Label5.Size = New System.Drawing.Size(308, 15)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "✔ Book Catalog Management     ✔ Member Tracking     ✔ Due Date Alerts"
         '
@@ -204,7 +204,7 @@ Partial Class Login_Panel
         '
         Me.TableLayoutPanel6.ColumnCount = 1
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Controls.Add(Me.Label12, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.lblTotalNumberofBooks, 0, 0)
         Me.TableLayoutPanel6.Controls.Add(Me.Label11, 0, 1)
         Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 0)
@@ -215,18 +215,18 @@ Partial Class Login_Panel
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(128, 94)
         Me.TableLayoutPanel6.TabIndex = 0
         '
-        'Label12
+        'lblTotalNumberofBooks
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(3, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(122, 47)
-        Me.Label12.TabIndex = 1
-        Me.Label12.Text = "1,482"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.lblTotalNumberofBooks.AutoSize = True
+        Me.lblTotalNumberofBooks.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblTotalNumberofBooks.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalNumberofBooks.ForeColor = System.Drawing.Color.Black
+        Me.lblTotalNumberofBooks.Location = New System.Drawing.Point(3, 0)
+        Me.lblTotalNumberofBooks.Name = "lblTotalNumberofBooks"
+        Me.lblTotalNumberofBooks.Size = New System.Drawing.Size(122, 47)
+        Me.lblTotalNumberofBooks.TabIndex = 1
+        Me.lblTotalNumberofBooks.Text = "1,482"
+        Me.lblTotalNumberofBooks.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'Label11
         '
@@ -254,7 +254,7 @@ Partial Class Login_Panel
         '
         Me.TableLayoutPanel7.ColumnCount = 1
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel7.Controls.Add(Me.Label15, 0, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.lblTotalNumberofMembers, 0, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.Label13, 0, 1)
         Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 0)
@@ -265,18 +265,18 @@ Partial Class Login_Panel
         Me.TableLayoutPanel7.Size = New System.Drawing.Size(128, 94)
         Me.TableLayoutPanel7.TabIndex = 1
         '
-        'Label15
+        'lblTotalNumberofMembers
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(3, 0)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(122, 47)
-        Me.Label15.TabIndex = 3
-        Me.Label15.Text = "59"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.lblTotalNumberofMembers.AutoSize = True
+        Me.lblTotalNumberofMembers.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblTotalNumberofMembers.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalNumberofMembers.ForeColor = System.Drawing.Color.Black
+        Me.lblTotalNumberofMembers.Location = New System.Drawing.Point(3, 0)
+        Me.lblTotalNumberofMembers.Name = "lblTotalNumberofMembers"
+        Me.lblTotalNumberofMembers.Size = New System.Drawing.Size(122, 47)
+        Me.lblTotalNumberofMembers.TabIndex = 3
+        Me.lblTotalNumberofMembers.Text = "59"
+        Me.lblTotalNumberofMembers.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'Label13
         '
@@ -304,7 +304,7 @@ Partial Class Login_Panel
         '
         Me.TableLayoutPanel8.ColumnCount = 1
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel8.Controls.Add(Me.Label16, 0, 0)
+        Me.TableLayoutPanel8.Controls.Add(Me.lblTotalNumberofDueToday, 0, 0)
         Me.TableLayoutPanel8.Controls.Add(Me.Label14, 0, 1)
         Me.TableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel8.Location = New System.Drawing.Point(0, 0)
@@ -315,18 +315,18 @@ Partial Class Login_Panel
         Me.TableLayoutPanel8.Size = New System.Drawing.Size(129, 94)
         Me.TableLayoutPanel8.TabIndex = 1
         '
-        'Label16
+        'lblTotalNumberofDueToday
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Black
-        Me.Label16.Location = New System.Drawing.Point(3, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(123, 47)
-        Me.Label16.TabIndex = 3
-        Me.Label16.Text = "16"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.lblTotalNumberofDueToday.AutoSize = True
+        Me.lblTotalNumberofDueToday.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblTotalNumberofDueToday.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalNumberofDueToday.ForeColor = System.Drawing.Color.Black
+        Me.lblTotalNumberofDueToday.Location = New System.Drawing.Point(3, 0)
+        Me.lblTotalNumberofDueToday.Name = "lblTotalNumberofDueToday"
+        Me.lblTotalNumberofDueToday.Size = New System.Drawing.Size(123, 47)
+        Me.lblTotalNumberofDueToday.TabIndex = 3
+        Me.lblTotalNumberofDueToday.Text = "16"
+        Me.lblTotalNumberofDueToday.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'Label14
         '
@@ -626,13 +626,13 @@ Partial Class Login_Panel
     Friend WithEvents lblForgotPassword As LinkLabel
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
-    Friend WithEvents Label12 As Label
+    Friend WithEvents lblTotalNumberofBooks As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
-    Friend WithEvents Label15 As Label
+    Friend WithEvents lblTotalNumberofMembers As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
-    Friend WithEvents Label16 As Label
+    Friend WithEvents lblTotalNumberofDueToday As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents lblError As Label
 End Class
