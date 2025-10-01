@@ -134,25 +134,6 @@ Public Class DatabaseConnection
         Return File.Exists(_dbPath)
     End Function
 
-    ' Execute scalar query
-    Public Function ExecuteScalar(query As String, ParamArray parameters As OleDbParameter()) As Object
-        Try
-            Using cmd As New OleDbCommand(query, _connection)
-                If parameters IsNot Nothing Then
-                    cmd.Parameters.AddRange(parameters)
-                End If
-
-                OpenConnection()
-                Dim result = cmd.ExecuteScalar()
-                CloseConnection()
-                Return result
-            End Using
-        Catch ex As Exception
-            CloseConnection()
-            Throw New Exception($"Error executing scalar query: {ex.Message}", ex)
-        End Try
-    End Function
-
     ' Execute non-query
     Public Function ExecuteNonQuery(query As String, ParamArray parameters As OleDbParameter()) As Integer
         Try
@@ -171,4 +152,43 @@ Public Class DatabaseConnection
             Throw New Exception($"Error executing non-query: {ex.Message}", ex)
         End Try
     End Function
+
+    Public Function ExecuteScalar(query As String, ParamArray parameters As OleDbParameter()) As Object
+        Try
+            Using cmd As New OleDbCommand(query, _connection)
+                If parameters IsNot Nothing Then
+                    cmd.Parameters.AddRange(parameters)
+                End If
+                OpenConnection()
+                Dim result = cmd.ExecuteScalar()
+                CloseConnection()
+                Return result
+            End Using
+        Catch ex As Exception
+            CloseConnection()
+            Throw New Exception($"Error executing scalar query: {ex.Message}", ex)
+        End Try
+    End Function
+
+    Friend Function ExecuteQuery(query As String, ParamArray parameters() As OleDbParameter) As DataTable
+        Try
+            Dim dt As New DataTable()
+            Using cmd As New OleDbCommand(query, _connection)
+                If parameters IsNot Nothing Then
+                    cmd.Parameters.AddRange(parameters)
+                End If
+
+                OpenConnection()
+                Using reader = cmd.ExecuteReader()
+                    dt.Load(reader)
+                End Using
+                CloseConnection()
+            End Using
+            Return dt
+        Catch ex As Exception
+            CloseConnection()
+            Throw New Exception("Error executing query: " & ex.Message, ex)
+        End Try
+    End Function
+
 End Class
