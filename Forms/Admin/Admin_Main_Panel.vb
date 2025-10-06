@@ -58,4 +58,5 @@
     Private Sub lnkSettings_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkSettings.LinkClicked
         LoadControl(New UC_settings())
     End Sub
+
 End Class

@@ -49,8 +49,8 @@ Partial Class Admin_Main_Panel
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.PanelContent = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -456,18 +456,6 @@ Partial Class Admin_Main_Panel
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(1136, 70)
         Me.TableLayoutPanel6.TabIndex = 5
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(3, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1059, 35)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Account Name"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -481,6 +469,18 @@ Partial Class Admin_Main_Panel
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Librarian"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(1059, 35)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Account Name"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomRight
         '
         'PictureBox8
         '
