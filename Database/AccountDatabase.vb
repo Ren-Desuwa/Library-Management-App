@@ -120,14 +120,14 @@ Public Class AccountDatabase
     ' Authenticate
     Public Function Authenticate(username As String, password As String) As Account
         Try
-            Dim query = "SELECT * FROM Accounts WHERE Username = ?"
+            Dim query = "SELECT * FROM Accounts WHERE Username = @Username"
             _dbConnection.OpenConnection()
 
             Try
                 Dim account As Account = Nothing
 
                 Using cmd As New OleDbCommand(query, _dbConnection.Connection)
-                    cmd.Parameters.AddWithValue("?", username)
+                    cmd.Parameters.AddWithValue("@Username", username)
 
                     Using reader = cmd.ExecuteReader()
                         If reader.Read() Then
@@ -139,7 +139,7 @@ Public Class AccountDatabase
                 ' Verify password
                 If account IsNot Nothing AndAlso account.VerifyPassword(password) Then
                     ' Update last login
-                    Dim updateQuery As String = "UPDATE Accounts SET LastLoginDate = ? WHERE AccountID = ?"
+                    Dim updateQuery As String = "UPDATE Accounts SET LastLoginDate = @Login WHERE AccountID = ?"
                     Using updateCmd As New OleDbCommand(updateQuery, _dbConnection.Connection)
                         updateCmd.Parameters.Add("?", OleDbType.Date).Value = DateTime.Now
                         updateCmd.Parameters.Add("?", OleDbType.Integer).Value = account.AccountID

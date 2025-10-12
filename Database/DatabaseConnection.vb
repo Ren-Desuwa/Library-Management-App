@@ -14,48 +14,6 @@ Public Class DatabaseConnection
         $"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={_dbPath};"
     )
 
-
-    Public Sub ResetPasswords()
-        ' Username -> new plaintext password
-        Dim newPasswords As New Dictionary(Of String, String) From {
-        {"admin", "Admin123!"},
-        {"librarian", "Lib2024!"},
-        {"manager", "Mgr2024!"},
-        {"john_doe", "John2024"},
-        {"jane_smith", "Jane2024"},
-        {"bob_wilson", "Bob2024"},
-        {"alice_brown", "Alice2024"},
-        {"charlie_davis", "Charlie2024"},
-        {"david_miller", "David2024"},
-        {"emma_jones", "Emma2024"}
-    }
-
-        Try
-            _connection.Open()
-            Using cmd As New OleDbCommand("", _connection)
-                For Each kvp As KeyValuePair(Of String, String) In newPasswords
-                    Dim username As String = kvp.Key
-                    Dim password As String = kvp.Value
-                    Dim hash As String = Account.HashPassword(password)
-
-                    cmd.CommandText = "UPDATE Accounts SET PasswordHash = ? WHERE Username = ?"
-                    cmd.Parameters.Clear()
-                    cmd.Parameters.AddWithValue("?", hash)
-                    cmd.Parameters.AddWithValue("?", username)
-
-                    cmd.ExecuteNonQuery()
-                Next
-
-            End Using
-            MessageBox.Show("Passwords updated successfully!")
-        Catch ex As Exception
-            MessageBox.Show("Error updating passwords: " & ex.Message)
-        Finally
-            _connection.Close()
-        End Try
-    End Sub
-
-
     ' Singleton instance
     Public Shared ReadOnly Property Instance As DatabaseConnection
         Get

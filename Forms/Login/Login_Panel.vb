@@ -59,28 +59,35 @@ Public Class Login_Panel
         btnLogin.Text = "Signing in..."
 
         Try
-            Using con As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xx\Source\Repos\Library-Management-App\Database\Library.accdb;")
-                con.Open()
-                Dim cmd As OleDbCommand
-                Dim reader As OleDbDataReader
+            Dim username = txtUsername.Text.Trim()
+            Dim password = txtPassword.Text
 
+            If LibraryDatabase.Instance.Accounts.Authenticate(username, password) IsNot Nothing Then
                 If isLibrarianLogin Then
-                    ' Librarian/Admin login
-                    cmd = New OleDbCommand("SELECT * FROM Accounts WHERE Username=@Username", con)
-                    cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim())
-                    reader = cmd.ExecuteReader()
 
-                    If reader.Read() Then
-                        Dim storedHash As String = reader("PasswordHash").ToString()
-                        If Account.HashPassword(txtPassword.Text) = storedHash Then
-                            ' Build account object
-                            Dim acc As New Account()
-                            acc.AccountID = Convert.ToInt32(reader("AccountID"))
-                            acc.Username = reader("Username").ToString()
-                            acc.PasswordHash = storedHash
-                            acc.Email = reader("Email").ToString()
-                            acc.IsAdmin = True
-                            acc.RecordLogin()
+                End If
+
+            Else
+                ShowError("Invalid student ID or password.")
+            End If
+        Catch ex As Exception
+            ShowError($"Login error: {ex.Message}")
+        Finally
+            btnLogin.Enabled = True
+            btnLogin.Text = "Sign In"
+        End Try
+
+
+        Try
+
+
+
+            If isLibrarianLogin Then
+
+
+                If reader.Read() Then
+
+                    acc.RecordLogin()
 
                             CurrentUser = acc
                             OpenAdminDashboard()

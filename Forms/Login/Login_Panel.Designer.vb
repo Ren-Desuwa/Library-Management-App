@@ -83,7 +83,7 @@ Partial Class Login_Panel
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.Padding = New System.Windows.Forms.Padding(20)
+        Me.TableLayoutPanel1.Padding = New System.Windows.Forms.Padding(20, 20, 20, 20)
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1384, 801)
@@ -109,7 +109,7 @@ Partial Class Login_Panel
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label5.Location = New System.Drawing.Point(57, 540)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(308, 15)
+        Me.Label5.Size = New System.Drawing.Size(411, 15)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "✔ Book Catalog Management     ✔ Member Tracking     ✔ Due Date Alerts"
         '
@@ -120,7 +120,7 @@ Partial Class Login_Panel
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label4.Location = New System.Drawing.Point(58, 462)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(401, 63)
+        Me.Label4.Size = New System.Drawing.Size(390, 54)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Manage books, track members, and streamline your" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "library operations with our com" &
     "prehensive management" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "system."
@@ -131,7 +131,7 @@ Partial Class Login_Panel
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 45.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.Location = New System.Drawing.Point(50, 252)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(517, 81)
+        Me.Label2.Size = New System.Drawing.Size(515, 70)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Welcome to Your"
         '
@@ -141,7 +141,7 @@ Partial Class Login_Panel
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(47, 170)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(250, 47)
+        Me.Label1.Size = New System.Drawing.Size(240, 41)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "📚 LibraryMS"
         '
@@ -152,7 +152,7 @@ Partial Class Login_Panel
         Me.Label3.ForeColor = System.Drawing.Color.DarkRed
         Me.Label3.Location = New System.Drawing.Point(53, 317)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(452, 81)
+        Me.Label3.Size = New System.Drawing.Size(460, 70)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Library System"
         '
@@ -347,7 +347,7 @@ Partial Class Login_Panel
         Me.RoundedPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RoundedPanel4.Location = New System.Drawing.Point(60, 3)
         Me.RoundedPanel4.Name = "RoundedPanel4"
-        Me.RoundedPanel4.Padding = New System.Windows.Forms.Padding(1)
+        Me.RoundedPanel4.Padding = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.RoundedPanel4.Size = New System.Drawing.Size(403, 643)
         Me.RoundedPanel4.TabIndex = 1
         '
@@ -432,7 +432,7 @@ Partial Class Login_Panel
         Me.cmbRole.FormattingEnabled = True
         Me.cmbRole.Items.AddRange(New Object() {"Librarian", "Student"})
         Me.cmbRole.Location = New System.Drawing.Point(12, 212)
-        Me.cmbRole.Margin = New System.Windows.Forms.Padding(12)
+        Me.cmbRole.Margin = New System.Windows.Forms.Padding(12, 12, 12, 12)
         Me.cmbRole.Name = "cmbRole"
         Me.cmbRole.Size = New System.Drawing.Size(377, 32)
         Me.cmbRole.TabIndex = 3
@@ -455,7 +455,7 @@ Partial Class Login_Panel
         Me.txtUsername.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.Location = New System.Drawing.Point(12, 281)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(12)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(12, 12, 12, 12)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(377, 29)
         Me.txtUsername.TabIndex = 5
@@ -478,7 +478,7 @@ Partial Class Login_Panel
         Me.txtPassword.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPassword.Location = New System.Drawing.Point(12, 341)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(12)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(12, 12, 12, 12)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(377, 29)
         Me.txtPassword.TabIndex = 7
@@ -503,7 +503,7 @@ Partial Class Login_Panel
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnLogin.Location = New System.Drawing.Point(12, 562)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(12)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(12, 12, 12, 12)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(377, 40)
         Me.btnLogin.TabIndex = 9
@@ -570,7 +570,7 @@ Partial Class Login_Panel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1384, 801)
+        Me.ClientSize = New System.Drawing.Size(1283, 760)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "Login_Panel"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
