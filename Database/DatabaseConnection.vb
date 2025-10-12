@@ -4,17 +4,57 @@ Imports System.IO
 Public Class DatabaseConnection
     Private Shared _instance As DatabaseConnection
     Private Shared ReadOnly _lock As New Object()
+    Private ReadOnly _dbPath As String =
+        Path.Combine(Application.StartupPath, "..\..\Database\Library.accdb")
 
-    Private ReadOnly _dbPath As String
-    Private ReadOnly _connectionString As String
-    Private _connection As OleDbConnection
+    Private ReadOnly _connectionString As String =
+        $"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={_dbPath};"
 
-    ' Private constructor for singleton
-    Private Sub New()
-        _dbPath = Path.Combine(Application.StartupPath, "..\..\..\Database\Library.accdb")
-        _connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={_dbPath};Persist Security Info=False;"
-        _connection = New OleDbConnection(_connectionString)
+    Private ReadOnly _connection As New OleDbConnection(
+        $"Provider=Microsoft.ACE.OLEDB.16.0;Data Source={_dbPath};"
+    )
+
+
+    Public Sub ResetPasswords()
+        ' Username -> new plaintext password
+        Dim newPasswords As New Dictionary(Of String, String) From {
+        {"admin", "Admin123!"},
+        {"librarian", "Lib2024!"},
+        {"manager", "Mgr2024!"},
+        {"john_doe", "John2024"},
+        {"jane_smith", "Jane2024"},
+        {"bob_wilson", "Bob2024"},
+        {"alice_brown", "Alice2024"},
+        {"charlie_davis", "Charlie2024"},
+        {"david_miller", "David2024"},
+        {"emma_jones", "Emma2024"}
+    }
+
+        Try
+            _connection.Open()
+            Using cmd As New OleDbCommand("", _connection)
+                For Each kvp As KeyValuePair(Of String, String) In newPasswords
+                    Dim username As String = kvp.Key
+                    Dim password As String = kvp.Value
+                    Dim hash As String = Account.HashPassword(password)
+
+                    cmd.CommandText = "UPDATE Accounts SET PasswordHash = ? WHERE Username = ?"
+                    cmd.Parameters.Clear()
+                    cmd.Parameters.AddWithValue("?", hash)
+                    cmd.Parameters.AddWithValue("?", username)
+
+                    cmd.ExecuteNonQuery()
+                Next
+
+            End Using
+            MessageBox.Show("Passwords updated successfully!")
+        Catch ex As Exception
+            MessageBox.Show("Error updating passwords: " & ex.Message)
+        Finally
+            _connection.Close()
+        End Try
     End Sub
+
 
     ' Singleton instance
     Public Shared ReadOnly Property Instance As DatabaseConnection
@@ -55,9 +95,11 @@ Public Class DatabaseConnection
     Public Sub OpenConnection()
         Try
             If _connection.State = ConnectionState.Closed Then
+
                 _connection.Open()
             End If
         Catch ex As Exception
+            MessageBox.Show(ex.ToString())
             Throw New Exception($"Failed to open database connection: {ex.Message}", ex)
         End Try
     End Sub
@@ -77,7 +119,9 @@ Public Class DatabaseConnection
     ' Test connection
     Public Function TestConnection() As Boolean
         Try
+
             OpenConnection()
+
             CloseConnection()
             Return True
         Catch ex As Exception
@@ -88,25 +132,6 @@ Public Class DatabaseConnection
     ' Check if database file exists
     Public Function DatabaseExists() As Boolean
         Return File.Exists(_dbPath)
-    End Function
-
-    ' Execute scalar query
-    Public Function ExecuteScalar(query As String, ParamArray parameters As OleDbParameter()) As Object
-        Try
-            Using cmd As New OleDbCommand(query, _connection)
-                If parameters IsNot Nothing Then
-                    cmd.Parameters.AddRange(parameters)
-                End If
-
-                OpenConnection()
-                Dim result = cmd.ExecuteScalar()
-                CloseConnection()
-                Return result
-            End Using
-        Catch ex As Exception
-            CloseConnection()
-            Throw New Exception($"Error executing scalar query: {ex.Message}", ex)
-        End Try
     End Function
 
     ' Execute non-query
@@ -127,4 +152,43 @@ Public Class DatabaseConnection
             Throw New Exception($"Error executing non-query: {ex.Message}", ex)
         End Try
     End Function
+
+    Public Function ExecuteScalar(query As String, ParamArray parameters As OleDbParameter()) As Object
+        Try
+            Using cmd As New OleDbCommand(query, _connection)
+                If parameters IsNot Nothing Then
+                    cmd.Parameters.AddRange(parameters)
+                End If
+                OpenConnection()
+                Dim result = cmd.ExecuteScalar()
+                CloseConnection()
+                Return result
+            End Using
+        Catch ex As Exception
+            CloseConnection()
+            Throw New Exception($"Error executing scalar query: {ex.Message}", ex)
+        End Try
+    End Function
+
+    Friend Function ExecuteQuery(query As String, ParamArray parameters() As OleDbParameter) As DataTable
+        Try
+            Dim dt As New DataTable()
+            Using cmd As New OleDbCommand(query, _connection)
+                If parameters IsNot Nothing Then
+                    cmd.Parameters.AddRange(parameters)
+                End If
+
+                OpenConnection()
+                Using reader = cmd.ExecuteReader()
+                    dt.Load(reader)
+                End Using
+                CloseConnection()
+            End Using
+            Return dt
+        Catch ex As Exception
+            CloseConnection()
+            Throw New Exception("Error executing query: " & ex.Message, ex)
+        End Try
+    End Function
+
 End Class

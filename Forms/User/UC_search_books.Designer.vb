@@ -22,42 +22,18 @@ Partial Class UC_search_books
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.RoundedPanel5 = New Library_Management_App.RoundedPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.RoundedPanel5.SuspendLayout()
+        Me.RoundedPanel1 = New Library_Management_App.RoundedPanel()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.btnClearSelection = New System.Windows.Forms.Button()
+        Me.btnBorrowBook = New System.Windows.Forms.Button()
+        Me.dgvBooks = New System.Windows.Forms.DataGridView()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.RoundedPanel1.SuspendLayout()
+        CType(Me.dgvBooks, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'RoundedPanel5
-        '
-        Me.RoundedPanel5.BackColor = System.Drawing.Color.White
-        Me.RoundedPanel5.Controls.Add(Me.Button1)
-        Me.RoundedPanel5.Controls.Add(Me.TextBox1)
-        Me.RoundedPanel5.Location = New System.Drawing.Point(34, 85)
-        Me.RoundedPanel5.Name = "RoundedPanel5"
-        Me.RoundedPanel5.Size = New System.Drawing.Size(1034, 596)
-        Me.RoundedPanel5.TabIndex = 23
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(365, 27)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(46, 29)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "🔍"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(24, 27)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(317, 29)
-        Me.TextBox1.TabIndex = 0
         '
         'Label2
         '
@@ -82,25 +58,107 @@ Partial Class UC_search_books
         Me.Label3.Text = "Browse Books"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
+        'RoundedPanel1
+        '
+        Me.RoundedPanel1.BackColor = System.Drawing.Color.White
+        Me.RoundedPanel1.Controls.Add(Me.btnSearch)
+        Me.RoundedPanel1.Controls.Add(Me.txtSearch)
+        Me.RoundedPanel1.Controls.Add(Me.btnClearSelection)
+        Me.RoundedPanel1.Controls.Add(Me.btnBorrowBook)
+        Me.RoundedPanel1.Controls.Add(Me.dgvBooks)
+        Me.RoundedPanel1.Controls.Add(Me.Label4)
+        Me.RoundedPanel1.Location = New System.Drawing.Point(32, 70)
+        Me.RoundedPanel1.Name = "RoundedPanel1"
+        Me.RoundedPanel1.Size = New System.Drawing.Size(1073, 600)
+        Me.RoundedPanel1.TabIndex = 19
+        '
+        'btnSearch
+        '
+        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSearch.Location = New System.Drawing.Point(349, 87)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 20)
+        Me.btnSearch.TabIndex = 26
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'txtSearch
+        '
+        Me.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSearch.Location = New System.Drawing.Point(33, 87)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(310, 20)
+        Me.txtSearch.TabIndex = 25
+        '
+        'btnClearSelection
+        '
+        Me.btnClearSelection.BackColor = System.Drawing.Color.Black
+        Me.btnClearSelection.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClearSelection.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClearSelection.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnClearSelection.Location = New System.Drawing.Point(714, 13)
+        Me.btnClearSelection.Name = "btnClearSelection"
+        Me.btnClearSelection.Size = New System.Drawing.Size(170, 52)
+        Me.btnClearSelection.TabIndex = 24
+        Me.btnClearSelection.Text = "Clear Selection"
+        Me.btnClearSelection.UseVisualStyleBackColor = False
+        '
+        'btnBorrowBook
+        '
+        Me.btnBorrowBook.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnBorrowBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBorrowBook.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBorrowBook.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btnBorrowBook.Location = New System.Drawing.Point(890, 13)
+        Me.btnBorrowBook.Name = "btnBorrowBook"
+        Me.btnBorrowBook.Size = New System.Drawing.Size(170, 52)
+        Me.btnBorrowBook.TabIndex = 13
+        Me.btnBorrowBook.Text = "Borrow Book"
+        Me.btnBorrowBook.UseVisualStyleBackColor = False
+        '
+        'dgvBooks
+        '
+        Me.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvBooks.Location = New System.Drawing.Point(33, 166)
+        Me.dgvBooks.Name = "dgvBooks"
+        Me.dgvBooks.Size = New System.Drawing.Size(851, 412)
+        Me.dgvBooks.TabIndex = 11
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(27, 132)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(189, 31)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "Book Catalog"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        '
         'UC_search_books
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.RoundedPanel5)
+        Me.Controls.Add(Me.RoundedPanel1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
         Me.Name = "UC_search_books"
         Me.Size = New System.Drawing.Size(1130, 713)
-        Me.RoundedPanel5.ResumeLayout(False)
-        Me.RoundedPanel5.PerformLayout()
+        Me.RoundedPanel1.ResumeLayout(False)
+        Me.RoundedPanel1.PerformLayout()
+        CType(Me.dgvBooks, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents RoundedPanel5 As RoundedPanel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents RoundedPanel1 As RoundedPanel
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents btnClearSelection As Button
+    Friend WithEvents btnBorrowBook As Button
+    Friend WithEvents dgvBooks As DataGridView
+    Friend WithEvents Label4 As Label
 End Class

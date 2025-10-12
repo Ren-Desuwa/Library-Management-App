@@ -1,5 +1,11 @@
 ﻿Public Class Admin_Main_Panel
 
+    Private Sub Admin_Main_Panel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Load the dashboard by default
+        LoadControl(New UC_dashboard())
+    End Sub
+
+
     ' Reusable method to load any UserControl into PanelMain
     Private Sub LoadControl(ctrl As UserControl)
         PanelContent.Controls.Clear()
@@ -24,7 +30,7 @@
         LoadControl(New UC_transactions())
     End Sub
 
-    Private Sub lnkOverdue_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkOverdue.LinkClicked
+    Private Sub lnkOverdue_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         LoadControl(New UC_overdue())
     End Sub
 

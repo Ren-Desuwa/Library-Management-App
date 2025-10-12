@@ -22,26 +22,29 @@ Partial Class UC_dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.RoundedPanel5 = New Library_Management_App.RoundedPanel()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.RoundedPanel4 = New Library_Management_App.RoundedPanel()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblAttention = New System.Windows.Forms.Label()
+        Me.lblOverdue = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.RoundedPanel3 = New Library_Management_App.RoundedPanel()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblBooksIssued = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.RoundedPanel2 = New Library_Management_App.RoundedPanel()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblTotalStudents = New System.Windows.Forms.Label()
+        Me.lblUpdateTotalStudents = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.RoundedPanel1 = New Library_Management_App.RoundedPanel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblUpdateTotalBooks = New System.Windows.Forms.Label()
+        Me.lblTotalBooks = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.RoundedPanel5.SuspendLayout()
         Me.RoundedPanel4.SuspendLayout()
         Me.RoundedPanel3.SuspendLayout()
@@ -88,46 +91,46 @@ Partial Class UC_dashboard
         Me.Label15.ForeColor = System.Drawing.Color.Black
         Me.Label15.Location = New System.Drawing.Point(19, 20)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(211, 31)
+        Me.Label15.Size = New System.Drawing.Size(301, 31)
         Me.Label15.TabIndex = 10
-        Me.Label15.Text = "Recent Activity"
+        Me.Label15.Text = "Make Announcements"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'RoundedPanel4
         '
         Me.RoundedPanel4.BackColor = System.Drawing.Color.White
-        Me.RoundedPanel4.Controls.Add(Me.Label14)
-        Me.RoundedPanel4.Controls.Add(Me.Label12)
+        Me.RoundedPanel4.Controls.Add(Me.lblAttention)
+        Me.RoundedPanel4.Controls.Add(Me.lblOverdue)
         Me.RoundedPanel4.Controls.Add(Me.Label13)
         Me.RoundedPanel4.Location = New System.Drawing.Point(825, 119)
         Me.RoundedPanel4.Name = "RoundedPanel4"
         Me.RoundedPanel4.Size = New System.Drawing.Size(232, 143)
         Me.RoundedPanel4.TabIndex = 8
         '
-        'Label14
+        'lblAttention
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.White
-        Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(29, 100)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(98, 14)
-        Me.Label14.TabIndex = 15
-        Me.Label14.Text = "Needs Attention"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lblAttention.AutoSize = True
+        Me.lblAttention.BackColor = System.Drawing.Color.White
+        Me.lblAttention.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAttention.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblAttention.Location = New System.Drawing.Point(29, 100)
+        Me.lblAttention.Name = "lblAttention"
+        Me.lblAttention.Size = New System.Drawing.Size(98, 14)
+        Me.lblAttention.TabIndex = 15
+        Me.lblAttention.Text = "Needs Attention"
+        Me.lblAttention.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
-        'Label12
+        'lblOverdue
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(26, 53)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(30, 31)
-        Me.Label12.TabIndex = 14
-        Me.Label12.Text = "2"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lblOverdue.AutoSize = True
+        Me.lblOverdue.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOverdue.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblOverdue.Location = New System.Drawing.Point(26, 53)
+        Me.lblOverdue.Name = "lblOverdue"
+        Me.lblOverdue.Size = New System.Drawing.Size(30, 31)
+        Me.lblOverdue.TabIndex = 14
+        Me.lblOverdue.Text = "2"
+        Me.lblOverdue.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Label13
         '
@@ -145,7 +148,7 @@ Partial Class UC_dashboard
         '
         Me.RoundedPanel3.BackColor = System.Drawing.Color.White
         Me.RoundedPanel3.Controls.Add(Me.Label11)
-        Me.RoundedPanel3.Controls.Add(Me.Label9)
+        Me.RoundedPanel3.Controls.Add(Me.lblBooksIssued)
         Me.RoundedPanel3.Controls.Add(Me.Label10)
         Me.RoundedPanel3.Location = New System.Drawing.Point(565, 119)
         Me.RoundedPanel3.Name = "RoundedPanel3"
@@ -164,17 +167,17 @@ Partial Class UC_dashboard
         Me.Label11.Text = "Today"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
-        'Label9
+        'lblBooksIssued
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(20, 53)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(30, 31)
-        Me.Label9.TabIndex = 12
-        Me.Label9.Text = "7"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lblBooksIssued.AutoSize = True
+        Me.lblBooksIssued.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBooksIssued.ForeColor = System.Drawing.Color.Black
+        Me.lblBooksIssued.Location = New System.Drawing.Point(20, 53)
+        Me.lblBooksIssued.Name = "lblBooksIssued"
+        Me.lblBooksIssued.Size = New System.Drawing.Size(30, 31)
+        Me.lblBooksIssued.TabIndex = 12
+        Me.lblBooksIssued.Text = "7"
+        Me.lblBooksIssued.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Label10
         '
@@ -191,7 +194,8 @@ Partial Class UC_dashboard
         'RoundedPanel2
         '
         Me.RoundedPanel2.BackColor = System.Drawing.Color.White
-        Me.RoundedPanel2.Controls.Add(Me.Label8)
+        Me.RoundedPanel2.Controls.Add(Me.lblTotalStudents)
+        Me.RoundedPanel2.Controls.Add(Me.lblUpdateTotalStudents)
         Me.RoundedPanel2.Controls.Add(Me.Label5)
         Me.RoundedPanel2.Controls.Add(Me.Label6)
         Me.RoundedPanel2.Location = New System.Drawing.Point(295, 119)
@@ -199,17 +203,29 @@ Partial Class UC_dashboard
         Me.RoundedPanel2.Size = New System.Drawing.Size(232, 143)
         Me.RoundedPanel2.TabIndex = 8
         '
-        'Label8
+        'lblTotalStudents
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(21, 100)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(79, 14)
-        Me.Label8.TabIndex = 10
-        Me.Label8.Text = "+5 this week"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lblTotalStudents.AutoSize = True
+        Me.lblTotalStudents.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalStudents.ForeColor = System.Drawing.Color.Black
+        Me.lblTotalStudents.Location = New System.Drawing.Point(23, 53)
+        Me.lblTotalStudents.Name = "lblTotalStudents"
+        Me.lblTotalStudents.Size = New System.Drawing.Size(30, 31)
+        Me.lblTotalStudents.TabIndex = 13
+        Me.lblTotalStudents.Text = "7"
+        Me.lblTotalStudents.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        '
+        'lblUpdateTotalStudents
+        '
+        Me.lblUpdateTotalStudents.AutoSize = True
+        Me.lblUpdateTotalStudents.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUpdateTotalStudents.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblUpdateTotalStudents.Location = New System.Drawing.Point(21, 100)
+        Me.lblUpdateTotalStudents.Name = "lblUpdateTotalStudents"
+        Me.lblUpdateTotalStudents.Size = New System.Drawing.Size(79, 14)
+        Me.lblUpdateTotalStudents.TabIndex = 10
+        Me.lblUpdateTotalStudents.Text = "+5 this week"
+        Me.lblUpdateTotalStudents.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Label5
         '
@@ -218,9 +234,8 @@ Partial Class UC_dashboard
         Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(17, 53)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(46, 31)
+        Me.Label5.Size = New System.Drawing.Size(0, 31)
         Me.Label5.TabIndex = 10
-        Me.Label5.Text = "53"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Label6
@@ -238,37 +253,36 @@ Partial Class UC_dashboard
         'RoundedPanel1
         '
         Me.RoundedPanel1.BackColor = System.Drawing.Color.White
-        Me.RoundedPanel1.Controls.Add(Me.Label7)
-        Me.RoundedPanel1.Controls.Add(Me.Label4)
+        Me.RoundedPanel1.Controls.Add(Me.lblUpdateTotalBooks)
+        Me.RoundedPanel1.Controls.Add(Me.lblTotalBooks)
         Me.RoundedPanel1.Controls.Add(Me.Label1)
         Me.RoundedPanel1.Location = New System.Drawing.Point(32, 119)
         Me.RoundedPanel1.Name = "RoundedPanel1"
         Me.RoundedPanel1.Size = New System.Drawing.Size(232, 143)
         Me.RoundedPanel1.TabIndex = 7
         '
-        'Label7
+        'lblUpdateTotalBooks
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(25, 100)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(86, 14)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "+14 this week"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lblUpdateTotalBooks.AutoSize = True
+        Me.lblUpdateTotalBooks.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUpdateTotalBooks.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblUpdateTotalBooks.Location = New System.Drawing.Point(25, 100)
+        Me.lblUpdateTotalBooks.Name = "lblUpdateTotalBooks"
+        Me.lblUpdateTotalBooks.Size = New System.Drawing.Size(86, 14)
+        Me.lblUpdateTotalBooks.TabIndex = 9
+        Me.lblUpdateTotalBooks.Text = "+14 this week"
+        Me.lblUpdateTotalBooks.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
-        'Label4
+        'lblTotalBooks
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(19, 53)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(87, 31)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "1,415"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lblTotalBooks.AutoSize = True
+        Me.lblTotalBooks.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalBooks.ForeColor = System.Drawing.Color.Black
+        Me.lblTotalBooks.Location = New System.Drawing.Point(19, 53)
+        Me.lblTotalBooks.Name = "lblTotalBooks"
+        Me.lblTotalBooks.Size = New System.Drawing.Size(0, 31)
+        Me.lblTotalBooks.TabIndex = 8
+        Me.lblTotalBooks.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Label1
         '
@@ -281,6 +295,11 @@ Partial Class UC_dashboard
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Total Books"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'UC_dashboard
         '
@@ -317,18 +336,20 @@ Partial Class UC_dashboard
     Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents RoundedPanel3 As RoundedPanel
     Friend WithEvents RoundedPanel4 As RoundedPanel
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblTotalBooks As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents lblUpdateTotalStudents As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label12 As Label
+    Friend WithEvents lblUpdateTotalBooks As Label
+    Friend WithEvents lblOverdue As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label9 As Label
+    Friend WithEvents lblBooksIssued As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label14 As Label
+    Friend WithEvents lblAttention As Label
     Friend WithEvents RoundedPanel5 As RoundedPanel
     Friend WithEvents Label15 As Label
+    Friend WithEvents lblTotalStudents As Label
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class

@@ -1,89 +1,201 @@
-﻿Public Class Login_Panel
-    Private Sub TableLayoutPanel2_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel2.Paint
+﻿Imports System.Data.OleDb
 
+Public Class Login_Panel
+    ' Keep track of current user session
+    Public Shared Property CurrentUser As Account = Nothing
+
+    Private Sub Login_Panel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Center form
+        Me.StartPosition = FormStartPosition.CenterScreen
+
+        ' Populate role combo box
+        cmbRole.Items.Clear()
+        cmbRole.Items.Add("Librarian")
+        cmbRole.Items.Add("Student")
+        cmbRole.SelectedIndex = 0
+
+        ' Hide error
+        lblError.Text = ""
+        lblError.Visible = False
+
+        ' Mask password
+        txtPassword.UseSystemPasswordChar = True
+
+        ' Clear fields
+        txtUsername.Clear()
+        txtPassword.Clear()
+        txtUsername.Focus()
+        LoadDashboardStats()
     End Sub
 
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        ' Hardcoded credentials
-        Dim librarianUser As String = "admin"
-        Dim librarianPass As String = "12345"
 
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         ' Clear previous error
         lblError.Text = ""
         lblError.Visible = False
 
-        ' Check role first
+        ' Validate inputs
         If cmbRole.SelectedItem Is Nothing Then
-            lblError.Text = "⚠ Please select a role."
-            lblError.Visible = True
+            ShowError("Please select a role.")
+            Return
+        End If
+
+        If String.IsNullOrWhiteSpace(txtUsername.Text) Then
+            ShowError("Please enter your User ID.")
+            txtUsername.Focus()
+            Return
+        End If
+
+        If String.IsNullOrWhiteSpace(txtPassword.Text) Then
+            ShowError("Please enter your password.")
+            txtPassword.Focus()
             Return
         End If
 
         Dim selectedRole As String = cmbRole.SelectedItem.ToString()
+        Dim isLibrarianLogin As Boolean = (selectedRole = "Librarian")
 
-        If selectedRole = "Librarian" Then
-            ' Validate credentials
-            If txtUsername.Text = librarianUser AndAlso txtPassword.Text = librarianPass Then
-                ' Success
-                Dim dashboard As New Admin_Main_Panel()
-                dashboard.StartPosition = FormStartPosition.CenterScreen
-                dashboard.Show()
+        btnLogin.Enabled = False
+        btnLogin.Text = "Signing in..."
 
-                ' Close login form completely
-                Me.Hide()
-            Else
-                lblError.Text = "❌ Invalid librarian username or password."
-                lblError.Visible = True
-            End If
+        Try
+            Using con As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\xx\Source\Repos\Library-Management-App\Database\Library.accdb;")
+                con.Open()
+                Dim cmd As OleDbCommand
+                Dim reader As OleDbDataReader
 
-        ElseIf selectedRole = "User" Then
-            lblError.Text = "ℹ User login not yet implemented."
-            lblError.Visible = True
-        End If
+                If isLibrarianLogin Then
+                    ' Librarian/Admin login
+                    cmd = New OleDbCommand("SELECT * FROM Accounts WHERE Username=@Username", con)
+                    cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim())
+                    reader = cmd.ExecuteReader()
 
+                    If reader.Read() Then
+                        Dim storedHash As String = reader("PasswordHash").ToString()
+                        If Account.HashPassword(txtPassword.Text) = storedHash Then
+                            ' Build account object
+                            Dim acc As New Account()
+                            acc.AccountID = Convert.ToInt32(reader("AccountID"))
+                            acc.Username = reader("Username").ToString()
+                            acc.PasswordHash = storedHash
+                            acc.Email = reader("Email").ToString()
+                            acc.IsAdmin = True
+                            acc.RecordLogin()
+
+                            CurrentUser = acc
+                            OpenAdminDashboard()
+                        Else
+                            ShowError("Invalid password.")
+                        End If
+                    Else
+                        ShowError("Username not found.")
+                    End If
+                    reader.Close()
+
+                Else
+                    ' Student login
+                    cmd = New OleDbCommand("SELECT * FROM Students WHERE StudentID=@StudentID AND [Password]=@Password", con)
+                    cmd.Parameters.AddWithValue("@StudentID", txtUsername.Text.Trim())
+                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text)
+                    reader = cmd.ExecuteReader()
+
+                    If reader.Read() Then
+                        ' Build account object for student
+                        Dim student As New Account()
+                        student.AccountID = Convert.ToInt32(reader("ID"))
+                        student.Username = reader("StudentID").ToString()
+                        student.FirstName = reader("FirstName").ToString()
+                        student.LastName = reader("LastName").ToString()
+                        student.Email = reader("Email").ToString()
+                        student.IsAdmin = False
+                        student.RecordLogin()
+
+                        CurrentUser = student
+                        OpenStudentDashboard()
+                    Else
+                        ShowError("Invalid student ID or password.")
+                    End If
+                    reader.Close()
+                End If
+            End Using
+        Catch ex As Exception
+            ShowError($"Login error: {ex.Message}")
+        Finally
+            btnLogin.Enabled = True
+            btnLogin.Text = "Sign In"
+        End Try
     End Sub
 
+    ' Opens the admin dashboard (placeholder)
+    Private Sub OpenAdminDashboard()
+        Try
+            Dim dashboard As New Admin_Main_Panel()
+            dashboard.StartPosition = FormStartPosition.CenterScreen
+            dashboard.Show()
+            Me.Hide()
+        Catch ex As Exception
+            ShowError($"Error opening admin dashboard: {ex.Message}")
+        End Try
+    End Sub
+
+    ' Opens the student dashboard
+    Private Sub OpenStudentDashboard()
+        Try
+            Dim dashboard As New User_Main_Panel()
+            dashboard.StartPosition = FormStartPosition.CenterScreen
+            dashboard.Show()
+            Me.Hide()
+        Catch ex As Exception
+            ShowError($"Error opening student dashboard: {ex.Message}")
+        End Try
+    End Sub
+
+    ' Toggle password visibility
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If CheckBox1.Checked Then
-            ' Show the password as plain text
-            txtPassword.UseSystemPasswordChar = False
-        Else
-            ' Mask the password with bullets
-            txtPassword.UseSystemPasswordChar = True
-        End If
+        txtPassword.UseSystemPasswordChar = Not CheckBox1.Checked
     End Sub
 
-    Private Sub lblForgotPassword_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lblForgotPassword.LinkClicked
-        ' Clear previous error
-        lblError.Text = ""
-        lblError.Visible = False
-
-        ' Check if a role is selected
-        If cmbRole.SelectedItem Is Nothing Then
-            lblError.Text = "⚠ Please select a role first to reset password."
-            lblError.Visible = True
-            Return
-        End If
-
-        ' Get selected role (normalize text)
-        Dim selectedRole As String = cmbRole.SelectedItem.ToString().Trim().ToLower()
-
-        If selectedRole = "librarian" Then
-            lblError.Text = "ℹ Password reset option for Librarian is not implemented yet."
-            lblError.Visible = True
-        ElseIf selectedRole = "user" Then
-            lblError.Text = "ℹ Password reset option for User is not implemented yet."
-            lblError.Visible = True
-        End If
+    ' Helper methods
+    Private Sub ShowError(message As String)
+        lblError.Text = message
+        lblError.Visible = True
+        lblError.ForeColor = Color.Red
     End Sub
 
-    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
-        ' Open the Sign Up panel
-        Dim signupForm As New SignUp_Panel()
-        signupForm.StartPosition = FormStartPosition.CenterScreen
-        signupForm.Show()
+    Private Sub ClearLoginForm()
+        txtUsername.Clear()
+        txtPassword.Clear()
+        CheckBox1.Checked = False
+        txtUsername.Focus()
+    End Sub
 
-        ' Close the login form completely
-        Me.Hide()
+    ' Handle Enter key
+    Private Sub txtUsername_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUsername.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then e.Handled = True : txtPassword.Focus()
+    End Sub
+    Private Sub txtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPassword.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then e.Handled = True : btnLogin.PerformClick()
+    End Sub
+
+    Private Sub LoadDashboardStats()
+        Try
+            ' Total books
+            Dim totalBooks As Integer = Convert.ToInt32(DatabaseConnection.Instance.ExecuteScalar(
+                "SELECT COUNT(*) FROM Books"))
+            lblTotalNumberofBooks.Text = totalBooks.ToString()
+
+            ' Total members
+            Dim totalMembers As Integer = Convert.ToInt32(DatabaseConnection.Instance.ExecuteScalar(
+                "SELECT COUNT(*) FROM Students"))
+            lblTotalNumberofMembers.Text = totalMembers.ToString()
+
+            ' Total due today
+            Dim totalDueToday As Integer = Convert.ToInt32(DatabaseConnection.Instance.ExecuteScalar(
+                "SELECT COUNT(*) FROM BorrowedBooks WHERE ReturnDate = Date()"))
+            lblTotalNumberofDueToday.Text = totalDueToday.ToString()
+
+        Catch ex As Exception
+            MessageBox.Show("Error loading dashboard stats: " & ex.Message)
+        End Try
     End Sub
 End Class
