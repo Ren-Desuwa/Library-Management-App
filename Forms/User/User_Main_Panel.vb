@@ -42,4 +42,16 @@
     Private Sub lnkSettings_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkSettings.LinkClicked
         LoadControl(New UC_user_settings())
     End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lblUserShowId.Click
+
+    End Sub
+
+    Private Sub User_Main_Panel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Login_Panel.CurrentUser IsNot Nothing AndAlso Not Login_Panel.CurrentUser.IsAdmin Then
+            lblUserShowId.Text = Login_Panel.CurrentUser.Username
+        Else
+            lblUserShowId.Text = "Unknown ID"
+        End If
+    End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UC_user_dashboard
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,10 @@ Partial Class UC_user_dashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblWelcomeName = New System.Windows.Forms.Label()
         Me.RoundedPanel5 = New Library_Management_App.RoundedPanel()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.RoundedPanel4 = New Library_Management_App.RoundedPanel()
@@ -61,16 +61,16 @@ Partial Class UC_user_dashboard
         Me.Label2.Text = "Manage your borrowed books and explore the catalog."
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
-        'Label3
+        'lblWelcomeName
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(26, 27)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(171, 24)
-        Me.Label3.TabIndex = 10
-        Me.Label3.Text = "Welcome, Name!"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.lblWelcomeName.AutoSize = True
+        Me.lblWelcomeName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWelcomeName.Location = New System.Drawing.Point(26, 27)
+        Me.lblWelcomeName.Name = "lblWelcomeName"
+        Me.lblWelcomeName.Size = New System.Drawing.Size(171, 24)
+        Me.lblWelcomeName.TabIndex = 10
+        Me.lblWelcomeName.Text = "Welcome, Name!"
+        Me.lblWelcomeName.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'RoundedPanel5
         '
@@ -292,7 +292,7 @@ Partial Class UC_user_dashboard
         Me.Controls.Add(Me.RoundedPanel2)
         Me.Controls.Add(Me.RoundedPanel1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblWelcomeName)
         Me.Name = "UC_user_dashboard"
         Me.Size = New System.Drawing.Size(1130, 713)
         Me.RoundedPanel5.ResumeLayout(False)
@@ -329,5 +329,5 @@ Partial Class UC_user_dashboard
     Friend WithEvents Label4 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblWelcomeName As Label
 End Class
