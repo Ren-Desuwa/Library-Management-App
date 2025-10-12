@@ -14,6 +14,9 @@
     End Sub
 
     ' When you click the Dashboard link
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
+        LoadControl(New UC_dashboard())
+    End Sub
     Private Sub lnkDashboard_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkDashboard.LinkClicked
         LoadControl(New UC_dashboard())
     End Sub
@@ -23,7 +26,7 @@
     End Sub
 
     Private Sub lnkMember_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkMember.LinkClicked
-        LoadControl(New UC_members())
+        LoadControl(New UC_Members())
     End Sub
 
     Private Sub lnkTransactions_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkTransactions.LinkClicked
@@ -65,4 +68,19 @@
         LoadControl(New UC_settings())
     End Sub
 
+    Private Sub TableLayoutPanel3_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+
+    End Sub
+
+    Private Sub TableLayoutPanel3_Paint_1(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel3.Paint
+
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
+
+    End Sub
 End Class
