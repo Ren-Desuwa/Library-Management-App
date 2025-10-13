@@ -2,12 +2,19 @@
 Imports System.Security.Cryptography
 Imports System.Text
 
+Public Enum Type
+    Visitor = 0
+    User = 1
+    Librarian = 2
+    Admin = 3
+End Enum
+
 Public Class Account
     Private _accountID As Integer
     Private _username As String
     Private _passwordHash As String
     Private _email As String
-    Private _isAdmin As Boolean
+    Private _Type As Type
     Private _createdDate As Date
     Private _lastLoginDate As Date?
 
@@ -53,12 +60,12 @@ Public Class Account
         End Set
     End Property
 
-    Public Property IsAdmin As Boolean
+    Public Property Type As Type
         Get
-            Return _isAdmin
+            Return _Type
         End Get
-        Friend Set(value As Boolean)
-            _isAdmin = value
+        Friend Set(value As Type)
+            _Type = value
         End Set
     End Property
 
@@ -107,17 +114,28 @@ Public Class Account
 
     Public ReadOnly Property AccountType As String
         Get
-            Return If(_isAdmin, "Admin", "User")
+            Select Case _Type
+                Case Type.Visitor
+                    Return "Visitor"
+                Case Type.User
+                    Return "User"
+                Case Type.Librarian
+                    Return "Librarian"
+                Case Type.Admin
+                    Return "Admin"
+                Case Else
+                    Return "NULL"
+            End Select
         End Get
     End Property
 
     Public Sub New()
     End Sub
 
-    Public Sub New(username As String, password As String, email As String, isAdmin As Boolean)
+    Public Sub New(username As String, password As String, email As String, type As Type)
         Me.Username = username
         Me.Email = email
-        Me.IsAdmin = isAdmin
+        Me.Type = type
         SetPassword(password)
         _createdDate = Date.Now
     End Sub
@@ -150,6 +168,6 @@ Public Class Account
     End Function
 
     Public Overrides Function ToString() As String
-        Return $"{Username} ({AccountType}) - ID: {AccountID}"
+        Return $"{Username} ({Type}) - ID: {AccountID}"
     End Function
 End Class

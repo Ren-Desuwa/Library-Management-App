@@ -62,13 +62,28 @@ Public Class Login_Panel
             Dim username = txtUsername.Text.Trim()
             Dim password = txtPassword.Text
 
-            If LibraryDatabase.Instance.Accounts.Authenticate(username, password) IsNot Nothing Then
+            Dim acc As Account = LibraryDatabase.Instance.Accounts.Authenticate(username, password)
+            If acc IsNot Nothing Then
                 If isLibrarianLogin Then
-
+                    If acc.Type = Type.Admin Then
+                        acc.RecordLogin()
+                        CurrentUser = acc
+                        OpenAdminDashboard()
+                    Else
+                        ShowError("This account is not a librarian.")
+                    End If
+                Else
+                    ' Student login
+                    If Not acc.Type = Type.User Then
+                        acc.RecordLogin()
+                        CurrentUser = acc
+                        OpenStudentDashboard()
+                    Else
+                        ShowError("This account is not a student.")
+                    End If
                 End If
-
             Else
-                ShowError("Invalid student ID or password.")
+                ShowError("Invalid username or password.")
             End If
         Catch ex As Exception
             ShowError($"Login error: {ex.Message}")
@@ -76,62 +91,8 @@ Public Class Login_Panel
             btnLogin.Enabled = True
             btnLogin.Text = "Sign In"
         End Try
-
-
-        Try
-
-
-
-            If isLibrarianLogin Then
-
-
-                If reader.Read() Then
-
-                    acc.RecordLogin()
-
-                            CurrentUser = acc
-                            OpenAdminDashboard()
-                        Else
-                            ShowError("Invalid password.")
-                        End If
-                    Else
-                        ShowError("Username not found.")
-                    End If
-                    reader.Close()
-
-                Else
-                    ' Student login
-                    cmd = New OleDbCommand("SELECT * FROM Students WHERE StudentID=@StudentID AND [Password]=@Password", con)
-                    cmd.Parameters.AddWithValue("@StudentID", txtUsername.Text.Trim())
-                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text)
-                    reader = cmd.ExecuteReader()
-
-                    If reader.Read() Then
-                        ' Build account object for student
-                        Dim student As New Account()
-                        student.AccountID = Convert.ToInt32(reader("ID"))
-                        student.Username = reader("StudentID").ToString()
-                        student.FirstName = reader("FirstName").ToString()
-                        student.LastName = reader("LastName").ToString()
-                        student.Email = reader("Email").ToString()
-                        student.IsAdmin = False
-                        student.RecordLogin()
-
-                        CurrentUser = student
-                        OpenStudentDashboard()
-                    Else
-                        ShowError("Invalid student ID or password.")
-                    End If
-                    reader.Close()
-                End If
-            End Using
-        Catch ex As Exception
-            ShowError($"Login error: {ex.Message}")
-        Finally
-            btnLogin.Enabled = True
-            btnLogin.Text = "Sign In"
-        End Try
     End Sub
+
 
     ' Opens the admin dashboard (placeholder)
     Private Sub OpenAdminDashboard()
