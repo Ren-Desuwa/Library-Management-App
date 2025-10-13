@@ -8,9 +8,10 @@
 
     ' Reusable method to load any UserControl into PanelMain
     Private Sub LoadControl(ctrl As UserControl)
-        PanelContent.Controls.Clear()
-        ctrl.Dock = DockStyle.Fill
-        PanelContent.Controls.Add(ctrl)
+        'MAY ERROR DITO
+        'PanelContent.Controls.Clear()
+        'ctrl.Dock = DockStyle.Fill
+        'PanelContent.Controls.Add(ctrl)
     End Sub
 
     ' When you click the Dashboard link
@@ -83,4 +84,6 @@
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
 
     End Sub
+
+
 End Class

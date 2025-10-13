@@ -15,7 +15,7 @@ Public Class AccountDatabase
                 Username TEXT(50) NOT NULL UNIQUE,
                 PasswordHash TEXT(255) NOT NULL,
                 Email TEXT(100) NOT NULL UNIQUE,
-                IsAdmin YESNO NOT NULL,
+                Type NUMBER NOT NULL,
                 CreatedDate DATETIME NOT NULL,
                 LastLoginDate DATETIME
             )"
@@ -36,10 +36,10 @@ Public Class AccountDatabase
     End Sub
 
     ' Create Account
-    Public Function CreateAccount(username As String, password As String, email As String, isAdmin As Boolean) As Integer
+    Public Function CreateAccount(username As String, password As String, email As String, type As Type) As Integer
         Try
             Dim passwordHash = Account.HashPassword(password)
-            Dim query = "INSERT INTO Accounts (Username, PasswordHash, Email, IsAdmin, CreatedDate) VALUES (?, ?, ?, ?, ?)"
+            Dim query = "INSERT INTO Accounts (Username, PasswordHash, Email, Type, CreatedDate) VALUES (?, ?, ?, ?, ?)"
 
             _dbConnection.OpenConnection()
             Try
@@ -47,7 +47,7 @@ Public Class AccountDatabase
                     cmd.Parameters.AddWithValue("@Username", username)
                     cmd.Parameters.AddWithValue("@PasswordHash", passwordHash)
                     cmd.Parameters.AddWithValue("@Email", email)
-                    cmd.Parameters.AddWithValue("@IsAdmin", isAdmin)
+                    cmd.Parameters.AddWithValue("@Type", type)
                     cmd.Parameters.AddWithValue("@CreatedDate", Date.Now)
 
                     cmd.ExecuteNonQuery()
@@ -273,7 +273,7 @@ Public Class AccountDatabase
         Dim users As New List(Of Account)()
 
         Try
-            Dim query = "SELECT * FROM Accounts WHERE IsAdmin = False ORDER BY Username"
+            Dim query = "SELECT * FROM Accounts WHERE Type = 1 ORDER BY Username"
 
             _dbConnection.OpenConnection()
             Try
@@ -299,7 +299,7 @@ Public Class AccountDatabase
         Dim admins As New List(Of Account)()
 
         Try
-            Dim query = "SELECT * FROM Accounts WHERE IsAdmin = True ORDER BY Username"
+            Dim query = "SELECT * FROM Accounts WHERE Type = 3 ORDER BY Username"
 
             _dbConnection.OpenConnection()
             Try
@@ -434,7 +434,7 @@ Public Class AccountDatabase
         account.Username = reader("Username").ToString()
         account.PasswordHash = reader("PasswordHash").ToString()
         account.Email = reader("Email").ToString()
-        account.IsAdmin = Convert.ToBoolean(reader("IsAdmin"))
+        account.Type = reader("Type").ToString()
         account.CreatedDate = Convert.ToDateTime(reader("CreatedDate"))
 
         If Not IsDBNull(reader("LastLoginDate")) Then
