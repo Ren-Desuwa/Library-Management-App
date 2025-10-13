@@ -25,7 +25,6 @@ Public Class Login_Panel
         txtUsername.Clear()
         txtPassword.Clear()
         txtUsername.Focus()
-        LoadDashboardStats()
     End Sub
 
 
@@ -145,25 +144,19 @@ Public Class Login_Panel
         If e.KeyChar = ChrW(Keys.Enter) Then e.Handled = True : btnLogin.PerformClick()
     End Sub
 
-    Private Sub LoadDashboardStats()
-        Try
-            ' Total books
-            Dim totalBooks As Integer = Convert.ToInt32(DatabaseConnection.Instance.ExecuteScalar(
-                "SELECT COUNT(*) FROM Books"))
-            lblTotalNumberofBooks.Text = totalBooks.ToString()
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
-            ' Total members
-            Dim totalMembers As Integer = Convert.ToInt32(DatabaseConnection.Instance.ExecuteScalar(
-                "SELECT COUNT(*) FROM Students"))
-            lblTotalNumberofMembers.Text = totalMembers.ToString()
+    End Sub
 
-            ' Total due today
-            Dim totalDueToday As Integer = Convert.ToInt32(DatabaseConnection.Instance.ExecuteScalar(
-                "SELECT COUNT(*) FROM BorrowedBooks WHERE ReturnDate = Date()"))
-            lblTotalNumberofDueToday.Text = totalDueToday.ToString()
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
-        Catch ex As Exception
-            MessageBox.Show("Error loading dashboard stats: " & ex.Message)
-        End Try
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
     End Sub
 End Class
