@@ -81,11 +81,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Account.vb" />
+    <Compile Include="Classes\Announcement.vb" />
     <Compile Include="Classes\Book.vb" />
     <Compile Include="Classes\Books.vb" />
+    <Compile Include="Classes\Notification.vb" />
+    <Compile Include="Classes\Transaction.vb" />
     <Compile Include="Database\AccountDatabase.vb" />
+    <Compile Include="Database\AnnouncementDatabase.vb" />
     <Compile Include="Database\BookDatabase.vb" />
     <Compile Include="Database\LibraryDatabase.vb" />
+    <Compile Include="Database\NotificationDatabase.vb" />
+    <Compile Include="Database\TransactionDatabase.vb" />
     <Compile Include="Forms\Admin\Admin_Main_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\Librarian\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\Library.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
