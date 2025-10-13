@@ -48,11 +48,17 @@
     <OptionInfer>Off</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -80,11 +86,29 @@
     <Compile Include="Database\AccountDatabase.vb" />
     <Compile Include="Database\BookDatabase.vb" />
     <Compile Include="Database\LibraryDatabase.vb" />
-    <Compile Include="Forms\Admin\Admin_Main_Panel.vb">
+    <Compile Include="Forms\User\AllAnnouncements.Designer.vb">
+      <DependentUpon>AllAnnouncements.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\AllAnnouncements.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\Admin_Main_Panel.Designer.vb">
-      <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
+    <Compile Include="Forms\User\SearchBooks.Designer.vb">
+      <DependentUpon>SearchBooks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\SearchBooks.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\StudentDashboard.Designer.vb">
+      <DependentUpon>StudentDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\StudentDashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Student_Main_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Student_Main_Panel.Designer.vb">
+      <DependentUpon>Student_Main_Panel.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Database\DatabaseConnection.vb" />
@@ -151,21 +175,15 @@
     <Compile Include="Forms\User\UC_search_books.Designer.vb">
       <DependentUpon>UC_search_books.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\UC_search_books.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Forms\User\UC_search_books.vb" />
     <Compile Include="Forms\User\UC_user_dashboard.Designer.vb">
       <DependentUpon>UC_user_dashboard.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\UC_user_dashboard.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Forms\User\UC_user_dashboard.vb" />
     <Compile Include="Forms\User\UC_user_history.Designer.vb">
       <DependentUpon>UC_user_history.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\UC_user_history.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Forms\User\UC_user_history.vb" />
     <Compile Include="Forms\User\UC_user_settings.Designer.vb">
       <DependentUpon>UC_user_settings.vb</DependentUpon>
     </Compile>
@@ -175,9 +193,7 @@
     <Compile Include="Forms\User\User_Main_Panel.Designer.vb">
       <DependentUpon>User_Main_Panel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\User_Main_Panel.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\User\User_Main_Panel.vb" />
     <Compile Include="LibraryDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,8 +220,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\Admin\Admin_Main_Panel.resx">
-      <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\User\AllAnnouncements.resx">
+      <DependentUpon>AllAnnouncements.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\SearchBooks.resx">
+      <DependentUpon>SearchBooks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\StudentDashboard.resx">
+      <DependentUpon>StudentDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\Student_Main_Panel.resx">
+      <DependentUpon>Student_Main_Panel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\UC_books.resx">
       <DependentUpon>UC_books.vb</DependentUpon>
@@ -278,7 +303,82 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\History.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search Books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\History1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search Books1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\History2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search Books2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SB BLACK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SB WHITE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-avatar-icon-profile-icon-member-login-vector-isolated-png-image_1978396.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borrowed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Items.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Read.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
