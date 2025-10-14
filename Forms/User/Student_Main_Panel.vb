@@ -14,7 +14,7 @@
 
     End Sub
 
-    Private Sub Guna2ControlBox3_Click(sender As Object, e As EventArgs) Handles Guna2ControlBox3.Click
+    Private Sub Guna2ControlBox3_Click(sender As Object, e As EventArgs)
 
     End Sub
 

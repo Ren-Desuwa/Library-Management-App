@@ -2,6 +2,7 @@
 Imports System.IO
 Imports System.Drawing
 Imports System.Windows.Forms ' Used for various WinForms types
+Imports Guna.UI2.WinForms ' Required for Guna2Button and other Guna controls
 
 Public Class SearchBooks
 
@@ -11,7 +12,6 @@ Public Class SearchBooks
 
     ' !!! CRITICAL FIX: REPLACE THE PATH BELOW WITH YOUR ACTUAL, ABSOLUTE PATH !!!
     Private Const DB_FILE_PATH As String = "C:\Users\xx\Downloads\TestDB.accdb"
-
     Private Const CONNECTION_STRING As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & DB_FILE_PATH
 
     ' === 2. Global State Variables for PAGING ===
@@ -38,8 +38,8 @@ Public Class SearchBooks
 
     ' === 4. Calculate Total Results (Run once at startup) ===
     Private Sub CalculateTotalResults()
-        ' NOTE: COUNT(*) is used instead of COUNT(BookID) for robustness
-        Dim sqlCount As String = "SELECT COUNT(*) FROM Books"
+        ' MODIFIED: Use the correct table name (BookDetails)
+        Dim sqlCount As String = "SELECT COUNT(*) FROM BookDetails"
 
         Using conn As New OleDbConnection(CONNECTION_STRING)
             Using cmd As New OleDbCommand(sqlCount, conn)
@@ -102,9 +102,8 @@ Public Class SearchBooks
         End If
 
         ' --- 5B. Construct and Execute the SQL Query ---
-        ' NOTE: We are intentionally NOT selecting the Attachment column here.
-        ' We will load it separately for each row using a nested query (5C).
-        Dim query As String = $"SELECT TOP {ROWS_PER_PAGE} BookID, Title, Author, Status FROM Books WHERE BookID > {startID} ORDER BY BookID ASC"
+        ' MODIFIED: Use BookDetails table and select BookID, Title, Author, Status
+        Dim query As String = $"SELECT TOP {ROWS_PER_PAGE} BookID, Title, Author, Status FROM BookDetails WHERE BookID > {startID} ORDER BY BookID ASC"
 
         Using conn As New OleDbConnection(CONNECTION_STRING)
             Using cmd As New OleDbCommand(query, conn)
@@ -131,18 +130,17 @@ Public Class SearchBooks
                 Dim bookID As Integer = CInt(row("BookID"))
 
                 ' ===================================================================
-                ' === ATTACHMENT RETRIEVAL LOGIC (Replaces OLE Stripping) ===
+                ' === ATTACHMENT RETRIEVAL LOGIC (Uses BookDetails.CoverImage) ===
                 ' ===================================================================
                 Try
-                    ' The attachment sub-table is automatically named based on the table and column.
-                    Dim attachmentQuery As String = $"SELECT FileData FROM Books.CoverImage WHERE ParentID = {bookID}"
+                    ' The attachment sub-table is named BookDetails.CoverImage
+                    Dim attachmentQuery As String = $"SELECT FileData FROM BookDetails.CoverImage WHERE ParentID = {bookID}"
 
                     Using attachmentConn As New OleDbConnection(CONNECTION_STRING)
                         attachmentConn.Open()
                         Using attachmentCmd As New OleDbCommand(attachmentQuery, attachmentConn)
                             Using reader As OleDbDataReader = attachmentCmd.ExecuteReader()
                                 If reader.Read() Then
-                                    ' Read the raw file data (the image bytes)
                                     Dim rawImageBytes As Byte() = DirectCast(reader("FileData"), Byte())
 
                                     If rawImageBytes IsNot Nothing AndAlso rawImageBytes.Length > 0 Then
@@ -155,19 +153,20 @@ Public Class SearchBooks
                         End Using
                     End Using
                 Catch ex As Exception
-                    ' This MessageBox will now show the correct file path error if DB_FILE_PATH is wrong.
                     MessageBox.Show($"Error loading attachment for BookID {bookID}: {ex.Message}", "Attachment Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End Try
                 ' ===================================================================
 
                 ' Populate Grid
+                ' IMPORTANT: Ensure colBookID is the last (hidden) column in your DataGridView designer
                 Guna2DataGridView1.Rows.Add(New Object() {
-                    bookCoverImage,               ' Index 0: Cover Column
-                    row("Title").ToString(),
-                    row("Author").ToString(),
-                    row("Status").ToString(),
-                    Nothing ' Action Column
-                })
+    bookCoverImage,                       ' Index 0: Cover Column
+    bookID,                               ' Index 1: BookID (Hidden column)
+    row("Title").ToString(),              ' Index 2: Title Column
+    row("Author").ToString(),             ' Index 3: Author Column
+    row("Status").ToString(),             ' Index 4: Status Column
+    Nothing                               ' Index 5: Action Column (View button)
+})
 
                 currentLastBookID = bookID
             Next
@@ -222,7 +221,7 @@ Public Class SearchBooks
                 AddHandler .Click, AddressOf PageNumber_Click
             End With
             pnlPageNumbers.Controls.Add(btnPage)
-        Next ' <<< FIX: Added missing Next statement for the For loop
+        Next
     End Sub
 
     ' === 7. Navigation Button Handlers (Handles all fixed buttons) ===
@@ -295,11 +294,24 @@ Public Class SearchBooks
         End If
     End Sub
 
-    ' === 9. "View" Button Click Handler (Unchanged) ===
+    ' === 9. "View" Button Click Handler (MODIFIED) ===
     Private Sub Guna2DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Guna2DataGridView1.CellContentClick
+        ' Check if the click was on the "colAction" (View button) column
         If e.RowIndex >= 0 AndAlso Guna2DataGridView1.Columns(e.ColumnIndex).Name = "colAction" Then
-            Dim bookTitle As String = Guna2DataGridView1.Rows(e.RowIndex).Cells("colTitle").Value.ToString()
-            MessageBox.Show($"Viewing details for: {bookTitle}", "Action Clicked", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Try
+                ' Retrieve the BookID from the hidden column (assuming it's named colBookID)
+                Dim bookID As Integer = CInt(Guna2DataGridView1.Rows(e.RowIndex).Cells("colBookID").Value)
+
+                ' Instantiate and show the ViewBooks form
+                Dim viewForm As New ViewBooks()
+                viewForm.LoadBookDetails(bookID)
+                viewForm.ShowDialog()
+
+            Catch ex As Exception
+                MessageBox.Show($"Error retrieving Book ID or opening form: {ex.Message}", "Action Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
         End If
     End Sub
 

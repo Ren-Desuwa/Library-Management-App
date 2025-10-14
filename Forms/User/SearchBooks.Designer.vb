@@ -47,6 +47,7 @@ Partial Class SearchBooks
         Me.btnPrev = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.txtGoToPage = New Guna.UI2.WinForms.Guna2TextBox()
         Me.colCover = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.colBookID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colAuthor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -130,12 +131,11 @@ Partial Class SearchBooks
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(158, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Empty
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.Guna2DataGridView1.ColumnHeadersHeight = 20
         Me.Guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.Guna2DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colCover, Me.colTitle, Me.colAuthor, Me.colStatus, Me.colAction})
+        Me.Guna2DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colCover, Me.colBookID, Me.colTitle, Me.colAuthor, Me.colStatus, Me.colAction})
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -153,7 +153,6 @@ Partial Class SearchBooks
         DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Empty
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Guna2DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.Guna2DataGridView1.RowHeadersVisible = False
@@ -327,6 +326,12 @@ Partial Class SearchBooks
         Me.colCover.Name = "colCover"
         Me.colCover.ReadOnly = True
         '
+        'colBookID
+        '
+        Me.colBookID.HeaderText = "BookID"
+        Me.colBookID.Name = "colBookID"
+        Me.colBookID.Visible = False
+        '
         'colTitle
         '
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -399,6 +404,7 @@ Partial Class SearchBooks
     Friend WithEvents lblTotalResults As Label
     Friend WithEvents btnGoTo As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents colCover As DataGridViewImageColumn
+    Friend WithEvents colBookID As DataGridViewTextBoxColumn
     Friend WithEvents colTitle As DataGridViewTextBoxColumn
     Friend WithEvents colAuthor As DataGridViewTextBoxColumn
     Friend WithEvents colStatus As DataGridViewTextBoxColumn

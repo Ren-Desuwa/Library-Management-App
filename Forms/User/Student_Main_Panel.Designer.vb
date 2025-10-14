@@ -25,11 +25,11 @@ Partial Class Student_Main_Panel
         Me.components = New System.ComponentModel.Container()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.Guna2ControlBox3 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
@@ -38,14 +38,13 @@ Partial Class Student_Main_Panel
         Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.MainPanel = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
-        Me.Guna2Panel1.SuspendLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Elipse1
@@ -60,23 +59,10 @@ Partial Class Student_Main_Panel
         Me.Guna2ControlBox2.FillColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.Silver
         Me.Guna2ControlBox2.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox2.Location = New System.Drawing.Point(877, 5)
+        Me.Guna2ControlBox2.Location = New System.Drawing.Point(918, 5)
         Me.Guna2ControlBox2.Name = "Guna2ControlBox2"
         Me.Guna2ControlBox2.Size = New System.Drawing.Size(35, 35)
         Me.Guna2ControlBox2.TabIndex = 3
-        '
-        'Guna2ControlBox3
-        '
-        Me.Guna2ControlBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Guna2ControlBox3.Animated = True
-        Me.Guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox
-        Me.Guna2ControlBox3.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2ControlBox3.HoverState.FillColor = System.Drawing.Color.Silver
-        Me.Guna2ControlBox3.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox3.Location = New System.Drawing.Point(918, 5)
-        Me.Guna2ControlBox3.Name = "Guna2ControlBox3"
-        Me.Guna2ControlBox3.Size = New System.Drawing.Size(35, 35)
-        Me.Guna2ControlBox3.TabIndex = 2
         '
         'Guna2ControlBox1
         '
@@ -137,6 +123,21 @@ Partial Class Student_Main_Panel
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(70, 28)
         Me.Guna2HtmlLabel3.TabIndex = 9
         Me.Guna2HtmlLabel3.Text = "Student"
+        '
+        'Guna2CirclePictureBox1
+        '
+        Me.Guna2CirclePictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox1.Image = Global.Library_Management_App.My.Resources.Resources.Settings__1_
+        Me.Guna2CirclePictureBox1.ImageRotate = 0!
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(22, 654)
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(30, 30)
+        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2CirclePictureBox1.TabIndex = 8
+        Me.Guna2CirclePictureBox1.TabStop = False
         '
         'Guna2Button5
         '
@@ -302,39 +303,6 @@ Partial Class Student_Main_Panel
         Me.Guna2HtmlLabel1.TabIndex = 1
         Me.Guna2HtmlLabel1.Text = "Library MS"
         '
-        'Guna2Panel1
-        '
-        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox1)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox2)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox3)
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel1.Location = New System.Drawing.Point(275, 0)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(999, 37)
-        Me.Guna2Panel1.TabIndex = 4
-        '
-        'MainPanel
-        '
-        Me.MainPanel.Location = New System.Drawing.Point(275, 37)
-        Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(999, 713)
-        Me.MainPanel.TabIndex = 5
-        '
-        'Guna2CirclePictureBox1
-        '
-        Me.Guna2CirclePictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox1.Image = Global.Library_Management_App.My.Resources.Resources.Settings__1_
-        Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(22, 654)
-        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
-        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(30, 30)
-        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2CirclePictureBox1.TabIndex = 8
-        Me.Guna2CirclePictureBox1.TabStop = False
-        '
         'Guna2PictureBox1
         '
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
@@ -348,6 +316,23 @@ Partial Class Student_Main_Panel
         Me.Guna2PictureBox1.TabIndex = 0
         Me.Guna2PictureBox1.TabStop = False
         Me.Guna2PictureBox1.UseTransparentBackground = True
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox1)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox2)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel1.Location = New System.Drawing.Point(275, 0)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(999, 37)
+        Me.Guna2Panel1.TabIndex = 4
+        '
+        'MainPanel
+        '
+        Me.MainPanel.Location = New System.Drawing.Point(275, 37)
+        Me.MainPanel.Name = "MainPanel"
+        Me.MainPanel.Size = New System.Drawing.Size(999, 713)
+        Me.MainPanel.TabIndex = 5
         '
         'Student_Main_Panel
         '
@@ -365,15 +350,14 @@ Partial Class Student_Main_Panel
         Me.Text = "Admin Dashboard"
         Me.Guna2CustomGradientPanel1.ResumeLayout(False)
         Me.Guna2CustomGradientPanel1.PerformLayout()
-        Me.Guna2Panel1.ResumeLayout(False)
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
-    Friend WithEvents Guna2ControlBox3 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
