@@ -11,7 +11,7 @@ Public Class SearchBooks
     Private Const MAX_PAGES_IN_WINDOW As Integer = 5
 
     ' !!! CRITICAL FIX: REPLACE THE PATH BELOW WITH YOUR ACTUAL, ABSOLUTE PATH !!!
-    Private Const DB_FILE_PATH As String = "C:\Users\xx\Downloads\TestDB.accdb"
+    Private Const DB_FILE_PATH As String = "C:\Users\xx\source\repos\Library-Management-App\bin\Debug\BookDetails.accdb"
     Private Const CONNECTION_STRING As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & DB_FILE_PATH
 
     ' === 2. Global State Variables for PAGING ===
@@ -216,7 +216,6 @@ Public Class SearchBooks
                     .FillColor = Color.Transparent
                     .ForeColor = Color.Black
                     .BorderColor = Color.LightGray
-                    .BorderThickness = 1
                 End If
                 AddHandler .Click, AddressOf PageNumber_Click
             End With
@@ -272,8 +271,8 @@ Public Class SearchBooks
 
             Select Case statusValue
                 Case "Available"
-                    backColor = Color.FromArgb(170, 255, 170) ' Light Green
-                    foreColor = Color.DarkGreen
+                    backColor = Color.FromArgb(255, 219, 245, 207) ' Light Green
+                    foreColor = Color.FromArgb(255, 55, 124, 38)
                 Case "Checked Out"
                     backColor = Color.FromArgb(220, 220, 220) ' Light Gray
                     foreColor = Color.Black

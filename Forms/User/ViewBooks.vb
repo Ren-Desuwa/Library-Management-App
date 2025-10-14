@@ -6,7 +6,7 @@ Imports System.Windows.Forms ' Required for Forms and controls
 Public Class ViewBooks
 
     ' !!! CRITICAL FIX: REPLACE THE PATH BELOW WITH YOUR ACTUAL, ABSOLUTE PATH !!!
-    Private Const DB_FILE_PATH As String = "C:\Users\xx\Downloads\TestDB.accdb"
+    Private Const DB_FILE_PATH As String = "C:\Users\xx\source\repos\Library-Management-App\TestDB.accdb"
     Private Const CONNECTION_STRING As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & DB_FILE_PATH
 
     ''' <summary>

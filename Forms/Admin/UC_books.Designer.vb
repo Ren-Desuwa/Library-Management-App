@@ -45,11 +45,9 @@ Partial Class UC_books
         Me.btnRemoveBook = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.LibraryDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.LibraryDataSet = New Library_Management_App.LibraryDataSet()
         Me.RoundedPanel1.SuspendLayout()
         CType(Me.dgvBooks, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LibraryDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LibraryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -278,13 +276,10 @@ Partial Class UC_books
         '
         'LibraryDataSetBindingSource
         '
-        Me.LibraryDataSetBindingSource.DataSource = Me.LibraryDataSet
         Me.LibraryDataSetBindingSource.Position = 0
         '
         'LibraryDataSet
         '
-        Me.LibraryDataSet.DataSetName = "LibraryDataSet"
-        Me.LibraryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'UC_books
         '
@@ -299,7 +294,6 @@ Partial Class UC_books
         Me.RoundedPanel1.PerformLayout()
         CType(Me.dgvBooks, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LibraryDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LibraryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -318,7 +312,6 @@ Partial Class UC_books
     Friend WithEvents txtSeriesTitle As TextBox
     Friend WithEvents txtDetails As TextBox
     Friend WithEvents LibraryDataSetBindingSource As BindingSource
-    Friend WithEvents LibraryDataSet As LibraryDataSet
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
