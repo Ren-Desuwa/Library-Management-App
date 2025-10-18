@@ -104,6 +104,18 @@
     <Compile Include="Forms\User\StudentDashboard.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\User\StudentHistory.Designer.vb">
+      <DependentUpon>StudentHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\StudentHistory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\StudentSettings.Designer.vb">
+      <DependentUpon>StudentSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\StudentSettings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\User\Student_Main_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -184,12 +196,6 @@
       <DependentUpon>UC_user_history.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\User\UC_user_history.vb" />
-    <Compile Include="Forms\User\UC_user_settings.Designer.vb">
-      <DependentUpon>UC_user_settings.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\User\UC_user_settings.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Forms\User\User_Main_Panel.Designer.vb">
       <DependentUpon>User_Main_Panel.vb</DependentUpon>
     </Compile>
@@ -198,6 +204,12 @@
       <DependentUpon>ViewBooks.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\User\ViewBooks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\ViewBorrowedBooks.Designer.vb">
+      <DependentUpon>ViewBorrowedBooks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\ViewBorrowedBooks.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -229,6 +241,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\StudentDashboard.resx">
       <DependentUpon>StudentDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\StudentHistory.resx">
+      <DependentUpon>StudentHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\StudentSettings.resx">
+      <DependentUpon>StudentSettings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\Student_Main_Panel.resx">
       <DependentUpon>Student_Main_Panel.vb</DependentUpon>
@@ -269,14 +287,14 @@
     <EmbeddedResource Include="Forms\User\UC_user_history.resx">
       <DependentUpon>UC_user_history.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\UC_user_settings.resx">
-      <DependentUpon>UC_user_settings.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\User_Main_Panel.resx">
       <DependentUpon>User_Main_Panel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\ViewBooks.resx">
       <DependentUpon>ViewBooks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\ViewBorrowedBooks.resx">
+      <DependentUpon>ViewBorrowedBooks.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

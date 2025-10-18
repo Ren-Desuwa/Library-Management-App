@@ -29,7 +29,6 @@ Partial Class Student_Main_Panel
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
@@ -38,13 +37,16 @@ Partial Class Student_Main_Panel
         Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.MainPanel = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2CustomGradientPanel1.SuspendLayout()
+        Me.Guna2Panel1.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Elipse1
@@ -59,7 +61,7 @@ Partial Class Student_Main_Panel
         Me.Guna2ControlBox2.FillColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox2.HoverState.FillColor = System.Drawing.Color.Silver
         Me.Guna2ControlBox2.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox2.Location = New System.Drawing.Point(918, 5)
+        Me.Guna2ControlBox2.Location = New System.Drawing.Point(918, 3)
         Me.Guna2ControlBox2.Name = "Guna2ControlBox2"
         Me.Guna2ControlBox2.Size = New System.Drawing.Size(35, 35)
         Me.Guna2ControlBox2.TabIndex = 3
@@ -124,21 +126,6 @@ Partial Class Student_Main_Panel
         Me.Guna2HtmlLabel3.TabIndex = 9
         Me.Guna2HtmlLabel3.Text = "Student"
         '
-        'Guna2CirclePictureBox1
-        '
-        Me.Guna2CirclePictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2CirclePictureBox1.Image = Global.Library_Management_App.My.Resources.Resources.Settings__1_
-        Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(22, 654)
-        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
-        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(30, 30)
-        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Guna2CirclePictureBox1.TabIndex = 8
-        Me.Guna2CirclePictureBox1.TabStop = False
-        '
         'Guna2Button5
         '
         Me.Guna2Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -156,7 +143,6 @@ Partial Class Student_Main_Panel
         Me.Guna2Button5.FillColor = System.Drawing.Color.Transparent
         Me.Guna2Button5.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button5.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button5.HoverState.FillColor = System.Drawing.Color.White
         Me.Guna2Button5.HoverState.ForeColor = System.Drawing.Color.Black
         Me.Guna2Button5.Location = New System.Drawing.Point(12, 696)
         Me.Guna2Button5.Name = "Guna2Button5"
@@ -303,6 +289,52 @@ Partial Class Student_Main_Panel
         Me.Guna2HtmlLabel1.TabIndex = 1
         Me.Guna2HtmlLabel1.Text = "Library MS"
         '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox1)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox2)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel1.Location = New System.Drawing.Point(275, 0)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(999, 37)
+        Me.Guna2Panel1.TabIndex = 4
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.MainPanel, 0, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(275, 37)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(999, 713)
+        Me.TableLayoutPanel1.TabIndex = 5
+        '
+        'MainPanel
+        '
+        Me.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MainPanel.Location = New System.Drawing.Point(3, 3)
+        Me.MainPanel.Name = "MainPanel"
+        Me.MainPanel.Size = New System.Drawing.Size(993, 707)
+        Me.MainPanel.TabIndex = 0
+        '
+        'Guna2CirclePictureBox1
+        '
+        Me.Guna2CirclePictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2CirclePictureBox1.Image = Global.Library_Management_App.My.Resources.Resources.Settings__1_
+        Me.Guna2CirclePictureBox1.ImageRotate = 0!
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(22, 654)
+        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
+        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(30, 30)
+        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Guna2CirclePictureBox1.TabIndex = 8
+        Me.Guna2CirclePictureBox1.TabStop = False
+        '
         'Guna2PictureBox1
         '
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
@@ -317,30 +349,13 @@ Partial Class Student_Main_Panel
         Me.Guna2PictureBox1.TabStop = False
         Me.Guna2PictureBox1.UseTransparentBackground = True
         '
-        'Guna2Panel1
-        '
-        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox1)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2ControlBox2)
-        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel1.Location = New System.Drawing.Point(275, 0)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(999, 37)
-        Me.Guna2Panel1.TabIndex = 4
-        '
-        'MainPanel
-        '
-        Me.MainPanel.Location = New System.Drawing.Point(275, 37)
-        Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(999, 713)
-        Me.MainPanel.TabIndex = 5
-        '
         'Student_Main_Panel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1274, 750)
-        Me.Controls.Add(Me.MainPanel)
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2CustomGradientPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -350,9 +365,10 @@ Partial Class Student_Main_Panel
         Me.Text = "Admin Dashboard"
         Me.Guna2CustomGradientPanel1.ResumeLayout(False)
         Me.Guna2CustomGradientPanel1.PerformLayout()
+        Me.Guna2Panel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Guna2Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -374,5 +390,6 @@ Partial Class Student_Main_Panel
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents MainPanel As Guna.UI2.WinForms.Guna2Panel
 End Class

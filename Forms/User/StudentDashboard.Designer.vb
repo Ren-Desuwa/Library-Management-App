@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class StudentDashboard
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,19 +20,22 @@ Partial Class StudentDashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
@@ -54,22 +57,20 @@ Partial Class StudentDashboard
         Me.TypeAnc2 = New System.Windows.Forms.Label()
         Me.TypeAncColor1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TypeAnc1 = New System.Windows.Forms.Label()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2HtmlToolTip1 = New Guna.UI2.WinForms.Guna2HtmlToolTip()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel5.SuspendLayout()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel4.SuspendLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel6.SuspendLayout()
         Me.Guna2Panel7.SuspendLayout()
         Me.TypeAncColor3.SuspendLayout()
         Me.TypeAncColor2.SuspendLayout()
         Me.TypeAncColor1.SuspendLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -130,6 +131,19 @@ Partial Class StudentDashboard
         Me.Guna2Panel3.Size = New System.Drawing.Size(292, 237)
         Me.Guna2Panel3.TabIndex = 2
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = Global.Library_Management_App.My.Resources.Resources.Borrowed
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(213, 174)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(57, 57)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 6
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
@@ -167,6 +181,19 @@ Partial Class StudentDashboard
         Me.Guna2Panel5.Size = New System.Drawing.Size(292, 237)
         Me.Guna2Panel5.TabIndex = 2
         '
+        'Guna2PictureBox3
+        '
+        Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox3.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox3.Image = Global.Library_Management_App.My.Resources.Resources.Read
+        Me.Guna2PictureBox3.ImageRotate = 0!
+        Me.Guna2PictureBox3.Location = New System.Drawing.Point(221, 174)
+        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
+        Me.Guna2PictureBox3.Size = New System.Drawing.Size(57, 57)
+        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox3.TabIndex = 8
+        Me.Guna2PictureBox3.TabStop = False
+        '
         'LinkLabel3
         '
         Me.LinkLabel3.AutoSize = True
@@ -203,6 +230,20 @@ Partial Class StudentDashboard
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.Size = New System.Drawing.Size(292, 237)
         Me.Guna2Panel4.TabIndex = 1
+        Me.Guna2HtmlToolTip1.SetToolTip(Me.Guna2Panel4, "You have 1 overdue item(s). Click to view all overdue items and return history.")
+        '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox2.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox2.Image = Global.Library_Management_App.My.Resources.Resources.Items
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(212, 174)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(57, 57)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox2.TabIndex = 7
+        Me.Guna2PictureBox2.TabStop = False
         '
         'LinkLabel2
         '
@@ -445,44 +486,13 @@ Partial Class StudentDashboard
         Me.TypeAnc1.Text = "[TYPE]"
         Me.TypeAnc1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Guna2PictureBox1
+        'Guna2HtmlToolTip1
         '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = Global.Library_Management_App.My.Resources.Resources.Borrowed
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(213, 174)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(57, 57)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox1.TabIndex = 6
-        Me.Guna2PictureBox1.TabStop = False
-        '
-        'Guna2PictureBox3
-        '
-        Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox3.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox3.Image = Global.Library_Management_App.My.Resources.Resources.Read
-        Me.Guna2PictureBox3.ImageRotate = 0!
-        Me.Guna2PictureBox3.Location = New System.Drawing.Point(221, 174)
-        Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
-        Me.Guna2PictureBox3.Size = New System.Drawing.Size(57, 57)
-        Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox3.TabIndex = 8
-        Me.Guna2PictureBox3.TabStop = False
-        '
-        'Guna2PictureBox2
-        '
-        Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox2.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox2.Image = Global.Library_Management_App.My.Resources.Resources.Items
-        Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(212, 174)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(57, 57)
-        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox2.TabIndex = 7
-        Me.Guna2PictureBox2.TabStop = False
+        Me.Guna2HtmlToolTip1.AllowLinksHandling = True
+        Me.Guna2HtmlToolTip1.BackColor = System.Drawing.Color.Gray
+        Me.Guna2HtmlToolTip1.ForeColor = System.Drawing.Color.White
+        Me.Guna2HtmlToolTip1.MaximumSize = New System.Drawing.Size(0, 0)
+        Me.Guna2HtmlToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning
         '
         'StudentDashboard
         '
@@ -498,10 +508,13 @@ Partial Class StudentDashboard
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel3.ResumeLayout(False)
         Me.Guna2Panel3.PerformLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()
+        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel4.ResumeLayout(False)
         Me.Guna2Panel4.PerformLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel6.ResumeLayout(False)
         Me.Guna2Panel6.PerformLayout()
         Me.Guna2Panel7.ResumeLayout(False)
@@ -512,9 +525,6 @@ Partial Class StudentDashboard
         Me.TypeAncColor2.PerformLayout()
         Me.TypeAncColor1.ResumeLayout(False)
         Me.TypeAncColor1.PerformLayout()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -554,4 +564,5 @@ Partial Class StudentDashboard
     Friend WithEvents TypeAnc3 As Label
     Friend WithEvents TypeAnc2 As Label
     Friend WithEvents LinkLabel4 As LinkLabel
+    Friend WithEvents Guna2HtmlToolTip1 As Guna.UI2.WinForms.Guna2HtmlToolTip
 End Class
