@@ -112,6 +112,8 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\User\Student_Main_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Database\LogDAO.vb" />
     <Compile Include="Database\NotificationDAO.vb" />
     <Compile Include="Database\TransactionDAO.vb" />
@@ -129,21 +131,15 @@
     <Compile Include="Forms\Admin\UC_books.Designer.vb">
       <DependentUpon>UC_books.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\UC_books.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Forms\Admin\UC_books.vb" />
     <Compile Include="Forms\Admin\UC_dashboard.Designer.vb">
       <DependentUpon>UC_dashboard.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\UC_dashboard.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Forms\Admin\UC_dashboard.vb" />
     <Compile Include="Forms\Admin\UC_members.Designer.vb">
       <DependentUpon>UC_members.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\UC_members.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Forms\Admin\UC_members.vb" />
     <Compile Include="Forms\Admin\UC_overdue.Designer.vb">
       <DependentUpon>UC_overdue.vb</DependentUpon>
     </Compile>
@@ -165,9 +161,7 @@
     <Compile Include="Forms\Admin\UC_transactions.Designer.vb">
       <DependentUpon>UC_transactions.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\UC_transactions.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Forms\Admin\UC_transactions.vb" />
     <Compile Include="Forms\Login\Login_Panel.Designer.vb">
       <DependentUpon>Login_Panel.vb</DependentUpon>
     </Compile>

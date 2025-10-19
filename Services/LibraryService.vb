@@ -42,12 +42,12 @@
             _db.BookDAO.Update(book)
 
             ' Create notification
-            Dim notification = notification.CreateDueReminder(accountID, transactionID, transaction.DateDue.Value)
-            _db.NotificationDAO.Insert(notification)
+            Dim notifications = Notification.CreateDueReminder(accountID, transactionID, transaction.DateDue.Value)
+            _db.NotificationDAO.Insert(notifications)
 
             ' Log the action
-            Dim log = log.RecordAction(accountID, "BORROW_BOOK", $"Borrowed book copy {copyID}")
-            _db.LogDAO.Insert(log)
+            Dim logs = Log.RecordAction(accountID, "BORROW_BOOK", $"Borrowed book copy {copyID}")
+            _db.LogDAO.Insert(logs)
 
             Return (True, "Book borrowed successfully!")
         Catch ex As Exception
@@ -101,8 +101,8 @@
             End If
 
             ' Log the action
-            Dim log = log.RecordAction(transaction.AccountID, "RETURN_BOOK", $"Returned book copy {transaction.CopyID}")
-            _db.LogDAO.Insert(log)
+            Dim logs = Log.RecordAction(transaction.AccountID, "RETURN_BOOK", $"Returned book copy {transaction.CopyID}")
+            _db.LogDAO.Insert(logs)
 
             Dim message As String = "Book returned successfully!"
             If transaction.Fine > 0 Then
