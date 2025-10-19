@@ -111,6 +111,18 @@
     <Compile Include="Forms\User\StudentDashboard.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\User\StudentHistory.Designer.vb">
+      <DependentUpon>StudentHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\StudentHistory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\User\StudentSettings.Designer.vb">
+      <DependentUpon>StudentSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\StudentSettings.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms\User\Student_Main_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -180,32 +192,47 @@
     <Compile Include="Forms\Login\Register_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\UC_search_books.Designer.vb">
-      <DependentUpon>UC_search_books.vb</DependentUpon>
+    <Compile Include="Forms\User\ViewBooks.Designer.vb">
+      <DependentUpon>ViewBooks.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\UC_search_books.vb" />
-    <Compile Include="Forms\User\UC_user_dashboard.Designer.vb">
-      <DependentUpon>UC_user_dashboard.vb</DependentUpon>
+    <Compile Include="Forms\User\ViewBooks.vb">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\UC_user_dashboard.vb" />
-    <Compile Include="Forms\User\UC_user_history.Designer.vb">
-      <DependentUpon>UC_user_history.vb</DependentUpon>
+    <Compile Include="Forms\User\ViewBorrowedBooks.Designer.vb">
+      <DependentUpon>ViewBorrowedBooks.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\UC_user_history.vb" />
-    <Compile Include="Forms\User\UC_user_settings.Designer.vb">
-      <DependentUpon>UC_user_settings.vb</DependentUpon>
+    <Compile Include="Forms\User\ViewBorrowedBooks.vb">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\UC_user_settings.vb">
+    <Compile Include="Librarian\LibrarianCataloging.Designer.vb">
+      <DependentUpon>LibrarianCataloging.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\LibrarianCataloging.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\User\User_Main_Panel.Designer.vb">
-      <DependentUpon>User_Main_Panel.vb</DependentUpon>
+    <Compile Include="Librarian\LibrarianDashboard.Designer.vb">
+      <DependentUpon>LibrarianDashboard.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User\User_Main_Panel.vb" />
-    <Compile Include="LibraryDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
+    <Compile Include="Librarian\LibrarianDashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\LibrarianTransactions.Designer.vb">
+      <DependentUpon>LibrarianTransactions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\LibrarianTransactions.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\Librarian_Main_Panel.Designer.vb">
+      <DependentUpon>Librarian_Main_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\Librarian_Main_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\TransactionDetails.Designer.vb">
+      <DependentUpon>TransactionDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\TransactionDetails.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -239,6 +266,12 @@
     <EmbeddedResource Include="Forms\User\StudentDashboard.resx">
       <DependentUpon>StudentDashboard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\StudentHistory.resx">
+      <DependentUpon>StudentHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\StudentSettings.resx">
+      <DependentUpon>StudentSettings.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\Student_Main_Panel.resx">
       <DependentUpon>Student_Main_Panel.vb</DependentUpon>
     </EmbeddedResource>
@@ -269,20 +302,26 @@
     <EmbeddedResource Include="Forms\Login\Register_Panel.resx">
       <DependentUpon>Register_Panel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\UC_search_books.resx">
-      <DependentUpon>UC_search_books.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\User\ViewBooks.resx">
+      <DependentUpon>ViewBooks.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\UC_user_dashboard.resx">
-      <DependentUpon>UC_user_dashboard.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\User\ViewBorrowedBooks.resx">
+      <DependentUpon>ViewBorrowedBooks.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\UC_user_history.resx">
-      <DependentUpon>UC_user_history.vb</DependentUpon>
+    <EmbeddedResource Include="Librarian\LibrarianCataloging.resx">
+      <DependentUpon>LibrarianCataloging.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\UC_user_settings.resx">
-      <DependentUpon>UC_user_settings.vb</DependentUpon>
+    <EmbeddedResource Include="Librarian\LibrarianDashboard.resx">
+      <DependentUpon>LibrarianDashboard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\User_Main_Panel.resx">
-      <DependentUpon>User_Main_Panel.vb</DependentUpon>
+    <EmbeddedResource Include="Librarian\LibrarianTransactions.resx">
+      <DependentUpon>LibrarianTransactions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\Librarian_Main_Panel.resx">
+      <DependentUpon>Librarian_Main_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\TransactionDetails.resx">
+      <DependentUpon>TransactionDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -292,6 +331,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="LibraryDataSet.xsc">
       <DependentUpon>LibraryDataSet.xsd</DependentUpon>
     </None>
@@ -304,6 +344,8 @@
       <DependentUpon>LibraryDataSet.xsd</DependentUpon>
     </None>
     <None Include="Misc\Documentation\vb-classes-reference.md" />
+=======
+>>>>>>> UI-(revised)-(KYLE)
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -390,6 +432,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Read.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Borrow Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Borrow White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Cataloging Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Cataloging White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Dashboard Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Dashboard White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Report Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Report White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Settings Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Settings White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Student Management Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Student Management White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Returns Due Today.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Total Books Borrowed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

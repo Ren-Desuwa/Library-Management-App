@@ -37,6 +37,12 @@ Partial Class SearchBooks
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2DataGridView1 = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.colCover = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.colBookID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colAuthor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colAction = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.panelPages = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnGoTo = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.lblTotalResults = New System.Windows.Forms.Label()
@@ -46,11 +52,6 @@ Partial Class SearchBooks
         Me.btnNext = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.btnPrev = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.txtGoToPage = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.colCover = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.colTitle = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colAuthor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colAction = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,6 +122,7 @@ Partial Class SearchBooks
         '
         'Guna2DataGridView1
         '
+        Me.Guna2DataGridView1.AllowUserToAddRows = False
         Me.Guna2DataGridView1.AllowUserToResizeColumns = False
         Me.Guna2DataGridView1.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
@@ -130,12 +132,11 @@ Partial Class SearchBooks
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(158, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Empty
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.Guna2DataGridView1.ColumnHeadersHeight = 20
         Me.Guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.Guna2DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colCover, Me.colTitle, Me.colAuthor, Me.colStatus, Me.colAction})
+        Me.Guna2DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colCover, Me.colBookID, Me.colTitle, Me.colAuthor, Me.colStatus, Me.colAction})
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -153,7 +154,6 @@ Partial Class SearchBooks
         DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Empty
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Guna2DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.Guna2DataGridView1.RowHeadersVisible = False
@@ -183,6 +183,62 @@ Partial Class SearchBooks
         Me.Guna2DataGridView1.ThemeStyle.RowsStyle.Height = 180
         Me.Guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'colCover
+        '
+        Me.colCover.HeaderText = "Cover"
+        Me.colCover.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.colCover.Name = "colCover"
+        Me.colCover.ReadOnly = True
+        '
+        'colBookID
+        '
+        Me.colBookID.HeaderText = "BookID"
+        Me.colBookID.Name = "colBookID"
+        Me.colBookID.Visible = False
+        '
+        'colTitle
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Sans Serif Collection", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.colTitle.DefaultCellStyle = DataGridViewCellStyle3
+        Me.colTitle.HeaderText = "Title"
+        Me.colTitle.Name = "colTitle"
+        Me.colTitle.ReadOnly = True
+        '
+        'colAuthor
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Sans Serif Collection", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.colAuthor.DefaultCellStyle = DataGridViewCellStyle4
+        Me.colAuthor.HeaderText = "Author"
+        Me.colAuthor.Name = "colAuthor"
+        Me.colAuthor.ReadOnly = True
+        '
+        'colStatus
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(245, Byte), Integer), CType(CType(207, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Sans Serif Collection", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.colStatus.DefaultCellStyle = DataGridViewCellStyle5
+        Me.colStatus.HeaderText = "Status"
+        Me.colStatus.Name = "colStatus"
+        Me.colStatus.ReadOnly = True
+        '
+        'colAction
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.NullValue = "View"
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.colAction.DefaultCellStyle = DataGridViewCellStyle6
+        Me.colAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.colAction.HeaderText = "Action"
+        Me.colAction.Name = "colAction"
+        Me.colAction.ReadOnly = True
+        Me.colAction.UseColumnTextForButtonValue = True
         '
         'panelPages
         '
@@ -229,9 +285,9 @@ Partial Class SearchBooks
         '
         'pnlPageNumbers
         '
-        Me.pnlPageNumbers.Location = New System.Drawing.Point(418, 7)
+        Me.pnlPageNumbers.Location = New System.Drawing.Point(418, 10)
         Me.pnlPageNumbers.Name = "pnlPageNumbers"
-        Me.pnlPageNumbers.Size = New System.Drawing.Size(108, 47)
+        Me.pnlPageNumbers.Size = New System.Drawing.Size(108, 30)
         Me.pnlPageNumbers.TabIndex = 14
         '
         'btnSuperNext
@@ -320,49 +376,6 @@ Partial Class SearchBooks
         Me.txtGoToPage.Size = New System.Drawing.Size(32, 30)
         Me.txtGoToPage.TabIndex = 6
         '
-        'colCover
-        '
-        Me.colCover.HeaderText = "Cover"
-        Me.colCover.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.colCover.Name = "colCover"
-        Me.colCover.ReadOnly = True
-        '
-        'colTitle
-        '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.colTitle.DefaultCellStyle = DataGridViewCellStyle3
-        Me.colTitle.HeaderText = "Title"
-        Me.colTitle.Name = "colTitle"
-        Me.colTitle.ReadOnly = True
-        '
-        'colAuthor
-        '
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Verdana", 11.25!)
-        Me.colAuthor.DefaultCellStyle = DataGridViewCellStyle4
-        Me.colAuthor.HeaderText = "Author"
-        Me.colAuthor.Name = "colAuthor"
-        Me.colAuthor.ReadOnly = True
-        '
-        'colStatus
-        '
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Verdana", 11.25!)
-        Me.colStatus.DefaultCellStyle = DataGridViewCellStyle5
-        Me.colStatus.HeaderText = "Status"
-        Me.colStatus.Name = "colStatus"
-        Me.colStatus.ReadOnly = True
-        '
-        'colAction
-        '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.NullValue = "View"
-        Me.colAction.DefaultCellStyle = DataGridViewCellStyle6
-        Me.colAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.colAction.HeaderText = "Action"
-        Me.colAction.Name = "colAction"
-        Me.colAction.ReadOnly = True
-        Me.colAction.UseColumnTextForButtonValue = True
-        '
         'SearchBooks
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -399,6 +412,7 @@ Partial Class SearchBooks
     Friend WithEvents lblTotalResults As Label
     Friend WithEvents btnGoTo As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents colCover As DataGridViewImageColumn
+    Friend WithEvents colBookID As DataGridViewTextBoxColumn
     Friend WithEvents colTitle As DataGridViewTextBoxColumn
     Friend WithEvents colAuthor As DataGridViewTextBoxColumn
     Friend WithEvents colStatus As DataGridViewTextBoxColumn
