@@ -86,19 +86,19 @@
     <Compile Include="Classes\Account.vb" />
     <Compile Include="Classes\Announcement.vb" />
     <Compile Include="Classes\Book.vb" />
-    <Compile Include="Classes\Books.vb" />
-    <Compile Include="Classes\BorrowedBook.vb" />
+    <Compile Include="Classes\BookCopy.vb" />
     <Compile Include="Classes\Log.vb" />
     <Compile Include="Classes\Notification.vb" />
     <Compile Include="Classes\Transaction.vb" />
-    <Compile Include="Database\AccountDatabase.vb" />
-    <Compile Include="Database\AnnouncementDatabase.vb" />
-    <Compile Include="Database\BookDatabase.vb" />
+    <Compile Include="Database\AccountDAO.vb" />
+    <Compile Include="Database\AnnouncementDAO.vb" />
+    <Compile Include="Database\BookCopyDAO.vb" />
+    <Compile Include="Database\BookDAO.vb" />
     <Compile Include="Database\DatabaseHelper.vb" />
     <Compile Include="Database\LibraryDatabase.vb" />
-    <Compile Include="Database\LogDatabase.vb" />
-    <Compile Include="Database\NotificationDatabase.vb" />
-    <Compile Include="Database\TransactionDatabase.vb" />
+    <Compile Include="Database\LogDAO.vb" />
+    <Compile Include="Database\NotificationDAO.vb" />
+    <Compile Include="Database\TransactionDAO.vb" />
     <Compile Include="Forms\Admin\Admin_Main_Panel.Designer.vb">
       <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
     </Compile>
@@ -227,6 +227,8 @@
     <Compile Include="Misc\RoundedPanel.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Services\AccountService.vb" />
+    <Compile Include="Services\LibraryService.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\Admin\Admin_Main_Panel.resx">
