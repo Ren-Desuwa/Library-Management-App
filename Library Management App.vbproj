@@ -212,6 +212,36 @@
     <Compile Include="Forms\User\ViewBorrowedBooks.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Librarian\LibrarianCataloging.Designer.vb">
+      <DependentUpon>LibrarianCataloging.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\LibrarianCataloging.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\LibrarianDashboard.Designer.vb">
+      <DependentUpon>LibrarianDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\LibrarianDashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\LibrarianTransactions.Designer.vb">
+      <DependentUpon>LibrarianTransactions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\LibrarianTransactions.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Librarian\Librarian_Main_Panel.Designer.vb">
+      <DependentUpon>Librarian_Main_Panel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\Librarian_Main_Panel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian\TransactionDetails.Designer.vb">
+      <DependentUpon>TransactionDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian\TransactionDetails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -295,6 +325,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\ViewBorrowedBooks.resx">
       <DependentUpon>ViewBorrowedBooks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\LibrarianCataloging.resx">
+      <DependentUpon>LibrarianCataloging.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\LibrarianDashboard.resx">
+      <DependentUpon>LibrarianDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\LibrarianTransactions.resx">
+      <DependentUpon>LibrarianTransactions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\Librarian_Main_Panel.resx">
+      <DependentUpon>Librarian_Main_Panel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian\TransactionDetails.resx">
+      <DependentUpon>TransactionDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -390,6 +435,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Read.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Borrow Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Borrow White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Cataloging Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Cataloging White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Dashboard Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Dashboard White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Report Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Report White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Settings Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Settings White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Student Management Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Student Management White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Returns Due Today.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Total Books Borrowed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
