@@ -18,9 +18,11 @@ Public Class Account
     Private _createdDate As Date
     Private _lastLoginDate As Date?
 
-    ' Student info
+    ' Personal info
     Private _firstName As String
     Private _lastName As String
+    Private _verifiedID As String
+    Private _contactNo As String
 
     Public Property AccountID As Integer
         Get
@@ -87,13 +89,12 @@ Public Class Account
         End Set
     End Property
 
-    ' Student name
     Public Property FirstName As String
         Get
             Return _firstName
         End Get
-        Friend Set(value As String)
-            _firstName = value
+        Set(value As String)
+            _firstName = If(value, String.Empty).Trim()
         End Set
     End Property
 
@@ -101,14 +102,35 @@ Public Class Account
         Get
             Return _lastName
         End Get
-        Friend Set(value As String)
-            _lastName = value
+        Set(value As String)
+            _lastName = If(value, String.Empty).Trim()
+        End Set
+    End Property
+
+    Public Property VerifiedID As String
+        Get
+            Return _verifiedID
+        End Get
+        Set(value As String)
+            _verifiedID = If(value, String.Empty).Trim()
+        End Set
+    End Property
+
+    Public Property ContactNo As String
+        Get
+            Return _contactNo
+        End Get
+        Set(value As String)
+            _contactNo = If(value, String.Empty).Trim()
         End Set
     End Property
 
     Public ReadOnly Property FullName As String
         Get
-            Return $"{_firstName} {_lastName}"
+            If String.IsNullOrWhiteSpace(_firstName) AndAlso String.IsNullOrWhiteSpace(_lastName) Then
+                Return _username
+            End If
+            Return $"{_firstName} {_lastName}".Trim()
         End Get
     End Property
 
@@ -138,6 +160,10 @@ Public Class Account
         Me.Type = type
         SetPassword(password)
         _createdDate = Date.Now
+        _firstName = String.Empty
+        _lastName = String.Empty
+        _verifiedID = String.Empty
+        _contactNo = String.Empty
     End Sub
 
     Public Sub SetPassword(password As String)

@@ -65,6 +65,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="Transitions, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\dot-net-transitions.1.2.1.0\lib\net40-full\Transitions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -84,19 +87,29 @@
     <Compile Include="Classes\Announcement.vb" />
     <Compile Include="Classes\Book.vb" />
     <Compile Include="Classes\Books.vb" />
+    <Compile Include="Classes\BorrowedBook.vb" />
+    <Compile Include="Classes\Log.vb" />
     <Compile Include="Classes\Notification.vb" />
     <Compile Include="Classes\Transaction.vb" />
     <Compile Include="Database\AccountDatabase.vb" />
     <Compile Include="Database\AnnouncementDatabase.vb" />
     <Compile Include="Database\BookDatabase.vb" />
+    <Compile Include="Database\DatabaseHelper.vb" />
     <Compile Include="Database\LibraryDatabase.vb" />
+    <Compile Include="Database\LogDatabase.vb" />
     <Compile Include="Database\NotificationDatabase.vb" />
     <Compile Include="Database\TransactionDatabase.vb" />
+    <Compile Include="Forms\Admin\Admin_Main_Panel.Designer.vb">
+      <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\Admin_Main_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\Admin_Main_Panel.Designer.vb">
-      <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
+    <Compile Include="Forms\Admin\Admin_Main_Panel2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Admin_Main_Panel2.Designer.vb">
+      <DependentUpon>Admin_Main_Panel2.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Database\DatabaseConnection.vb" />
@@ -219,6 +232,9 @@
     <EmbeddedResource Include="Forms\Admin\Admin_Main_Panel.resx">
       <DependentUpon>Admin_Main_Panel.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Admin_Main_Panel2.resx">
+      <DependentUpon>Admin_Main_Panel2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\UC_books.resx">
       <DependentUpon>UC_books.vb</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +296,7 @@
     <None Include="LibraryDataSet.xss">
       <DependentUpon>LibraryDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Misc\Documentation\vb-classes-reference.md" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

@@ -3,17 +3,16 @@
     Private _title As String
     Private _author As String
     Private _isbn As String
-    Private _borrowedBy As Integer?
-    Private _dueDate As Date?
     Private _details As String
-    Private _history As List(Of String)
+    Private _seriesTitle As String
+    Private _createdDate As DateTime
+    Private _recentBorrowHistory As List(Of Integer) ' List of BorrowID (max 5)
 
-    ' Properties with validation
     Public Property BookID As Integer
         Get
             Return _bookID
         End Get
-        Private Set(value As Integer)
+        Friend Set(value As Integer)
             _bookID = value
         End Set
     End Property
@@ -54,18 +53,6 @@
         End Set
     End Property
 
-    Public ReadOnly Property BorrowedBy As Integer?
-        Get
-            Return _borrowedBy
-        End Get
-    End Property
-
-    Public ReadOnly Property DueDate As Date?
-        Get
-            Return _dueDate
-        End Get
-    End Property
-
     Public Property Details As String
         Get
             Return _details
@@ -75,89 +62,72 @@
         End Set
     End Property
 
-    Public ReadOnly Property History As List(Of String)
+    Public Property SeriesTitle As String
         Get
-            Return New List(Of String)(_history) ' Return a copy to prevent external modification
+            Return _seriesTitle
         End Get
+        Set(value As String)
+            _seriesTitle = If(value, "General").Trim()
+        End Set
     End Property
 
-    Public ReadOnly Property IsAvailable As Boolean
+    Public Property CreatedDate As DateTime
         Get
-            Return Not _borrowedBy.HasValue
+            Return _createdDate
         End Get
+        Friend Set(value As DateTime)
+            _createdDate = value
+        End Set
     End Property
 
-    Public ReadOnly Property IsOverdue As Boolean
+    Public ReadOnly Property RecentBorrowHistory As List(Of Integer)
         Get
-            Return _dueDate.HasValue AndAlso _dueDate.Value < Date.Today
+            Return New List(Of Integer)(_recentBorrowHistory)
         End Get
     End Property
 
     ' Constructor
-    Public Sub New(bookID As Integer, title As String, author As String, isbn As String, Optional details As String = "")
+    Public Sub New()
+        _recentBorrowHistory = New List(Of Integer)()
+        _seriesTitle = "General"
+        _details = String.Empty
+    End Sub
+
+    Public Sub New(bookID As Integer, title As String, author As String, isbn As String, Optional seriesTitle As String = "General", Optional details As String = "")
         If bookID <= 0 Then
             Throw New ArgumentException("BookID must be positive")
         End If
 
         _bookID = bookID
-        Me.Title = title ' Uses property setter for validation
+        Me.Title = title
         Me.Author = author
         Me.ISBN = isbn
+        Me.SeriesTitle = seriesTitle
         Me.Details = details
-        _history = New List(Of String)()
-
-        AddHistoryEntry("Book created")
+        _createdDate = DateTime.Now
+        _recentBorrowHistory = New List(Of Integer)()
     End Sub
 
-    ' Methods for borrowing and returning
-    Public Sub BorrowBook(memberID As Integer, dueDate As Date)
-        If Not IsAvailable Then
-            Throw New InvalidOperationException($"Book '{Title}' is already borrowed")
+    ' Add borrow record to history (keep only last 5)
+    Public Sub AddBorrowRecord(borrowID As Integer)
+        If borrowID <= 0 Then
+            Throw New ArgumentException("BorrowID must be positive")
         End If
 
-        If dueDate <= Date.Today Then
-            Throw New ArgumentException("Due date must be in the future")
-        End If
+        _recentBorrowHistory.Insert(0, borrowID) ' Add to beginning
 
-        _borrowedBy = memberID
-        _dueDate = dueDate
-        AddHistoryEntry($"Borrowed by member {memberID} on {Date.Today:yyyy-MM-dd}, due {dueDate:yyyy-MM-dd}")
+        ' Keep only last 5
+        If _recentBorrowHistory.Count > 5 Then
+            _recentBorrowHistory.RemoveAt(5)
+        End If
     End Sub
 
-    Public Sub ReturnBook()
-        If IsAvailable Then
-            Throw New InvalidOperationException($"Book '{Title}' is not currently borrowed")
-        End If
-
-        Dim wasOverdue = IsOverdue
-        Dim returnedBy = _borrowedBy.Value
-
-        _borrowedBy = Nothing
-        _dueDate = Nothing
-
-        Dim status = If(wasOverdue, "OVERDUE", "on time")
-        AddHistoryEntry($"Returned by member {returnedBy} on {Date.Today:yyyy-MM-dd} ({status})")
-    End Sub
-
-    Public Sub RenewBook(newDueDate As Date)
-        If IsAvailable Then
-            Throw New InvalidOperationException($"Book '{Title}' is not currently borrowed")
-        End If
-
-        If newDueDate <= Date.Today Then
-            Throw New ArgumentException("New due date must be in the future")
-        End If
-
-        Dim oldDueDate = _dueDate.Value
-        _dueDate = newDueDate
-        AddHistoryEntry($"Renewed by member {_borrowedBy.Value} on {Date.Today:yyyy-MM-dd}, new due date {newDueDate:yyyy-MM-dd}")
-    End Sub
-
-    Private Sub AddHistoryEntry(entry As String)
-        _history.Add($"{Date.Now:yyyy-MM-dd HH:mm:ss} - {entry}")
+    ' Load borrow history from database
+    Friend Sub LoadBorrowHistory(borrowIDs As List(Of Integer))
+        _recentBorrowHistory = New List(Of Integer)(borrowIDs.Take(5))
     End Sub
 
     Public Overrides Function ToString() As String
-        Return $"{Title} by {Author} (ID: {BookID})"
+        Return $"{Title} by {Author} (ISBN: {ISBN})"
     End Function
 End Class
