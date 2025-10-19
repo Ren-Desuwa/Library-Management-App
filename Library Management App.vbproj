@@ -184,22 +184,6 @@
     <Compile Include="Forms\Login\Register_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\User\UC_search_books.Designer.vb">
-      <DependentUpon>UC_search_books.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\User\UC_search_books.vb" />
-    <Compile Include="Forms\User\UC_user_dashboard.Designer.vb">
-      <DependentUpon>UC_user_dashboard.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\User\UC_user_dashboard.vb" />
-    <Compile Include="Forms\User\UC_user_history.Designer.vb">
-      <DependentUpon>UC_user_history.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\User\UC_user_history.vb" />
-    <Compile Include="Forms\User\User_Main_Panel.Designer.vb">
-      <DependentUpon>User_Main_Panel.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\User\User_Main_Panel.vb" />
     <Compile Include="Forms\User\ViewBooks.Designer.vb">
       <DependentUpon>ViewBooks.vb</DependentUpon>
     </Compile>
@@ -307,18 +291,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Register_Panel.resx">
       <DependentUpon>Register_Panel.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\UC_search_books.resx">
-      <DependentUpon>UC_search_books.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\UC_user_dashboard.resx">
-      <DependentUpon>UC_user_dashboard.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\UC_user_history.resx">
-      <DependentUpon>UC_user_history.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User\User_Main_Panel.resx">
-      <DependentUpon>User_Main_Panel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User\ViewBooks.resx">
       <DependentUpon>ViewBooks.vb</DependentUpon>
